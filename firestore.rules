@@ -11,6 +11,17 @@ service cloud.firestore {
       allow read: if signedIn() && request.auth.token.email == email;
       allow write: if false;
     }
+    // Assistant photos shared with the team: any member can add one in their own name;
+    // the person who added it or an editor can delete it. Photos can't be edited.
+    match /mascots/{id} {
+      allow read: if member();
+      allow create: if member()
+        && request.resource.data.keys().hasOnly(['url', 'by', 'createdAt'])
+        && request.resource.data.by == request.auth.token.email
+        && request.resource.data.url is string && request.resource.data.url.matches('data:image/.*')
+        && request.resource.data.url.size() < 300000;
+      allow delete: if editor() || (member() && resource.data.by == request.auth.token.email);
+    }
     match /{col}/{id} {
       allow read: if member() && col in ['folders', 'docs', 'clubs', 'thumbs'];
       allow write: if editor() && col in ['folders', 'docs', 'clubs', 'thumbs'];

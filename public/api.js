@@ -27,6 +27,10 @@
       return { fileUrl: URL.createObjectURL(file), thumbUrl: thumbBlob ? URL.createObjectURL(thumbBlob) : '', sizeBytes: file.size };
     },
     async removeFile(doc) { /* demo */ },
+    _m: [], me: () => 'demo',
+    async listMascots() { return this._m; },
+    async addMascot(url) { const m = { id: 'm' + Date.now(), url, by: 'demo', createdAt: new Date().toISOString() }; this._m.push(m); return m; },
+    async removeMascot(id) { this._m = this._m.filter(m => m.id !== id); },
     fileUrl: d => d.fileUrl || '',
     thumbUrl: d => d.thumbUrl || ''
   };
@@ -142,6 +146,14 @@
       await this.db().collection(collection).doc(id).set(rest);
     },
     async remove(collection, id) { await this.db().collection(collection).doc(id).delete(); },
+    me: () => firebase.auth().currentUser?.email || '',
+    // Assistant photos shared with the whole team: `mascots` collection, { url (data: URL), by, createdAt }.
+    async listMascots() { return (await this.db().collection('mascots').orderBy('createdAt').get()).docs.map(x => ({ id: x.id, ...x.data() })); },
+    async addMascot(url) {
+      const m = { url, by: this.me(), createdAt: new Date().toISOString() }, ref = this.db().collection('mascots').doc();
+      await ref.set(m); return { id: ref.id, ...m };
+    },
+    async removeMascot(id) { await this.db().collection('mascots').doc(id).delete(); },
     // Sends the file to FILE_SERVER (apps-script/Upload.gs), which saves it into the DOCUMENT CENTER Drive folder.
     async upload(file, thumbBlob) {
       const res = await this._server({ action: 'upload', name: file.name, mime: file.type || '', data: await toB64(file) });

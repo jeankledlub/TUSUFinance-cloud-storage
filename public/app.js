@@ -27,7 +27,7 @@ const TX = {
   tMerge: 'รวมเป็น PDF ไฟล์เดียว', tMergeP: 'เรียงตามลำดับในรายการ รูปภาพจะวางเป็นหน้า A4', doMerge: 'รวมและดาวน์โหลด', tImg: 'แปลง PDF เป็นรูป', tImgP: 'ทุกหน้าของทุกไฟล์ในรายการ ได้เป็น ZIP', toPng: 'เป็น PNG', toJpg: 'เป็น JPG', tZip: 'ดาวน์โหลดรวดเดียว', tZipP: 'ไฟล์ต้นฉบับทั้งหมดใน ZIP เดียว', doZip: 'โหลดเป็น ZIP', local: 'จากเครื่อง',
   starHero: 'ติดดาว', starP: 'เอกสารในคลังกลางที่คุณกดดาวไว้ จำไว้ในเครื่องนี้', starEmpty: 'ยังไม่มีเอกสารติดดาว', starEmptyP: 'กดรูปดาวที่การ์ดเอกสาร แล้วจะมารวมอยู่ที่นี่',
   trashHero: 'ถังขยะ', trashP: 'เอกสารที่ลบจากคลังกลาง กู้คืนได้ หรือลบถาวรเพื่อคืนพื้นที่', trashEmpty: 'ถังขยะว่าง', restore: 'กู้คืน', purge: 'ลบถาวร', purgeQ: 'ลบ “{n}” ถาวร? กู้คืนไม่ได้อีก',
-  lookHero: 'ตั้งค่าหน้าตา', lookP: 'เลือกได้ตามชอบ ระบบจำไว้ในเครื่องนี้ ไม่กระทบคนอื่น', theme: 'ธีมสี', mode: 'โหมด', lang: 'ภาษา', mascotSet: 'ตัวช่วย', mascotOn: 'แสดง', mascotOff: 'ซ่อน', mascotPhoto: 'เพิ่มรูป', mascotReset: 'ตัวเดิม', mascotPhotoP: 'กดรูปเพื่อเลือกตัวช่วย เพิ่มรูปจากเครื่องได้ตามใจ ตัวเดิมยังอยู่เสมอ (จำไว้ในเครื่องนี้ ไม่กระทบคนอื่น)', tPhotoSaved: 'เพิ่มรูปตัวช่วยแล้ว', tPhotoFull: 'เพิ่มได้สูงสุด 12 รูป ลบรูปเก่าก่อน', palTusu: 'TUSU (ค่าเริ่มต้น)',
+  lookHero: 'ตั้งค่าหน้าตา', lookP: 'เลือกได้ตามชอบ ระบบจำไว้ในเครื่องนี้ ไม่กระทบคนอื่น', theme: 'ธีมสี', mode: 'โหมด', lang: 'ภาษา', mascotSet: 'ตัวช่วย', mascotOn: 'แสดง', mascotOff: 'ซ่อน', mascotPhoto: 'เพิ่มรูป', mascotReset: 'ตัวเดิม', mascotPhotoP: 'กดรูปเพื่อเลือกตัวช่วยของคุณ (จำไว้ในเครื่องนี้) รูปที่เพิ่มจะแชร์ให้ทุกคนในทีมเลือกใช้ได้', tPhotoSaved: 'เพิ่มรูปแล้ว ทุกคนในทีมเลือกใช้ได้', tPhotoFull: 'แกลเลอรีเต็มแล้ว (30 รูป) ลบรูปเก่าก่อน', mName0: 'น้องดาต้า', mName1: 'น้องหมา', mName2: 'น้องบอท', mBy: 'รูปจาก {n}', mDelQ: 'ลบรูปนี้ออกจากแกลเลอรีของทีม ทุกคนจะใช้รูปนี้ไม่ได้อีก', palTusu: 'TUSU (ค่าเริ่มต้น)',
   chTitle: 'แชทกับน้องดาต้า', chSub: 'ตอบจากข้อมูลในคลังนี้เท่านั้น', chPh: 'ถามเรื่องชุมนุม ใบแต่งตั้ง หรือชื่อคน…', chSend: 'ส่ง', chAsk: 'ถามน้อง',
   chHelp: 'สวัสดี! ถามน้องได้เลย น้องตอบจากข้อมูลในคลังนี้เท่านั้น เช่น ใครเป็นประธานชุมนุมไหน ชุมนุมไหนมีใบแต่งตั้งแล้ว สายกีฬามีกี่ชุมนุม หรือพิมพ์ชื่อคนก็ได้',
   chWhich: 'เจอหลายชุมนุมที่ชื่อคล้ายกัน หมายถึงอันไหน', chContact: 'ข้อมูลติดต่อ (เบอร์ ไลน์ อีเมล) น้องไม่ตอบในแชทนะ ดูได้ที่หน้าชุมนุมเลย',
@@ -76,7 +76,7 @@ const TX = {
   tMerge: 'Merge into one PDF', tMergeP: 'Uses the order of the list. Images become A4 pages.', doMerge: 'Merge and download', tImg: 'Convert PDF to images', tImgP: 'Every page of every file, as one ZIP.', toPng: 'As PNG', toJpg: 'As JPG', tZip: 'Download all at once', tZipP: 'All original files in one ZIP.', doZip: 'Download ZIP', local: 'From computer',
   starHero: 'Starred', starP: 'Shared documents you starred, remembered on this device.', starEmpty: 'Nothing starred yet', starEmptyP: 'Press the star on a document card and it shows up here.',
   trashHero: 'Trash', trashP: 'Documents removed from the shared drive. Restore them, or delete forever to free space.', trashEmpty: 'Trash is empty', restore: 'Restore', purge: 'Delete forever', purgeQ: 'Delete “{n}” forever? This cannot be undone.',
-  lookHero: 'Appearance', lookP: 'Saved on this device only. It does not change anyone else’s view.', theme: 'Color theme', mode: 'Mode', lang: 'Language', mascotSet: 'Assistant', mascotOn: 'Show', mascotOff: 'Hide', mascotPhoto: 'Add photo', mascotReset: 'Original', mascotPhotoP: 'Tap a picture to choose your assistant. Add your own photos; the original always stays. Saved on this device only.', tPhotoSaved: 'Assistant photo added', tPhotoFull: 'Up to 12 photos. Delete one first.', palTusu: 'TUSU (default)',
+  lookHero: 'Appearance', lookP: 'Saved on this device only. It does not change anyone else’s view.', theme: 'Color theme', mode: 'Mode', lang: 'Language', mascotSet: 'Assistant', mascotOn: 'Show', mascotOff: 'Hide', mascotPhoto: 'Add photo', mascotReset: 'Original', mascotPhotoP: 'Tap a picture to choose your assistant (saved on this device). Photos you add are shared so the whole team can use them.', tPhotoSaved: 'Photo added for the whole team', tPhotoFull: 'The gallery is full (30 photos). Delete one first.', mName0: 'Data-chan', mName1: 'Doggo', mName2: 'Bot', mBy: 'Photo from {n}', mDelQ: 'Remove this photo from the team gallery? Nobody will be able to use it any more.', palTusu: 'TUSU (default)',
   chTitle: 'Chat with Data-chan', chSub: 'Answers only from this archive', chPh: 'Ask about clubs, appointments or a person…', chSend: 'Send', chAsk: 'Ask',
   chHelp: 'Hi! Ask me anything about this archive, and I answer only from its data. For example: who is president of a club, which clubs have an appointment letter, how many sports clubs there are, or type a person’s name.',
   chWhich: 'Several clubs have a similar name. Which one?', chContact: 'I don’t give contact details (phone, LINE, email) in chat. You can find them on the club page.',
@@ -157,32 +157,33 @@ const isImg = d => /^image\//.test(d.mime || '');
 const isOffice = d => !isLink(d) && !isPdf(d) && !isImg(d);
 const ofcCls = d => { const x = extOf(d); return /docx?|txt/.test(x) ? 'docx' : /xlsx?|csv/.test(x) ? 'xlsx' : /pptx?/.test(x) ? 'pptx' : 'other'; };
 const mascotOn = () => LS.get('mascot', 'off') === 'on';
-// Assistant gallery (this device only): the original animated character plus any photos added.
-// `mascots` holds [{ id, url }], `mascotPick` is 'default' or one of those ids.
-const MASCOT_MAX = 12;
-const mascotPhotos = () => { try { return JSON.parse(LS.get('mascots', '[]')); } catch { return []; } };
+// Assistant gallery: built-in pixel characters (12-frame strips, see tools/make-sprites.js)
+// plus photos the team added (shared through API.listMascots). Which one shows is chosen per device (`mascotPick`).
+const MASCOTS = [{ id: 'default', strip: 'assets/mascot.webp', name: 'mName0' }, { id: 'dog', strip: 'assets/mascot-dog.png', name: 'mName1' }, { id: 'robot', strip: 'assets/mascot-robot.png', name: 'mName2' }];
+const MASCOT_MAX = 30;
+let TEAM_M = [];
 const mascotPick = () => LS.get('mascotPick', 'default');
-const mascotPhoto = () => (mascotPhotos().find(p => p.id === mascotPick()) || {}).url || '';
-function saveMascots(list) { const v = JSON.stringify(list); LS.set('mascots', v); if (LS.get('mascots', '') !== v) throw new Error('not saved'); }
-if (LS.get('mascotPhoto', '')) { // a photo picked before the gallery existed joins it
-  const id = 'p' + rid(); try { saveMascots([...mascotPhotos(), { id, url: LS.get('mascotPhoto', '') }]); LS.set('mascotPick', id); } catch {}
-  LS.set('mascotPhoto', '');
-}
-// Crops a picked image to the assistant's 220×326 shape, adds it to the gallery and selects it.
+const mascotNow = () => MASCOTS.find(m => m.id === mascotPick()) || TEAM_M.find(m => m.id === mascotPick()) || MASCOTS[0];
+const mascotPhoto = () => mascotNow().url || '';
+// Crops a picked image to the assistant's 220×326 shape, shares it with the team and selects it.
 async function addMascotPhoto(file) {
-  const list = mascotPhotos();
-  if (list.length >= MASCOT_MAX) throw { code: 'full' };
+  if (TEAM_M.length >= MASCOT_MAX) throw { code: 'full' };
   const b = await createImageBitmap(file), W = 220, H = 326, c = document.createElement('canvas');
   c.width = W; c.height = H;
   const s = Math.max(W / b.width, H / b.height), w = b.width * s, h = b.height * s;
   c.getContext('2d').drawImage(b, (W - w) / 2, (H - h) / 2, w, h);
-  const id = 'p' + rid();
-  saveMascots([...list, { id, url: c.toDataURL('image/webp', .85) }]);
-  LS.set('mascotPick', id); LS.set('mascot', 'on');
+  const m = await API.addMascot(c.toDataURL('image/webp', .85));
+  TEAM_M.push(m); LS.set('mascotPick', m.id); LS.set('mascot', 'on');
 }
-function removeMascotPhoto(id) {
-  saveMascots(mascotPhotos().filter(p => p.id !== id));
+async function removeMascotPhoto(id) {
+  await API.removeMascot(id);
+  TEAM_M = TEAM_M.filter(m => m.id !== id);
   if (mascotPick() === id) LS.set('mascotPick', 'default');
+}
+const canDelMascot = m => S.staff || m.by === API.me();
+async function loadMascots() {
+  try { TEAM_M = await API.listMascots(); } catch (e) { console.error(e); }
+  applyLook(); if (cur() === 'look') route();
 }
 let tt; function toast(m) { let e = $('.toast'); if (!e) { e = document.createElement('div'); e.className = 'toast'; e.setAttribute('role', 'status'); document.body.append(e); } e.textContent = m; e.hidden = false; clearTimeout(tt); tt = setTimeout(() => e.hidden = true, 3000); }
 function veil(on, m) { let e = $('.veil'); if (!on) { e && e.remove(); return; } if (!e) { e = document.createElement('div'); e.className = 'veil'; document.body.append(e); } e.innerHTML = `<div><span class="spin"></span>${esc(m || t('tWork'))}</div>`; }
@@ -404,9 +405,10 @@ function isDark() { const r = document.documentElement, m = r.dataset.mode; retu
 function applyLook() {
   const r = document.documentElement;
   r.dataset.palette = LS.get('pal', 'tusu'); r.dataset.mode = LS.get('mode', 'system'); r.lang = lang;
-  const photo = mascotPhoto();
-  r.classList.toggle('mphoto', !!photo);
-  if (photo) r.style.setProperty('--photo', `url("${photo}")`); else r.style.removeProperty('--photo');
+  const mc = mascotNow();
+  r.classList.toggle('mphoto', !!mc.url);
+  if (mc.url) r.style.setProperty('--photo', `url("${mc.url}")`); else r.style.removeProperty('--photo');
+  r.style.setProperty('--strip', `url("${mc.strip || MASCOTS[0].strip}")`);
   $$('[data-t]').forEach(e => e.textContent = t(e.dataset.t));
   $$('[data-tp]').forEach(e => e.placeholder = t(e.dataset.tp));
   $('#langLbl').textContent = lang === 'th' ? 'TH / EN' : 'EN / TH';
@@ -724,8 +726,8 @@ function pageLook() {
     <section class="card box"><h3 style="font-size:18px">${esc(t('lang'))}</h3><div class="seg" style="justify-self:start"><button data-setlang="th" aria-pressed="${lang === 'th'}">ไทย</button><button data-setlang="en" aria-pressed="${lang === 'en'}">English</button></div></section>
     <section class="card box"><h3 style="font-size:18px">${esc(t('mascotSet'))}</h3><div class="seg" style="justify-self:start"><button data-assist="on" aria-pressed="${as === 'on'}">${esc(t('mascotOn'))}</button><button data-assist="off" aria-pressed="${as !== 'on'}">${esc(t('mascotOff'))}</button></div>
       <p class="d">${esc(t('mascotPhotoP'))}</p>
-      <div class="mgal">${[{ id: 'default' }, ...mascotPhotos()].map(p => `<div class="mg"><button class="mgb" data-mpick="${esc(p.id)}" aria-pressed="${mascotPick() === p.id}" aria-label="${esc(p.id === 'default' ? t('mascotReset') : t('mascotSet'))}"><span class="mthumb${p.id === 'default' ? ' orig' : ''}"${p.url ? ` style="background-image:url(&quot;${p.url}&quot;)"` : ''}></span>${mascotPick() === p.id ? `<i class="mok">${ic('check')}</i>` : ''}</button>${p.id === 'default' ? '' : `<button class="mgx" data-mdel="${esc(p.id)}" aria-label="${esc(t('del'))}" title="${esc(t('del'))}">${ic('x')}</button>`}</div>`).join('')}
-        ${mascotPhotos().length < MASCOT_MAX ? `<label class="mgadd" title="${esc(t('mascotPhoto'))}">${ic('plus')}<span>${esc(t('mascotPhoto'))}</span><input type="file" id="mPhotoIn" accept="image/png,image/jpeg,image/webp,image/gif" class="sr"></label>` : ''}</div></section></div>`;
+      <div class="mgal">${[...MASCOTS, ...TEAM_M].map(p => { const sel = mascotNow().id === p.id, label = p.name ? t(p.name) : t('mBy', { n: p.by || '' }); return `<div class="mg"><button class="mgb" data-mpick="${esc(p.id)}" aria-pressed="${sel}" aria-label="${esc(label)}" title="${esc(label)}"><span class="mthumb${p.strip ? ' strip' : ''}" style="background-image:url(&quot;${p.strip || p.url}&quot;)"></span>${sel ? `<i class="mok">${ic('check')}</i>` : ''}</button>${p.name ? `<small class="mcap">${esc(t(p.name))}</small>` : ''}${!p.strip && canDelMascot(p) ? `<button class="mgx" data-mdel="${esc(p.id)}" aria-label="${esc(t('del'))}" title="${esc(t('del'))}">${ic('x')}</button>` : ''}</div>`; }).join('')}
+        ${TEAM_M.length < MASCOT_MAX ? `<label class="mgadd" title="${esc(t('mascotPhoto'))}">${ic('plus')}<span>${esc(t('mascotPhoto'))}</span><input type="file" id="mPhotoIn" accept="image/png,image/jpeg,image/webp,image/gif" class="sr"></label>` : ''}</div></section></div>`;
 }
 document.addEventListener('click', e => {
   const p = e.target.closest('[data-pal]'); if (p) { LS.set('pal', p.dataset.pal); applyLook(); refreshLook(); if (cur() === 'look') route(); }
@@ -734,7 +736,7 @@ document.addEventListener('click', e => {
   const l = e.target.closest('[data-setlang]'); if (l) { lang = l.dataset.setlang; LS.set('lang', lang); route(); }
   const a = e.target.closest('[data-assist]'); if (a) { LS.set('mascot', a.dataset.assist); route(); }
   const mp = e.target.closest('[data-mpick]'); if (mp) { LS.set('mascotPick', mp.dataset.mpick); LS.set('mascot', 'on'); applyLook(); route(); say(t('sayHi'), 'happy', 10); }
-  const md = e.target.closest('[data-mdel]'); if (md) { removeMascotPhoto(md.dataset.mdel); applyLook(); route(); }
+  const md = e.target.closest('[data-mdel]'); if (md) confirmModal(t('mDelQ'), async () => { try { await removeMascotPhoto(md.dataset.mdel); } catch (err) { console.error(err); toast(t('failed')); } applyLook(); route(); });
 });
 document.addEventListener('change', async e => {
   if (e.target.id !== 'mPhotoIn' || !e.target.files[0]) return;
@@ -1271,6 +1273,7 @@ async function boot() {
     DATA = Object.assign({ v: 4, folders: [], docs: [], clubs: [] }, d);
   } catch (e) { console.error(e); toast(t('tLoadErr')); }
   try { S.staff = !!(await API.canEdit()); } catch {}
+  loadMascots();
   route();
   await myOpen(); route();
 }
