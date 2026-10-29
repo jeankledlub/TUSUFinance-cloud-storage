@@ -1,0 +1,19 @@
+rules_version = '2';
+// Only signed-in Google accounts listed in `team` (document id = email) can see the data.
+// role 'editor' can also change folders, docs and clubs. The team list itself is managed in the console.
+service cloud.firestore {
+  match /databases/{database}/documents {
+    function signedIn() { return request.auth != null && request.auth.token.email_verified == true; }
+    function member() { return signedIn() && exists(/databases/$(database)/documents/team/$(request.auth.token.email)); }
+    function editor() { return member() && get(/databases/$(database)/documents/team/$(request.auth.token.email)).data.role == 'editor'; }
+
+    match /team/{email} {
+      allow read: if signedIn() && request.auth.token.email == email;
+      allow write: if false;
+    }
+    match /{col}/{id} {
+      allow read: if member() && col in ['folders', 'docs', 'clubs', 'thumbs'];
+      allow write: if editor() && col in ['folders', 'docs', 'clubs'];
+    }
+  }
+}
