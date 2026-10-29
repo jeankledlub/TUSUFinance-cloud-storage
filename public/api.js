@@ -78,6 +78,8 @@
     });
   }
 
+  const toDataUrl = blob => new Promise((res, rej) => { const fr = new FileReader(); fr.onload = () => res(fr.result); fr.onerror = () => rej(fr.error); fr.readAsDataURL(blob); });
+  const toB64 = async blob => (await toDataUrl(blob)).split(',')[1];
   const clean = o => JSON.parse(JSON.stringify(o, (k, v) => (k.startsWith('_') || v instanceof Blob ? undefined : v)));
   const FIREBASE = {
     demo: false,
@@ -129,11 +131,40 @@
       return new Response(u, { headers: { 'Content-Type': j.mime } });
     },
     async canEdit() { return this._role === 'editor'; },
-    canUpload() { return false; },              // uploads go straight into the Drive folder for now
-    async put(collection, obj) { const { id, ...rest } = clean(obj); await this.db().collection(collection).doc(id).set(rest); },
+    canUpload() { return this._role === 'editor' && !!FILE_SERVER; },
+    // A new upload carries its cover as a data: URL in thumbUrl; it is stored in `thumbs`, not in the doc.
+    async put(collection, obj) {
+      const { id, ...rest } = clean(obj);
+      if (collection === 'docs' && (rest.thumbUrl || '').startsWith('data:')) {
+        await this.db().collection('thumbs').doc(id).set({ data: rest.thumbUrl });
+        rest.thumbUrl = '';
+      }
+      await this.db().collection(collection).doc(id).set(rest);
+    },
     async remove(collection, id) { await this.db().collection(collection).doc(id).delete(); },
-    async upload(file, thumbBlob) { throw new Error('upload() not set up yet'); },
-    async removeFile(doc) { /* files live in Drive; delete them there */ },
+    // Sends the file to FILE_SERVER (apps-script/Upload.gs), which saves it into the DOCUMENT CENTER Drive folder.
+    async upload(file, thumbBlob) {
+      const res = await this._server({ action: 'upload', name: file.name, mime: file.type || '', data: await toB64(file) });
+      return {
+        fileUrl: `https://drive.google.com/file/d/${res.driveId}/view`,
+        driveId: res.driveId,
+        thumbUrl: thumbBlob ? await toDataUrl(thumbBlob) : '',
+        sizeBytes: file.size
+      };
+    },
+    // Moves the Drive file to Drive's trash (recoverable for 30 days) and drops its cover.
+    async removeFile(doc) {
+      if (doc.driveId) await this._server({ action: 'trash', driveId: doc.driveId });
+      await this.db().collection('thumbs').doc(doc.id).delete().catch(() => {});
+    },
+    async _server(body) {
+      if (!FILE_SERVER) throw new Error('FILE_SERVER not set in api.js');
+      const token = await firebase.auth().currentUser.getIdToken();
+      const r = await fetch(FILE_SERVER, { method: 'POST', body: JSON.stringify({ ...body, token }) }); // text/plain: no CORS preflight
+      const j = await r.json();
+      if (j.error) throw Object.assign(new Error(j.error), { code: j.error === 'too large' ? 'too_large' : j.error === 'bad type' ? 'unsupported_type' : 'server' });
+      return j;
+    },
     fileUrl: d => d.driveId ? `https://drive.google.com/file/d/${d.driveId}/view` : (d.fileUrl || ''),
     thumbUrl: d => d._thumb || d.thumbUrl || ''
   };

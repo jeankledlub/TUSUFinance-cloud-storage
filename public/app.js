@@ -282,7 +282,7 @@ function renderNav() {
   if (c.startsWith('c-')) $('#navs a[href="#clubs"]')?.setAttribute('aria-current', 'page');
 }
 $('#navs').addEventListener('click', e => { if (e.target.closest('a')) side(false); });
-window.addEventListener('hashchange', () => { route(); window.scrollTo({ top: 0 }); });
+window.addEventListener('hashchange', () => { if (R.d) closeReader(); closeModal(); route(); window.scrollTo({ top: 0 }); });
 function route() {
   renderNav(); applyLook();
   const c = cur(), P = $('#page');
@@ -1065,7 +1065,7 @@ function uploadModal(k, fid, initial) {
           MY.files.push(rec); await myPut('files', rec);
         } else {
           const up = await API.upload(r.p.file, r.p.thumb);
-          const nd = { id: 'd' + rid(), title: v('ti') || t('untitled'), folder: target, status: v('st') || 'active', year: parseInt(v('yr'), 10) || null, clubs: uniq(v('cl').split(',').map(x => x.trim())), clubIds: clubIdsFor(v('cl')), announced: r.p.meta.announced || '', note: '', fileUrl: up.fileUrl, thumbUrl: up.thumbUrl || '', fileName: r.p.file.name, mime: r.p.mime, sizeBytes: up.sizeBytes ?? r.p.file.size, pageCount: r.p.pageCount, pages: r.p.meta.pages || [], trashed: false, createdAt: now, updatedAt: now };
+          const nd = { id: 'd' + rid(), title: v('ti') || t('untitled'), folder: target, status: v('st') || 'active', year: parseInt(v('yr'), 10) || null, clubs: uniq(v('cl').split(',').map(x => x.trim())), clubIds: clubIdsFor(v('cl')), announced: r.p.meta.announced || '', note: '', fileUrl: up.fileUrl, ...(up.driveId ? { driveId: up.driveId } : {}), thumbUrl: up.thumbUrl || '', fileName: r.p.file.name, mime: r.p.mime, sizeBytes: up.sizeBytes ?? r.p.file.size, pageCount: r.p.pageCount, pages: r.p.meta.pages || [], trashed: false, createdAt: now, updatedAt: now };
           DATA.docs.push(nd); r.newDoc = nd;
         }
         r.done = true; added++; s.className = 'us ok'; s.textContent = t('done');
