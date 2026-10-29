@@ -8,15 +8,36 @@
 - **ไฟล์ PDF:** เก็บใน Google Drive โฟลเดอร์ DOCUMENT CENTER
 - **ข้อมูล:** เก็บใน Firestore ได้แก่ ชุมนุม เอกสาร โฟลเดอร์ และรายชื่อทีม
 
-## เริ่มทำงาน (ทุกครั้ง)
+## ครั้งแรก (ทำครั้งเดียวต่อเครื่อง)
+
+ต้องมี [Git](https://git-scm.com) กับ [Node.js](https://nodejs.org) (เลือกรุ่น LTS) ในเครื่องก่อน แล้วพิมพ์:
 
 ```
-git pull                      # เอางานล่าสุดของคนอื่นมาก่อน
-# ...แก้โค้ด...
-firebase deploy --only hosting --project document-center-513108   # ขึ้นเว็บจริง
-git add -A && git commit -m "บอกว่าแก้อะไร" && git push
+git clone https://github.com/jeankledlub/TUSUFinance-cloud-storage.git
+cd TUSUFinance-cloud-storage
+npm install -g firebase-tools
+firebase login
 ```
 
+`firebase login` ให้ล็อกอินด้วย Gmail ที่เจ้าของโปรเจกต์เพิ่มสิทธิ์ไว้แล้ว
+
+## ทุกครั้งที่ทำงาน
+
+พิมพ์ทีละบรรทัด (อย่าต่อกันด้วย `&&` เพราะใช้ไม่ได้ใน PowerShell ตัวที่มากับ Windows)
+
+```
+git pull                         # 1. เอางานล่าสุดของคนอื่นมาก่อน
+# 2. แก้โค้ด แล้วลองดู
+git add -A                       # 3. เตรียมไฟล์ที่แก้
+git commit -m "บอกว่าแก้อะไร"      # 4. บันทึกงาน
+git pull                         # 5. เผื่อมีคนอื่น push มาระหว่างที่เราแก้
+git push                         # 6. ส่งขึ้น GitHub
+firebase deploy --only hosting --project document-center-513108   # 7. ขึ้นเว็บจริง
+```
+
+- **ต้อง push ก่อน deploy เสมอ** เว็บจริงจะได้ตรงกับโค้ดบน GitHub ถ้า deploy จากเครื่องที่ยังไม่มีงานล่าสุดของคนอื่น เว็บจริงจะถูกทับด้วยโค้ดเก่า
+- **ถ้า `git pull` บอกว่า conflict** แปลว่าแก้บรรทัดเดียวกับคนอื่น เปิดไฟล์นั้น เลือกว่าจะเก็บส่วนไหน แล้ว `git add` กับ `git commit` อีกรอบ ถ้าไม่แน่ใจให้ถามกันก่อน
+- **ถ้าทำพร้อมกัน** ให้แบ่งกันว่าใครแก้ส่วนไหน จะได้ไม่แก้ไฟล์เดียวกันในเวลาเดียวกัน
 - **ห้าม `git push --force`** เพราะจะลบงานของคนอื่น
 - **repo นี้เป็น Public** ห้าม commit ข้อมูลส่วนบุคคล เช่น เบอร์โทร ลิงก์สำเนาบัตร สมุดบัญชี ไฟล์ Excel ไฟล์สำรอง `tusu-backup-*.json` และไฟล์คีย์ใดๆ (`.gitignore` กันไว้ให้แล้ว)
 - **ต้องมีสิทธิ์ก่อน deploy:** `firebase login` ด้วยบัญชีที่มีสิทธิ์ในโปรเจกต์ ถ้ายังไม่มี ขอให้เจ้าของโปรเจกต์เพิ่มให้
