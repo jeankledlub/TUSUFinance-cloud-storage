@@ -27,8 +27,8 @@ const TX = {
   tMerge: 'รวมเป็น PDF ไฟล์เดียว', tMergeP: 'เรียงตามลำดับในรายการ รูปภาพจะวางเป็นหน้า A4', doMerge: 'รวมและดาวน์โหลด', tImg: 'แปลง PDF เป็นรูป', tImgP: 'ทุกหน้าของทุกไฟล์ในรายการ ได้เป็น ZIP', toPng: 'เป็น PNG', toJpg: 'เป็น JPG', tZip: 'ดาวน์โหลดรวดเดียว', tZipP: 'ไฟล์ต้นฉบับทั้งหมดใน ZIP เดียว', doZip: 'โหลดเป็น ZIP', local: 'จากเครื่อง',
   starHero: 'ติดดาว', starP: 'เอกสารในคลังกลางที่คุณกดดาวไว้ จำไว้ในเครื่องนี้', starEmpty: 'ยังไม่มีเอกสารติดดาว', starEmptyP: 'กดรูปดาวที่การ์ดเอกสาร แล้วจะมารวมอยู่ที่นี่',
   trashHero: 'ถังขยะ', trashP: 'เอกสารที่ลบจากคลังกลาง กู้คืนได้ หรือลบถาวรเพื่อคืนพื้นที่', trashEmpty: 'ถังขยะว่าง', restore: 'กู้คืน', purge: 'ลบถาวร', purgeQ: 'ลบ “{n}” ถาวร? กู้คืนไม่ได้อีก',
-  lookHero: 'ตั้งค่าหน้าตา', lookP: 'เลือกได้ตามชอบ ระบบจำไว้ในเครื่องนี้ ไม่กระทบคนอื่น', theme: 'ธีมสี', mode: 'โหมด', lang: 'ภาษา', mascotSet: 'ตัวช่วย', mascotOn: 'แสดง', mascotOff: 'ซ่อน', mascotPhoto: 'เปลี่ยนรูปตัวช่วย', mascotReset: 'ใช้ตัวเดิม', mascotPhotoP: 'เลือกรูปจากเครื่อง ระบบจะครอปให้พอดีและจำไว้ในเครื่องนี้ ไม่กระทบคนอื่น', tPhotoSaved: 'เปลี่ยนรูปตัวช่วยแล้ว', tPhotoBad: 'ใช้รูปนี้ไม่ได้ ลองไฟล์ JPG หรือ PNG ที่เล็กลง', customColor: 'เลือกสีเอง',
-  palBlue: 'น้ำเงิน (ค่าเริ่มต้น)', palTu: 'ธรรมศาสตร์ แดง-เหลือง', palMint: 'มิ้นต์ ฟ้าอ่อน ขาว', palPink: 'ชมพู ฟ้า', light: 'สว่าง', dark: 'มืด', system: 'ตามเครื่อง',
+  lookHero: 'ตั้งค่าหน้าตา', lookP: 'เลือกได้ตามชอบ ระบบจำไว้ในเครื่องนี้ ไม่กระทบคนอื่น', theme: 'ธีมสี', mode: 'โหมด', lang: 'ภาษา', mascotSet: 'ตัวช่วย', mascotOn: 'แสดง', mascotOff: 'ซ่อน', mascotPhoto: 'เพิ่มรูป', mascotReset: 'ตัวเดิม', mascotPhotoP: 'กดรูปเพื่อเลือกตัวช่วย เพิ่มรูปจากเครื่องได้ตามใจ ตัวเดิมยังอยู่เสมอ (จำไว้ในเครื่องนี้ ไม่กระทบคนอื่น)', tPhotoSaved: 'เพิ่มรูปตัวช่วยแล้ว', tPhotoFull: 'เพิ่มได้สูงสุด 12 รูป ลบรูปเก่าก่อน', palTusu: 'TUSU (ค่าเริ่มต้น)', tPhotoBad: 'ใช้รูปนี้ไม่ได้ ลองไฟล์ JPG หรือ PNG ที่เล็กลง', customColor: 'เลือกสีเอง',
+  palBlue: 'น้ำเงิน', palTu: 'ธรรมศาสตร์ แดง-เหลือง', palMint: 'มิ้นต์ ฟ้าอ่อน ขาว', palPink: 'ชมพู ฟ้า', light: 'สว่าง', dark: 'มืด', system: 'ตามเครื่อง',
   searchHero: 'ผลการค้นหา “{q}”', searchSub: '{a} ในคลังกลาง · {b} ในไฟล์ของฉัน', typeToSearch: 'พิมพ์คำค้นที่ช่องด้านบน', notFound: 'ไม่พบสิ่งที่ค้นหา', notFoundP: 'ลองค้นด้วยคำที่สั้นลง เช่น ชื่อชุมนุมหรือชื่อจริงอย่างเดียว',
   tDl: 'ส่งไฟล์ให้ดาวน์โหลดแล้ว', tDecl: 'ยกเลิกการดาวน์โหลด', tNoDl: 'ดาวน์โหลดผ่านปุ่มนี้ไม่ได้ในมุมมองนี้ ลองกด เปิดในแท็บใหม่', tSaved: 'บันทึกแล้ว', tSaving: 'กำลังบันทึก… หน้าเว็บจะรีโหลดเอง', tErr: 'ทำไม่สำเร็จ ลองใหม่อีกครั้ง', tWork: 'กำลังเตรียมไฟล์…', tTrashed: 'ย้ายลงถังขยะแล้ว', tRestored: 'กู้คืนแล้ว', tPurged: 'ลบถาวรแล้ว', tAdded: 'เพิ่มเข้ารายการรวมไฟล์แล้ว', tQuota: 'พื้นที่เก็บไฟล์เต็ม', tBig: 'ไฟล์ใหญ่เกินกำหนด', tType: 'ไม่รองรับไฟล์ประเภทนี้', tMoved: 'ย้ายแล้ว', tConflict: 'มีคนแก้ไขพร้อมกัน หน้าเว็บโหลดเวอร์ชันล่าสุดให้แล้ว ลองทำอีกครั้ง', tReadOnly: 'บัญชีนี้แก้ไขคลังกลางไม่ได้', tTooLarge: 'ข้อมูลใหญ่เกินกำหนด',
   you: 'คุณ', goBack: 'ย้อนกลับ', goFwd: 'ไปข้างหน้า', lookShort: 'ธีม', gClubs: 'ชุมนุม', clubsNav: 'ชุมนุมและกลุ่มอิสระ', clubsHero: 'ชุมนุมและกลุ่มอิสระ', clubsP: 'ข้อมูลจากชีต “ชุมนุม และ กลุ่มอิสระ มธ. 2569” กดที่ชื่อเพื่อดูรายละเอียด ใบแต่งตั้ง และลิงก์เอกสาร',
@@ -67,8 +67,8 @@ const TX = {
   tMerge: 'Merge into one PDF', tMergeP: 'Uses the order of the list. Images become A4 pages.', doMerge: 'Merge and download', tImg: 'Convert PDF to images', tImgP: 'Every page of every file, as one ZIP.', toPng: 'As PNG', toJpg: 'As JPG', tZip: 'Download all at once', tZipP: 'All original files in one ZIP.', doZip: 'Download ZIP', local: 'From computer',
   starHero: 'Starred', starP: 'Shared documents you starred, remembered on this device.', starEmpty: 'Nothing starred yet', starEmptyP: 'Press the star on a document card and it shows up here.',
   trashHero: 'Trash', trashP: 'Documents removed from the shared drive. Restore them, or delete forever to free space.', trashEmpty: 'Trash is empty', restore: 'Restore', purge: 'Delete forever', purgeQ: 'Delete “{n}” forever? This cannot be undone.',
-  lookHero: 'Appearance', lookP: 'Saved on this device only. It does not change anyone else’s view.', theme: 'Color theme', mode: 'Mode', lang: 'Language', mascotSet: 'Assistant', mascotOn: 'Show', mascotOff: 'Hide', mascotPhoto: 'Change photo', mascotReset: 'Use original', mascotPhotoP: 'Pick an image from your device. It is cropped to fit and saved on this device only.', tPhotoSaved: 'Assistant photo updated', tPhotoBad: 'This image could not be used. Try a smaller JPG or PNG.', customColor: 'Custom color',
-  palBlue: 'Blue (default)', palTu: 'Thammasat red & gold', palMint: 'Mint, light blue, white', palPink: 'Pink & sky', light: 'Light', dark: 'Dark', system: 'System',
+  lookHero: 'Appearance', lookP: 'Saved on this device only. It does not change anyone else’s view.', theme: 'Color theme', mode: 'Mode', lang: 'Language', mascotSet: 'Assistant', mascotOn: 'Show', mascotOff: 'Hide', mascotPhoto: 'Add photo', mascotReset: 'Original', mascotPhotoP: 'Tap a picture to choose your assistant. Add your own photos; the original always stays. Saved on this device only.', tPhotoSaved: 'Assistant photo added', tPhotoFull: 'Up to 12 photos. Delete one first.', palTusu: 'TUSU (default)', tPhotoBad: 'This image could not be used. Try a smaller JPG or PNG.', customColor: 'Custom color',
+  palBlue: 'Blue', palTu: 'Thammasat red & gold', palMint: 'Mint, light blue, white', palPink: 'Pink & sky', light: 'Light', dark: 'Dark', system: 'System',
   searchHero: 'Results for “{q}”', searchSub: '{a} in the shared drive · {b} in my files', typeToSearch: 'Type in the search box above', notFound: 'Nothing found', notFoundP: 'Try a shorter word, such as just the club name or a first name.',
   tDl: 'File sent to download', tDecl: 'Download cancelled', tNoDl: 'This button cannot download here. Try Open in new tab.', tSaved: 'Saved', tSaving: 'Saving… the page will reload', tErr: 'Something went wrong. Try again.', tWork: 'Preparing file…', tTrashed: 'Moved to trash', tRestored: 'Restored', tPurged: 'Deleted', tAdded: 'Added to merge list', tQuota: 'Storage is full', tBig: 'File is too large', tType: 'Unsupported file type', tMoved: 'Moved', tConflict: 'Someone else saved at the same time. The latest version is loaded; please try again.', tReadOnly: 'This account cannot edit the shared drive', tTooLarge: 'The data is too large to save',
   you: 'You', goBack: 'Back', goFwd: 'Forward', lookShort: 'Theme', gClubs: 'Clubs', clubsNav: 'Clubs & groups', clubsHero: 'Clubs & independent groups', clubsP: 'From the sheet “TU clubs and independent groups 2569”. Tap a name for details, the appointment letter and document links.',
@@ -87,6 +87,8 @@ const TX = {
 };
 const LS = { get(k, d) { try { const v = localStorage.getItem('tuarc3.' + k); return v == null ? d : v; } catch { return d; } }, set(k, v) { try { localStorage.setItem('tuarc3.' + k, v); } catch {} } };
 let lang = LS.get('lang', 'th');
+// The TUSU CI theme became the default once; anyone can still pick another theme afterwards.
+if (LS.get('ci', '') !== '1') { LS.set('pal', 'tusu'); LS.set('ci', '1'); }
 const t = (k, vars) => { let s = TX[lang]?.[k] ?? TX.th[k] ?? k; if (vars && typeof s === 'string') for (const [a, b] of Object.entries(vars)) s = s.replaceAll('{' + a + '}', b); return s; };
 
 /* ============ helpers ============ */
@@ -137,17 +139,32 @@ const isImg = d => /^image\//.test(d.mime || '');
 const isOffice = d => !isLink(d) && !isPdf(d) && !isImg(d);
 const ofcCls = d => { const x = extOf(d); return /docx?|txt/.test(x) ? 'docx' : /xlsx?|csv/.test(x) ? 'xlsx' : /pptx?/.test(x) ? 'pptx' : 'other'; };
 const mascotOn = () => LS.get('mascot', 'off') === 'on';
-const mascotPhoto = () => LS.get('mascotPhoto', '');
-// Crops a picked image to the assistant's 220×326 shape and keeps it on this device as a small WebP.
-async function setMascotPhoto(file) {
+// Assistant gallery (this device only): the original animated character plus any photos added.
+// `mascots` holds [{ id, url }], `mascotPick` is 'default' or one of those ids.
+const MASCOT_MAX = 12;
+const mascotPhotos = () => { try { return JSON.parse(LS.get('mascots', '[]')); } catch { return []; } };
+const mascotPick = () => LS.get('mascotPick', 'default');
+const mascotPhoto = () => (mascotPhotos().find(p => p.id === mascotPick()) || {}).url || '';
+function saveMascots(list) { const v = JSON.stringify(list); LS.set('mascots', v); if (LS.get('mascots', '') !== v) throw new Error('not saved'); }
+if (LS.get('mascotPhoto', '')) { // a photo picked before the gallery existed joins it
+  const id = 'p' + rid(); try { saveMascots([...mascotPhotos(), { id, url: LS.get('mascotPhoto', '') }]); LS.set('mascotPick', id); } catch {}
+  LS.set('mascotPhoto', '');
+}
+// Crops a picked image to the assistant's 220×326 shape, adds it to the gallery and selects it.
+async function addMascotPhoto(file) {
+  const list = mascotPhotos();
+  if (list.length >= MASCOT_MAX) throw { code: 'full' };
   const b = await createImageBitmap(file), W = 220, H = 326, c = document.createElement('canvas');
   c.width = W; c.height = H;
   const s = Math.max(W / b.width, H / b.height), w = b.width * s, h = b.height * s;
   c.getContext('2d').drawImage(b, (W - w) / 2, (H - h) / 2, w, h);
-  const url = c.toDataURL('image/webp', .85);
-  LS.set('mascotPhoto', url);
-  if (mascotPhoto() !== url) throw new Error('not saved');
-  LS.set('mascot', 'on');
+  const id = 'p' + rid();
+  saveMascots([...list, { id, url: c.toDataURL('image/webp', .85) }]);
+  LS.set('mascotPick', id); LS.set('mascot', 'on');
+}
+function removeMascotPhoto(id) {
+  saveMascots(mascotPhotos().filter(p => p.id !== id));
+  if (mascotPick() === id) LS.set('mascotPick', 'default');
 }
 let tt; function toast(m) { let e = $('.toast'); if (!e) { e = document.createElement('div'); e.className = 'toast'; e.setAttribute('role', 'status'); document.body.append(e); } e.textContent = m; e.hidden = false; clearTimeout(tt); tt = setTimeout(() => e.hidden = true, 3000); }
 function veil(on, m) { let e = $('.veil'); if (!on) { e && e.remove(); return; } if (!e) { e = document.createElement('div'); e.className = 'veil'; document.body.append(e); } e.innerHTML = `<div><span class="spin"></span>${esc(m || t('tWork'))}</div>`; }
@@ -254,7 +271,7 @@ document.addEventListener('click', e => { if (e.target.closest('.mascot')) { say
 function isDark() { const r = document.documentElement, m = r.dataset.mode; return m === 'dark' || (m === 'system' && (r.dataset.theme === 'dark' || (!r.dataset.theme && matchMedia('(prefers-color-scheme: dark)').matches))); }
 function applyLook() {
   const r = document.documentElement;
-  r.dataset.palette = LS.get('pal', 'blue'); r.dataset.mode = LS.get('mode', 'system'); r.lang = lang;
+  r.dataset.palette = LS.get('pal', 'tusu'); r.dataset.mode = LS.get('mode', 'system'); r.lang = lang;
   const photo = mascotPhoto();
   r.classList.toggle('mphoto', !!photo);
   if (photo) r.style.setProperty('--photo', `url("${photo}")`); else r.style.removeProperty('--photo');
@@ -269,8 +286,8 @@ $('#backBtn').onclick = () => history.back();
 $('#fwdBtn').onclick = () => history.forward();
 function closeLook() { $('.lookpop')?.remove(); $('#lookBtn').setAttribute('aria-expanded', 'false'); }
 function lookHtml() {
-  const pal = LS.get('pal', 'blue'), mode = LS.get('mode', 'system');
-  const P = [['blue', 'palBlue', ['#1479F0', '#7DB8FF', '#EFF3F9', '#0B5BC0']], ['tu', 'palTu', ['#B8141F', '#F5C443', '#FBF4EC', '#B07C00']], ['mint', 'palMint', ['#0B8F7E', '#8CCBF5', '#FFFFFF', '#2577B8']], ['pinksky', 'palPink', ['#F383B2', '#93C4F7', '#FFFFFF', '#CC3F7C']]];
+  const pal = LS.get('pal', 'tusu'), mode = LS.get('mode', 'system');
+  const P = [['tusu', 'palTusu', ['#006371', '#2BABC2', '#E8F3F5', '#B2DCE1']], ['blue', 'palBlue', ['#1479F0', '#7DB8FF', '#EFF3F9', '#0B5BC0']], ['tu', 'palTu', ['#B8141F', '#F5C443', '#FBF4EC', '#B07C00']], ['mint', 'palMint', ['#0B8F7E', '#8CCBF5', '#FFFFFF', '#2577B8']], ['pinksky', 'palPink', ['#F383B2', '#93C4F7', '#FFFFFF', '#CC3F7C']]];
   return `<div><h6>${esc(t('theme'))}</h6><div class="palrow">${P.map(([k, l, c]) => `<button class="palbtn" data-pal="${k}" aria-pressed="${pal === k}"><span class="sw2">${c.map(x => `<i style="background:${x}"></i>`).join('')}</span>${esc(t(l).replace(/ \(.*\)$/, ''))}</button>`).join('')}</div></div>
     <div><h6>${esc(t('mode'))}</h6><div class="seg">${['light', 'dark', 'system'].map(m => `<button data-setmode="${m}" aria-pressed="${mode === m}">${ic(m === 'light' ? 'sun' : m === 'dark' ? 'moon' : 'gear')}${esc(t(m))}</button>`).join('')}</div></div>
     <div class="sw-tog"><span>${esc(t('mascotT'))}</span><button class="tog" data-mascot aria-pressed="${mascotOn()}" aria-label="${esc(t('mascotT'))}"></button></div>`;
@@ -566,14 +583,16 @@ document.addEventListener('click', e => {
   const p = e.target.closest('[data-purge]'); if (p) { const d = DATA.docs.find(x => x.id === p.dataset.purge); if (d) confirmModal(t('purgeQ', { n: d.title }), async () => { await API.removeFile(d).catch(() => {}); DATA.docs = DATA.docs.filter(x => x !== d); commit([['docs', d, true]]); }); }
 });
 function pageLook() {
-  const pal = LS.get('pal', 'blue'), mode = LS.get('mode', 'system'), as = LS.get('mascot', 'off');
-  const P = [['blue', 'palBlue', ['#1479F0', '#7DB8FF', '#0C0D10']], ['tu', 'palTu', ['#B8141F', '#F5C443', '#FFFFFF']], ['mint', 'palMint', ['#0B8F7E', '#8CCBF5', '#FFFFFF']], ['pinksky', 'palPink', ['#F383B2', '#93C4F7', '#FFFFFF']]];
+  const pal = LS.get('pal', 'tusu'), mode = LS.get('mode', 'system'), as = LS.get('mascot', 'off');
+  const P = [['tusu', 'palTusu', ['#006371', '#2BABC2', '#E8F3F5']], ['blue', 'palBlue', ['#1479F0', '#7DB8FF', '#0C0D10']], ['tu', 'palTu', ['#B8141F', '#F5C443', '#FFFFFF']], ['mint', 'palMint', ['#0B8F7E', '#8CCBF5', '#FFFFFF']], ['pinksky', 'palPink', ['#F383B2', '#93C4F7', '#FFFFFF']]];
   return `<div class="page"><section class="card hero"><div><p class="k">${esc(t('gTools'))}</p><h1>${esc(t('lookHero'))}</h1><p class="d">${esc(t('lookP'))}</p></div></section>
     <section class="card box"><h3 style="font-size:18px">${esc(t('theme'))}</h3><div class="opts">${P.map(([k, l, c]) => `<button class="opt" data-pal="${k}" aria-pressed="${pal === k}"><span class="sw">${c.map(x => `<i style="background:${x}"></i>`).join('')}</span>${esc(t(l))}</button>`).join('')}</div></section>
     <section class="card box"><h3 style="font-size:18px">${esc(t('mode'))}</h3><div class="seg" style="justify-self:start">${['light', 'dark', 'system'].map(m => `<button data-setmode="${m}" aria-pressed="${mode === m}">${ic(m === 'light' ? 'sun' : m === 'dark' ? 'moon' : 'gear')}${esc(t(m))}</button>`).join('')}</div></section>
     <section class="card box"><h3 style="font-size:18px">${esc(t('lang'))}</h3><div class="seg" style="justify-self:start"><button data-setlang="th" aria-pressed="${lang === 'th'}">ไทย</button><button data-setlang="en" aria-pressed="${lang === 'en'}">English</button></div></section>
     <section class="card box"><h3 style="font-size:18px">${esc(t('mascotSet'))}</h3><div class="seg" style="justify-self:start"><button data-assist="on" aria-pressed="${as === 'on'}">${esc(t('mascotOn'))}</button><button data-assist="off" aria-pressed="${as !== 'on'}">${esc(t('mascotOff'))}</button></div>
-      <div class="mpick"><div class="mascot" role="img" aria-label="assistant"></div><div class="mpick-t"><p class="d">${esc(t('mascotPhotoP'))}</p><div class="quick"><label class="btn sm">${ic('up')}${esc(t('mascotPhoto'))}<input type="file" id="mPhotoIn" accept="image/png,image/jpeg,image/webp,image/gif" class="sr"></label>${mascotPhoto() ? `<button class="btn sm" data-mreset>${esc(t('mascotReset'))}</button>` : ''}</div></div></div></section></div>`;
+      <p class="d">${esc(t('mascotPhotoP'))}</p>
+      <div class="mgal">${[{ id: 'default' }, ...mascotPhotos()].map(p => `<div class="mg"><button class="mgb" data-mpick="${esc(p.id)}" aria-pressed="${mascotPick() === p.id}" aria-label="${esc(p.id === 'default' ? t('mascotReset') : t('mascotSet'))}"><span class="mthumb${p.id === 'default' ? ' orig' : ''}"${p.url ? ` style="background-image:url(&quot;${p.url}&quot;)"` : ''}></span>${mascotPick() === p.id ? `<i class="mok">${ic('check')}</i>` : ''}</button>${p.id === 'default' ? '' : `<button class="mgx" data-mdel="${esc(p.id)}" aria-label="${esc(t('del'))}" title="${esc(t('del'))}">${ic('x')}</button>`}</div>`).join('')}
+        ${mascotPhotos().length < MASCOT_MAX ? `<label class="mgadd" title="${esc(t('mascotPhoto'))}">${ic('plus')}<span>${esc(t('mascotPhoto'))}</span><input type="file" id="mPhotoIn" accept="image/png,image/jpeg,image/webp,image/gif" class="sr"></label>` : ''}</div></section></div>`;
 }
 document.addEventListener('click', e => {
   const p = e.target.closest('[data-pal]'); if (p) { LS.set('pal', p.dataset.pal); applyLook(); refreshLook(); if (cur() === 'look') route(); }
@@ -581,12 +600,13 @@ document.addEventListener('click', e => {
   const ms = e.target.closest('[data-mascot]'); if (ms) { LS.set('mascot', mascotOn() ? 'off' : 'on'); refreshLook(); route(); if (mascotOn()) setTimeout(() => say(t('sayHi'), 'wave', 10), 50); }
   const l = e.target.closest('[data-setlang]'); if (l) { lang = l.dataset.setlang; LS.set('lang', lang); route(); }
   const a = e.target.closest('[data-assist]'); if (a) { LS.set('mascot', a.dataset.assist); route(); }
-  if (e.target.closest('[data-mreset]')) { LS.set('mascotPhoto', ''); applyLook(); route(); say(t('sayHi'), 'wave', 10); }
+  const mp = e.target.closest('[data-mpick]'); if (mp) { LS.set('mascotPick', mp.dataset.mpick); LS.set('mascot', 'on'); applyLook(); route(); say(t('sayHi'), 'happy', 10); }
+  const md = e.target.closest('[data-mdel]'); if (md) { removeMascotPhoto(md.dataset.mdel); applyLook(); route(); }
 });
 document.addEventListener('change', async e => {
   if (e.target.id !== 'mPhotoIn' || !e.target.files[0]) return;
-  try { await setMascotPhoto(e.target.files[0]); applyLook(); route(); toast(t('tPhotoSaved')); say(t('sayHi'), 'happy', 10); }
-  catch (err) { console.error(err); toast(t('tPhotoBad')); }
+  try { await addMascotPhoto(e.target.files[0]); applyLook(); route(); toast(t('tPhotoSaved')); say(t('sayHi'), 'happy', 10); }
+  catch (err) { console.error(err); toast(err.code === 'full' ? t('tPhotoFull') : t('tPhotoBad')); }
 });
 
 /* ============ tools ============ */

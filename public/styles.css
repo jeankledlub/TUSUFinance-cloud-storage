@@ -14,6 +14,17 @@
 :root[data-palette="mint"] { --a-l: #0B8F7E; --a-d: #3DD1BC; --a2-l: #2577B8; --a2-d: #8CCBF5; --bg: #EEF8F7; --soft: #E6F4F2; --line: #D3E9E6; }
 :root[data-palette="pinksky"] { --a-l: #CC3F7C; --a-d: #F383B2; --a2-l: #2F6FC4; --a2-d: #93C4F7; --bg: #FBF1F6; --soft: #F7E9F0; --line: #EED8E3; }
 :root[data-palette="blue"] { --bg: #EFF3F9; --soft: #EAF0F8; --line: #DCE3EE; }
+/* TUSU CI (same identity as the TUSU budget-pitching site): teal + cyan, glowing page, frosted bar, gradient headings */
+:root[data-palette="tusu"] {
+  --a-l: #006371; --a-d: #4CC6D9; --a2-l: #2BABC2; --a2-d: #A6E8F0;
+  --bg: #E8F3F5; --soft: #ECFCFF; --line: #D3E6EA; --line-2: #B2DCE1;
+  --fg: #1D1D1F; --muted: #6E6E73; --faint: #A1A1A6;
+  --shadow: 0 2px 6px rgb(0 99 113 / .05), 0 12px 32px rgb(0 99 113 / .07);
+  --f: "Noto Sans Thai", -apple-system, BlinkMacSystemFont, "SF Pro Text", "Helvetica Neue", "Leelawadee UI", system-ui, sans-serif;
+  --r: 18px;
+  --glass: rgb(255 255 255 / .72);
+  --page: radial-gradient(45% 40% at 8% 8%, rgb(0 99 113 / .32), transparent 70%), radial-gradient(40% 35% at 92% 12%, rgb(43 171 194 / .26), transparent 70%), radial-gradient(45% 45% at 85% 92%, rgb(0 99 113 / .30), transparent 70%), radial-gradient(40% 40% at 12% 90%, rgb(43 171 194 / .22), transparent 70%), linear-gradient(180deg, #F7FBFC, #DCEBEE);
+}
 :root[data-mode="dark"],
 :root:not([data-mode="light"]):not([data-mode="dark"])[data-theme="dark"] {
   --bg: color-mix(in srgb, var(--a-d) 7%, #0B0C0F); --panel: color-mix(in srgb, var(--a-d) 4%, #15161A); --card: color-mix(in srgb, var(--a-d) 3%, #191B20); --soft: color-mix(in srgb, var(--a-d) 6%, #202228); --line: color-mix(in srgb, var(--a-d) 8%, #2A2D34); --line-2: #3A3E47;
@@ -32,6 +43,23 @@
   }
 }
 :root[data-mode="light"] { color-scheme: light; }
+:root[data-palette="tusu"][data-mode="dark"],
+:root[data-palette="tusu"]:not([data-mode="light"]):not([data-mode="dark"])[data-theme="dark"] {
+  --glass: rgb(20 25 28 / .82);
+  --page: radial-gradient(45% 40% at 8% 8%, rgb(11 127 143 / .30), transparent 70%), radial-gradient(40% 35% at 92% 12%, rgb(76 198 217 / .16), transparent 70%), radial-gradient(45% 45% at 85% 92%, rgb(0 99 113 / .30), transparent 70%), radial-gradient(40% 40% at 12% 90%, rgb(76 198 217 / .14), transparent 70%), linear-gradient(180deg, #0B1517, #081012);
+}
+@media (prefers-color-scheme: dark) {
+  :root[data-palette="tusu"]:not([data-mode="light"]):not([data-mode="dark"]):not([data-theme="light"]) {
+    --glass: rgb(20 25 28 / .82);
+    --page: radial-gradient(45% 40% at 8% 8%, rgb(11 127 143 / .30), transparent 70%), radial-gradient(40% 35% at 92% 12%, rgb(76 198 217 / .16), transparent 70%), radial-gradient(45% 45% at 85% 92%, rgb(0 99 113 / .30), transparent 70%), radial-gradient(40% 40% at 12% 90%, rgb(76 198 217 / .14), transparent 70%), linear-gradient(180deg, #0B1517, #081012);
+  }
+}
+/* TUSU CI surfaces */
+:root[data-palette="tusu"] body { background: var(--page); background-attachment: fixed; background-color: var(--bg); }
+:root[data-palette="tusu"] .bar, :root[data-palette="tusu"] .bar::before, :root[data-palette="tusu"] body::before { background: var(--glass); -webkit-backdrop-filter: saturate(180%) blur(20px); backdrop-filter: saturate(180%) blur(20px); }
+:root[data-palette="tusu"] :is(.card, .side) { box-shadow: var(--shadow); }
+:root[data-palette="tusu"] .side { background: var(--glass); -webkit-backdrop-filter: saturate(180%) blur(20px); backdrop-filter: saturate(180%) blur(20px); }
+:root[data-palette="tusu"] :is(.hero, .home-hero) h1 { background: linear-gradient(90deg, var(--accent), var(--accent-2)); -webkit-background-clip: text; background-clip: text; color: transparent; }
 
 * { box-sizing: border-box; }
 [hidden]:not([hidden=until-found i]) { display: none !important; }
@@ -158,9 +186,20 @@ body::before { content: ""; position: fixed; inset: 0 0 auto; height: env(safe-a
 .mphoto .mascot.hop { animation: hop .26s ease-in-out infinite alternate; }
 @keyframes hop { to { translate: 0 -6px; } }
 @media (prefers-reduced-motion: reduce) { .mphoto .mascot.hop { animation: none; } }
-.mpick { display: flex; gap: 16px; align-items: center; flex-wrap: wrap; }
-.mpick .mascot { --mw: 72px; }
-.mpick-t { display: grid; gap: 10px; min-width: 0; flex: 1 1 220px; }
+/* assistant gallery on the Appearance page: original + added photos */
+.mgal { display: flex; flex-wrap: wrap; gap: 12px; align-items: start; }
+.mg { position: relative; }
+.mgb { position: relative; display: block; padding: 4px; border: 2px solid var(--line); border-radius: 16px; background: var(--card); }
+.mgb[aria-pressed="true"] { border-color: var(--accent); box-shadow: 0 0 0 3px var(--accent-soft); }
+.mthumb { display: block; width: 64px; aspect-ratio: 220 / 326; border-radius: 11px; background-size: cover; background-position: center; background-repeat: no-repeat; }
+.mthumb.orig { background-image: var(--strip); background-size: 1200% 100%; background-position: 0 0; border-radius: 0; }
+.mok { position: absolute; left: 6px; bottom: 6px; width: 20px; height: 20px; border-radius: 50%; background: var(--accent); color: var(--on-accent); display: grid; place-items: center; }
+.mok svg.i { width: 13px; height: 13px; stroke-width: 3; }
+.mgx { position: absolute; top: -8px; right: -8px; width: 24px; height: 24px; border-radius: 50%; border: 1px solid var(--line); background: var(--panel); color: var(--muted); display: grid; place-items: center; padding: 0; box-shadow: var(--shadow); }
+.mgx svg.i { width: 13px; height: 13px; }
+.mgx:hover { color: var(--bad); }
+.mgadd { width: 76px; aspect-ratio: 220 / 326; box-sizing: content-box; padding: 0; border: 2px dashed var(--line-2); border-radius: 16px; display: grid; place-content: center; justify-items: center; gap: 4px; color: var(--muted); font-size: 12px; font-weight: 600; text-align: center; cursor: pointer; }
+.mgadd:hover, .mgadd:focus-within { border-color: var(--accent); color: var(--accent); }
 
 /* drive */
 .crumbs { display: flex; flex-wrap: wrap; align-items: center; gap: 4px; font-size: 22px; font-weight: 700; }
