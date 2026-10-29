@@ -55,6 +55,7 @@ const TX = {
   tagSel: 'กำลังดู', tagRel: 'หมวดที่เกี่ยวข้อง', tagRelP: 'กดเพื่อเจาะให้แคบลง', tagAll: 'ดูทุกหมวด', tagNone: 'ไม่มีรายการในหมวดนี้', nItems: '{a} เอกสาร · {b} ชุมนุม',
   relDocs: 'เอกสารที่เกี่ยวข้อง', relClubs: 'ชุมนุมที่เกี่ยวข้อง', tagsOf: 'หมวดหมู่',
   print: 'พิมพ์', printAll: 'พิมพ์ทั้งหมด', tPrint: 'พิมพ์ไฟล์', tPrintP: 'ทุกไฟล์ในรายการ ส่งไปเครื่องพิมพ์ในครั้งเดียว', tPrintDrive: 'ไฟล์ประเภทนี้พิมพ์จากเว็บไม่ได้ เปิดใน Google Drive ให้แล้ว กด Ctrl+P ที่นั่น', tPrintSkip: 'ข้าม {n} ไฟล์ที่พิมพ์จากเว็บไม่ได้ (เช่น PowerPoint) ดาวน์โหลดไปพิมพ์ในเครื่องแทน', tPrintReady: 'กำลังเปิดหน้าต่างพิมพ์…',
+  font: 'ฟอนต์', fontTusu: 'TUSU (Kanit) · หัวข้อหนา ทันสมัย', fontPrompt: 'Prompt · กลมมน เป็นมิตร', fontPlex: 'IBM Plex · เรียบ มืออาชีพ', fontSarabun: 'Sarabun · ทางการ แบบหนังสือราชการ', fontAnuphan: 'Anuphan · แบบเดิม',
   kwT: 'คำค้น', kwPh: 'เช่น ชื่อเดิม ชื่อภาษาอังกฤษ ชื่อเล่น', kwP: 'คั่นด้วยจุลภาค ค้นหาด้วยคำเหล่านี้แล้วจะเจอชุมนุมนี้และเอกสารของชุมนุมนี้',
   upSteps: ['เลือกไฟล์', 'ตรวจชื่อ', 'กดอัปโหลด'], change: 'เปลี่ยน', autoFilled: 'ระบบกรอกให้แล้ว:', autoNone: 'ตรวจชื่อไฟล์ให้เรียบร้อย แล้วกดอัปโหลดได้เลย', moreDetail: 'แก้รายละเอียดเพิ่มเติม', pickClub: 'พิมพ์ชื่อชุมนุมแล้วเลือกจากรายการ', upMineP: 'ไฟล์ส่วนตัวเห็นแค่คุณคนเดียว เก็บในเครื่องนี้',
   help: 'วิธีใช้', helpHero: 'วิธีใช้คลังเอกสาร', helpP: 'สรุปสั้นๆ ว่าแต่ละเมนูใช้ทำอะไร กดหัวข้อเพื่อไปที่หน้านั้นได้เลย', helpGo: 'ไปที่หน้านี้', helpFirst: 'ใช้ครั้งแรก? ดูวิธีใช้แบบสั้นๆ 1 นาที', helpOpen: 'ดูวิธีใช้',
@@ -123,6 +124,7 @@ const TX = {
   tagSel: 'Showing', tagRel: 'Related categories', tagRelP: 'Pick one to narrow down', tagAll: 'All categories', tagNone: 'Nothing in this category', nItems: '{a} documents · {b} clubs',
   relDocs: 'Related documents', relClubs: 'Related clubs', tagsOf: 'Categories',
   print: 'Print', printAll: 'Print all', tPrint: 'Print files', tPrintP: 'Sends every file in the list to the printer in one go.', tPrintDrive: 'This file type can’t print from the site. It’s open in Google Drive now; press Ctrl+P there.', tPrintSkip: 'Skipped {n} files that can’t print from the site (like PowerPoint). Download them and print from your computer.', tPrintReady: 'Opening the print window…',
+  font: 'Font', fontTusu: 'TUSU (Kanit) · bold, modern headings', fontPrompt: 'Prompt · rounded, friendly', fontPlex: 'IBM Plex · clean, professional', fontSarabun: 'Sarabun · formal, like official letters', fontAnuphan: 'Anuphan · the original',
   kwT: 'Search words', kwPh: 'e.g. old name, English name, nickname', kwP: 'Separate with commas. Searching any of these finds this club and its documents.',
   upSteps: ['Choose files', 'Check the name', 'Press Upload'], change: 'Change', autoFilled: 'Filled in for you:', autoNone: 'Check the name, then press Upload.', moreDetail: 'Edit more details', pickClub: 'Type a club name and pick it from the list', upMineP: 'Private files are only visible to you, on this device.',
   help: 'How to use', helpHero: 'How to use the archive', helpP: 'What each menu is for, in short. Tap a heading to go there.', helpGo: 'Go there', helpFirst: 'First time here? See the 1-minute guide.', helpOpen: 'Open guide',
@@ -482,9 +484,17 @@ document.addEventListener('keydown', e => { if (e.key === 'Escape' && $('#chat')
 
 /* ============ look ============ */
 function isDark() { const r = document.documentElement, m = r.dataset.mode; return m === 'dark' || (m === 'system' && (r.dataset.theme === 'dark' || (!r.dataset.theme && matchMedia('(prefers-color-scheme: dark)').matches))); }
+// [key, label, heading font]. Kanit, Anuphan and Noto Sans Thai come with the page; the others load when picked.
+const FONTS = [['tusu', 'fontTusu', 'Kanit'], ['prompt', 'fontPrompt', 'Prompt'], ['plex', 'fontPlex', 'IBM Plex Sans Thai'], ['sarabun', 'fontSarabun', 'Sarabun'], ['anuphan', 'fontAnuphan', 'Anuphan']];
+const fontLinks = new Set(['Kanit', 'Anuphan', 'Noto Sans Thai']);
+function loadFont(fam) {
+  if (fontLinks.has(fam)) return; fontLinks.add(fam);
+  const l = document.createElement('link'); l.rel = 'stylesheet'; l.href = `https://fonts.googleapis.com/css2?family=${fam.replace(/ /g, '+')}:wght@400;500;600;700&display=swap`; document.head.append(l);
+}
 function applyLook() {
   const r = document.documentElement;
   r.dataset.palette = LS.get('pal', 'tusu'); r.dataset.mode = LS.get('mode', 'system'); r.lang = lang;
+  const f = FONTS.find(x => x[0] === LS.get('font', 'tusu')) || FONTS[0]; r.dataset.font = f[0]; loadFont(f[2]);
   const mc = mascotNow();
   r.classList.toggle('mphoto', !!mc.url);
   if (mc.url) r.style.setProperty('--photo', `url("${mc.url}")`); else r.style.removeProperty('--photo');
@@ -877,6 +887,7 @@ function pageLook() {
   const P = [['tusu', 'palTusu', ['#006371', '#2BABC2', '#E8F3F5']], ['blue', 'palBlue', ['#1479F0', '#7DB8FF', '#0C0D10']], ['tu', 'palTu', ['#B8141F', '#F5C443', '#FFFFFF']], ['mint', 'palMint', ['#0B8F7E', '#8CCBF5', '#FFFFFF']], ['pinksky', 'palPink', ['#F383B2', '#93C4F7', '#FFFFFF']]];
   return `<div class="page"><section class="card hero"><div><p class="k">${esc(t('gTools'))}</p><h1>${esc(t('lookHero'))}</h1><p class="d">${esc(t('lookP'))}</p></div></section>
     <section class="card box"><h3 style="font-size:18px">${esc(t('theme'))}</h3><div class="opts">${P.map(([k, l, c]) => `<button class="opt" data-pal="${k}" aria-pressed="${pal === k}"><span class="sw">${c.map(x => `<i style="background:${x}"></i>`).join('')}</span>${esc(t(l))}</button>`).join('')}</div></section>
+    <section class="card box"><h3 style="font-size:18px">${esc(t('font'))}</h3><div class="opts">${FONTS.map(([k, l, fam]) => { loadFont(fam); return `<button class="opt" data-setfont="${k}" aria-pressed="${(LS.get('font', 'tusu')) === k}"><span class="fsample" style="font-family:'${fam}'">อมธ. คลังเอกสาร</span>${esc(t(l))}</button>`; }).join('')}</div></section>
     <section class="card box"><h3 style="font-size:18px">${esc(t('mode'))}</h3><div class="seg" style="justify-self:start">${['light', 'dark', 'system'].map(m => `<button data-setmode="${m}" aria-pressed="${mode === m}">${ic(m === 'light' ? 'sun' : m === 'dark' ? 'moon' : 'gear')}${esc(t(m))}</button>`).join('')}</div></section>
     <section class="card box"><h3 style="font-size:18px">${esc(t('lang'))}</h3><div class="seg" style="justify-self:start"><button data-setlang="th" aria-pressed="${lang === 'th'}">ไทย</button><button data-setlang="en" aria-pressed="${lang === 'en'}">English</button></div></section>
     <section class="card box"><h3 style="font-size:18px">${esc(t('mascotSet'))}</h3><div class="seg" style="justify-self:start"><button data-assist="on" aria-pressed="${as === 'on'}">${esc(t('mascotOn'))}</button><button data-assist="off" aria-pressed="${as !== 'on'}">${esc(t('mascotOff'))}</button></div>
@@ -886,6 +897,7 @@ function pageLook() {
 }
 document.addEventListener('click', e => {
   const p = e.target.closest('[data-pal]'); if (p) { LS.set('pal', p.dataset.pal); applyLook(); refreshLook(); if (cur() === 'look') route(); }
+  const fo = e.target.closest('[data-setfont]'); if (fo) { LS.set('font', fo.dataset.setfont); applyLook(); route(); }
   const m = e.target.closest('[data-setmode]'); if (m) { LS.set('mode', m.dataset.setmode); applyLook(); refreshLook(); if (cur() === 'look') route(); }
   const ms = e.target.closest('[data-mascot]'); if (ms) { LS.set('mascot', mascotOn() ? 'off' : 'on'); refreshLook(); route(); if (mascotOn()) setTimeout(() => say(t('sayHi'), 'wave', 10), 50); }
   const l = e.target.closest('[data-setlang]'); if (l) { lang = l.dataset.setlang; LS.set('lang', lang); route(); }
