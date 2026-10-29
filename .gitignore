@@ -9,3 +9,6 @@ seed/
 .firebase/
 node_modules/
 .env
+
+# backups downloaded from the site (personal data)
+tusu-backup-*.json

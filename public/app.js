@@ -24,7 +24,7 @@ const TX = {
   prev: 'ก่อนหน้า', next: 'ถัดไป', of: 'จาก',
   upShared: 'อัปโหลดเข้าคลังกลาง', upMine: 'อัปโหลดไฟล์ของฉัน', dropHere: 'ลากไฟล์มาวางตรงนี้', or: 'หรือ', pick: 'เลือกไฟล์', upNote: 'PDF รูปภาพ Word Excel PowerPoint ไม่เกิน 20 MB ต่อไฟล์ · ไฟล์ PDF ใบแต่งตั้ง ระบบจะกรอกชื่อชุมนุมและปีให้เอง', upGo: 'อัปโหลด', reading: 'กำลังอ่านไฟล์…', ready: 'พร้อมอัปโหลด', uploading: 'กำลังอัปโหลด…', done: 'เสร็จแล้ว', failed: 'ไม่สำเร็จ', into: 'อัปโหลดลงใน',
   toolsHero: 'รวม / แปลงไฟล์', toolsP: 'เลือกไฟล์จากคลังกลาง ไฟล์ของฉัน หรือจากเครื่อง มาเรียงลำดับ แล้วรวมเป็น PDF ไฟล์เดียวหรือแปลงเป็นรูป', tray: 'ไฟล์ที่เลือก', trayEmpty: 'ยังไม่ได้เลือกไฟล์', trayEmptyP: 'กดปุ่ม + ที่การ์ดเอกสาร หรือเพิ่มไฟล์จากเครื่องด้านล่าง', fromPc: 'เพิ่มไฟล์จากเครื่อง', clearAll: 'ล้างทั้งหมด',
-  tMerge: 'รวมเป็น PDF ไฟล์เดียว', tMergeP: 'เรียงตามลำดับในรายการ รูปภาพจะวางเป็นหน้า A4', doMerge: 'รวมและดาวน์โหลด', tImg: 'แปลง PDF เป็นรูป', tImgP: 'ทุกหน้าของทุกไฟล์ในรายการ ได้เป็น ZIP', toPng: 'เป็น PNG', toJpg: 'เป็น JPG', tZip: 'ดาวน์โหลดรวดเดียว', tZipP: 'ไฟล์ต้นฉบับทั้งหมดใน ZIP เดียว', doZip: 'โหลดเป็น ZIP', local: 'จากเครื่อง',
+  tMerge: 'รวมเป็น PDF ไฟล์เดียว', tMergeP: 'เรียงตามลำดับในรายการ รูปภาพจะวางเป็นหน้า A4', doMerge: 'รวมและดาวน์โหลด', tImg: 'แปลง PDF เป็นรูป', tImgP: 'ทุกหน้าของทุกไฟล์ในรายการ ได้เป็น ZIP', toPng: 'เป็น PNG', toJpg: 'เป็น JPG', tZip: 'ดาวน์โหลดรวดเดียว', tZipP: 'ไฟล์ต้นฉบับทั้งหมดใน ZIP เดียว', doZip: 'โหลดเป็น ZIP', local: 'จากเครื่อง', tBak: 'สำรองข้อมูล', tBakP: 'โฟลเดอร์ เอกสาร ชมรม ปก และรูปผู้ช่วยทั้งหมด เป็นไฟล์ JSON ไฟล์ PDF อยู่ใน Google Drive อยู่แล้ว', tBakWarn: 'ไฟล์มีข้อมูลส่วนบุคคล เก็บไว้ในที่ปลอดภัย ห้ามอัปโหลดขึ้น GitHub', doBak: 'ดาวน์โหลดไฟล์สำรอง',
   starHero: 'ติดดาว', starP: 'เอกสารในคลังกลางที่คุณกดดาวไว้ จำไว้ในเครื่องนี้', starEmpty: 'ยังไม่มีเอกสารติดดาว', starEmptyP: 'กดรูปดาวที่การ์ดเอกสาร แล้วจะมารวมอยู่ที่นี่',
   trashHero: 'ถังขยะ', trashP: 'เอกสารที่ลบจากคลังกลาง กู้คืนได้ หรือลบถาวรเพื่อคืนพื้นที่', trashEmpty: 'ถังขยะว่าง', restore: 'กู้คืน', purge: 'ลบถาวร', purgeQ: 'ลบ “{n}” ถาวร? กู้คืนไม่ได้อีก',
   lookHero: 'ตั้งค่าหน้าตา', lookP: 'เลือกได้ตามชอบ ระบบจำไว้ในเครื่องนี้ ไม่กระทบคนอื่น', theme: 'ธีมสี', mode: 'โหมด', lang: 'ภาษา', mascotSet: 'ตัวช่วย', mascotOn: 'แสดง', mascotOff: 'ซ่อน', mascotPhoto: 'เพิ่มรูป', mascotReset: 'ตัวเดิม', mascotPhotoP: 'กดรูปเพื่อเลือกตัวช่วยของคุณ (จำไว้ในเครื่องนี้) รูปที่เพิ่มจะแชร์ให้ทุกคนในทีมเลือกใช้ได้', tPhotoSaved: 'เพิ่มรูปแล้ว ทุกคนในทีมเลือกใช้ได้', tPhotoFull: 'แกลเลอรีเต็มแล้ว (30 รูป) ลบรูปเก่าก่อน', mName0: 'น้องดาต้า', mName1: 'น้องหมา', mName2: 'น้องบอท', mBy: 'รูปจาก {n}', mDelQ: 'ลบรูปนี้ออกจากแกลเลอรีของทีม ทุกคนจะใช้รูปนี้ไม่ได้อีก', palTusu: 'TUSU (ค่าเริ่มต้น)',
@@ -73,7 +73,7 @@ const TX = {
   prev: 'Previous', next: 'Next', of: 'of',
   upShared: 'Upload to the shared drive', upMine: 'Upload my files', dropHere: 'Drop files here', or: 'or', pick: 'Choose files', upNote: 'PDF, images, Word, Excel, PowerPoint up to 20 MB each · Club names and year are filled in from appointment PDFs', upGo: 'Upload', reading: 'Reading…', ready: 'Ready', uploading: 'Uploading…', done: 'Done', failed: 'Failed', into: 'Upload into',
   toolsHero: 'Merge / convert', toolsP: 'Pick files from the shared drive, your files or your computer, put them in order, then merge into one PDF or convert to images.', tray: 'Selected files', trayEmpty: 'No files selected', trayEmptyP: 'Press + on any document card, or add files from your computer below.', fromPc: 'Add from computer', clearAll: 'Clear all',
-  tMerge: 'Merge into one PDF', tMergeP: 'Uses the order of the list. Images become A4 pages.', doMerge: 'Merge and download', tImg: 'Convert PDF to images', tImgP: 'Every page of every file, as one ZIP.', toPng: 'As PNG', toJpg: 'As JPG', tZip: 'Download all at once', tZipP: 'All original files in one ZIP.', doZip: 'Download ZIP', local: 'From computer',
+  tMerge: 'Merge into one PDF', tMergeP: 'Uses the order of the list. Images become A4 pages.', doMerge: 'Merge and download', tImg: 'Convert PDF to images', tImgP: 'Every page of every file, as one ZIP.', toPng: 'As PNG', toJpg: 'As JPG', tZip: 'Download all at once', tZipP: 'All original files in one ZIP.', doZip: 'Download ZIP', local: 'From computer', tBak: 'Backup', tBakP: 'All folders, documents, clubs, covers and assistant photos as one JSON file. The PDFs are already in Google Drive.', tBakWarn: 'This file has personal data. Keep it somewhere safe and never upload it to GitHub.', doBak: 'Download backup',
   starHero: 'Starred', starP: 'Shared documents you starred, remembered on this device.', starEmpty: 'Nothing starred yet', starEmptyP: 'Press the star on a document card and it shows up here.',
   trashHero: 'Trash', trashP: 'Documents removed from the shared drive. Restore them, or delete forever to free space.', trashEmpty: 'Trash is empty', restore: 'Restore', purge: 'Delete forever', purgeQ: 'Delete “{n}” forever? This cannot be undone.',
   lookHero: 'Appearance', lookP: 'Saved on this device only. It does not change anyone else’s view.', theme: 'Color theme', mode: 'Mode', lang: 'Language', mascotSet: 'Assistant', mascotOn: 'Show', mascotOff: 'Hide', mascotPhoto: 'Add photo', mascotReset: 'Original', mascotPhotoP: 'Tap a picture to choose your assistant (saved on this device). Photos you add are shared so the whole team can use them.', tPhotoSaved: 'Photo added for the whole team', tPhotoFull: 'The gallery is full (30 photos). Delete one first.', mName0: 'Data-chan', mName1: 'Doggo', mName2: 'Bot', mBy: 'Photo from {n}', mDelQ: 'Remove this photo from the team gallery? Nobody will be able to use it any more.', palTusu: 'TUSU (default)',
@@ -761,13 +761,14 @@ function pageTools() {
       <div class="card tool-card"><h4><span class="ic blue">${ic('layers')}</span>${esc(t('tMerge'))}</h4><p>${esc(t('tMergeP'))}</p><div class="btns"><button class="btn go" data-tool="merge" ${dis}>${esc(t('doMerge'))}</button></div></div>
       <div class="card tool-card"><h4><span class="ic green">${ic('image')}</span>${esc(t('tImg'))}</h4><p>${esc(t('tImgP'))}</p><div class="btns"><button class="btn" data-tool="png" ${dis}>${esc(t('toPng'))}</button><button class="btn" data-tool="jpg" ${dis}>${esc(t('toJpg'))}</button></div></div>
       <div class="card tool-card"><h4><span class="ic amber">${ic('zip')}</span>${esc(t('tZip'))}</h4><p>${esc(t('tZipP'))}</p><div class="btns"><button class="btn" data-tool="zip" ${dis}>${esc(t('doZip'))}</button></div></div>
+      ${S.staff ? `<div class="card tool-card"><h4><span class="ic blue">${ic('down')}</span>${esc(t('tBak'))}</h4><p>${esc(t('tBakP'))}</p><p style="color:var(--bad)">${esc(t('tBakWarn'))}</p><div class="btns"><button class="btn" data-tool="backup">${esc(t('doBak'))}</button></div></div>` : ''}
     </div></div></div>`;
 }
 document.addEventListener('click', e => {
   const mv = e.target.closest('[data-tmv]'); if (mv) { const i = +mv.dataset.tmv, j = i + +mv.dataset.dir; [S.tray[i], S.tray[j]] = [S.tray[j], S.tray[i]]; saveTray(); return route(); }
   const rm = e.target.closest('[data-trm]'); if (rm) { S.tray.splice(+rm.dataset.trm, 1); saveTray(); return route(); }
   if (e.target.closest('[data-tclear]')) { S.tray = []; saveTray(); return route(); }
-  const tl = e.target.closest('[data-tool]'); if (tl) { const list = S.tray.map(trayItem).filter(Boolean); ({ merge: () => mergeFiles(list), zip: () => zipFiles(list), png: () => toImages(list, 'png'), jpg: () => toImages(list, 'jpg') })[tl.dataset.tool](); }
+  const tl = e.target.closest('[data-tool]'); if (tl) { const list = S.tray.map(trayItem).filter(Boolean); ({ merge: () => mergeFiles(list), zip: () => zipFiles(list), png: () => toImages(list, 'png'), jpg: () => toImages(list, 'jpg'), backup: backupAll })[tl.dataset.tool](); }
 });
 document.addEventListener('change', async e => {
   if (e.target.id !== 'pcIn') return;
@@ -1019,6 +1020,10 @@ async function save(filename, blob) {
     setTimeout(() => URL.revokeObjectURL(url), 60000);
     toast(t('tDl')); say(t('sayDone'), 'happy', 10); return true;
   } catch (e) { console.error(e); toast(t('tErr')); return false; }
+}
+async function backupAll() {
+  try { await save(`tusu-backup-${new Date().toISOString().slice(0, 10)}.json`, new Blob([JSON.stringify(await API.backup(), null, 1)], { type: 'application/json' })); }
+  catch (e) { console.error(e); toast(t('tErr')); }
 }
 async function dlOrig(k, d) {
   const ext = (d.fileName || '').split('.').pop() || 'pdf';

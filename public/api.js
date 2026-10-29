@@ -31,6 +31,7 @@
     async listMascots() { return this._m; },
     async addMascot(url) { const m = { id: 'm' + Date.now(), url, by: 'demo', createdAt: new Date().toISOString() }; this._m.push(m); return m; },
     async removeMascot(id) { this._m = this._m.filter(m => m.id !== id); },
+    async backup() { return { project: 'sample', exportedAt: new Date().toISOString(), by: 'demo', ...(await this.load()), thumbs: [], mascots: this._m }; },
     fileUrl: d => d.fileUrl || '',
     thumbUrl: d => d.thumbUrl || ''
   };
@@ -154,6 +155,12 @@
       await ref.set(m); return { id: ref.id, ...m };
     },
     async removeMascot(id) { await this.db().collection('mascots').doc(id).delete(); },
+    // Everything in Firestore except `team`, for the editor's Backup button. PDFs stay in Drive.
+    async backup() {
+      const db = this.db(), all = async name => (await db.collection(name).get()).docs.map(x => ({ id: x.id, ...x.data() }));
+      const [folders, docs, clubs, thumbs, mascots] = await Promise.all(['folders', 'docs', 'clubs', 'thumbs', 'mascots'].map(all));
+      return { project: firebaseConfig.projectId, exportedAt: new Date().toISOString(), by: this.me(), folders, docs, clubs, thumbs, mascots };
+    },
     // Sends the file to FILE_SERVER (apps-script/Upload.gs), which saves it into the DOCUMENT CENTER Drive folder.
     async upload(file, thumbBlob) {
       const res = await this._server({ action: 'upload', name: file.name, mime: file.type || '', data: await toB64(file) });
