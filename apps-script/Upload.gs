@@ -1,107 +1,77 @@
 /**
- * Upload.gs: lets data-team editors add files to the DOCUMENT CENTER Drive folder from the website,
- * and move them to Drive's trash. Add this file next to Code.gs in the same Apps Script project.
+ * Uploads from the website into the DOCUMENT CENTER Drive folder (editors only), and moving files to trash.
+ * Uses PROJECT, ROOT_FOLDER, insideRoot() and reply() from Code.gs.
  *
- * Hook it up with one line at the top of doPost in Code.gs, right after the request body is parsed:
+ * Code.gs doPost sends any request with an `action` here, right after parsing:
+ *   if (req.action) return uploadRoute(req);
  *
- *   if (body.action) return uploadRoute_(body);
- *
- * Requests come from public/api.js as text/plain JSON:
- *   { action: 'upload', token, name, mime, data }  ->  { driveId }
- *   { action: 'trash',  token, driveId }            ->  { ok: true }
- *   anything wrong                                  ->  { error: '...' }
- *
- * Setup: set UPLOAD_ROOT_ID below to the ID of the DOCUMENT CENTER folder (the part after /folders/ in its link).
+ * The website (public/api.js) sends text/plain JSON:
+ *   { action: 'upload', token, name, mime, data (base64) }  ->  { driveId }
+ *   { action: 'trash',  token, driveId }                     ->  { ok: true }
  */
-const UPLOAD_ROOT_ID = '';
-const UPLOAD_FIREBASE = { apiKey: 'AIzaSyDcKORfq1K-HWNSGIglxevwPu7g5-dreI8', projectId: 'document-center-513108' };
-const UPLOAD_TYPES = {
+const UPLOAD_API_KEY = 'AIzaSyDcKORfq1K-HWNSGIglxevwPu7g5-dreI8'; // Firebase web key (public, same as api.js)
+const UPLOAD_MAX_BYTES = 20 * 1024 * 1024; // same limit as the website
+const UPLOAD_SUBFOLDER = {
   'application/pdf': 'อัปโหลดจากเว็บ',
   'image/jpeg': 'รูปภาพ',
   'image/png': 'รูปภาพ',
   'image/webp': 'รูปภาพ'
 };
-const UPLOAD_MAX_BYTES = 20 * 1024 * 1024; // same limit as the website
 
-function uploadRoute_(body) {
+function uploadRoute(req) {
   try {
-    if (!UPLOAD_ROOT_ID) return uploadJson_({ error: 'not configured' });
-    const email = uploadEditor_(body.token);
-    if (!email) return uploadJson_({ error: 'denied' });
-    if (body.action === 'upload') return uploadJson_(uploadSave_(body, email));
-    if (body.action === 'trash') return uploadJson_(uploadTrash_(body));
-    return uploadJson_({ error: 'bad request' });
-  } catch (e) {
-    console.error(e);
-    return uploadJson_({ error: 'failed' });
+    const email = editorEmail(String(req.token || ''));
+    if (!email) return reply({ error: 'denied' });
+    if (req.action === 'upload') return reply(uploadFile(req, email));
+    if (req.action === 'trash') return reply(trashFile(req));
+    return reply({ error: 'bad request' });
+  } catch (err) {
+    console.error(err);
+    return reply({ error: 'failed' });
   }
 }
 
-// Returns the signed-in email if the Firebase ID token is valid and that email is an editor in `team`, else ''.
-function uploadEditor_(token) {
+// The signed-in email if the Firebase token is valid and the person is an editor in `team`, else ''.
+function editorEmail(token) {
   if (!token) return '';
-  const look = UrlFetchApp.fetch('https://identitytoolkit.googleapis.com/v1/accounts:lookup?key=' + UPLOAD_FIREBASE.apiKey, {
+  const look = UrlFetchApp.fetch('https://identitytoolkit.googleapis.com/v1/accounts:lookup?key=' + UPLOAD_API_KEY, {
     method: 'post', contentType: 'application/json', payload: JSON.stringify({ idToken: token }), muteHttpExceptions: true
   });
   if (look.getResponseCode() !== 200) return '';
   const user = (JSON.parse(look.getContentText()).users || [])[0];
   if (!user || !user.email || !user.emailVerified) return '';
-  // Read the user's own team doc with their own token, so firestore.rules decide access as on the website.
-  const url = 'https://firestore.googleapis.com/v1/projects/' + UPLOAD_FIREBASE.projectId +
-    '/databases/(default)/documents/team/' + encodeURIComponent(user.email);
-  const team = UrlFetchApp.fetch(url, { headers: { Authorization: 'Bearer ' + token }, muteHttpExceptions: true });
-  if (team.getResponseCode() !== 200) return '';
-  const role = ((JSON.parse(team.getContentText()).fields || {}).role || {}).stringValue;
+  // Read the person's own team doc with their own token, so firestore.rules decide, as on the website.
+  const r = UrlFetchApp.fetch(
+    'https://firestore.googleapis.com/v1/projects/' + PROJECT + '/databases/(default)/documents/team/' + encodeURIComponent(user.email),
+    { headers: { Authorization: 'Bearer ' + token }, muteHttpExceptions: true }
+  );
+  if (r.getResponseCode() !== 200) return '';
+  const role = ((JSON.parse(r.getContentText()).fields || {}).role || {}).stringValue;
   return role === 'editor' ? user.email : '';
 }
 
-function uploadSave_(body, email) {
-  const sub = UPLOAD_TYPES[body.mime];
+function uploadFile(req, email) {
+  const sub = UPLOAD_SUBFOLDER[req.mime];
   if (!sub) return { error: 'bad type' };
-  if (!body.data || !body.name) return { error: 'bad request' };
-  const bytes = Utilities.base64Decode(body.data);
+  if (!req.data || !req.name) return { error: 'bad request' };
+  const bytes = Utilities.base64Decode(req.data);
   if (bytes.length > UPLOAD_MAX_BYTES) return { error: 'too large' };
-  const name = String(body.name).replace(/[\\/:*?"<>|]/g, '_').slice(0, 200);
-  const file = uploadFolder_(sub).createFile(Utilities.newBlob(bytes, body.mime, name));
+  const name = String(req.name).replace(/[\\/:*?"<>|]/g, '_').slice(0, 200);
+  const file = subfolder(sub).createFile(Utilities.newBlob(bytes, req.mime, name));
   file.setDescription('อัปโหลดจากเว็บคลังเอกสารโดย ' + email + ' เมื่อ ' + new Date().toISOString());
   return { driveId: file.getId() };
 }
 
-// Only files inside the DOCUMENT CENTER folder can be trashed, so a stray ID can't touch anything else in Drive.
-function uploadTrash_(body) {
-  if (!body.driveId) return { error: 'bad request' };
-  const file = DriveApp.getFileById(body.driveId);
-  if (!uploadInsideRoot_(file)) return { error: 'denied' };
+function trashFile(req) {
+  if (!req.driveId) return { error: 'bad request' };
+  const file = DriveApp.getFileById(String(req.driveId));
+  if (!insideRoot(file)) return { error: 'denied' }; // only files from the DOCUMENT CENTER folder
   file.setTrashed(true);
   return { ok: true };
 }
 
-function uploadInsideRoot_(file) {
-  const seen = {};
-  let level = [];
-  const ps = file.getParents();
-  while (ps.hasNext()) level.push(ps.next());
-  for (let depth = 0; depth < 10 && level.length; depth++) {
-    const next = [];
-    for (const f of level) {
-      const id = f.getId();
-      if (id === UPLOAD_ROOT_ID) return true;
-      if (seen[id]) continue;
-      seen[id] = true;
-      const up = f.getParents();
-      while (up.hasNext()) next.push(up.next());
-    }
-    level = next;
-  }
-  return false;
-}
-
-function uploadFolder_(name) {
-  const root = DriveApp.getFolderById(UPLOAD_ROOT_ID);
+function subfolder(name) {
+  const root = DriveApp.getFolderById(ROOT_FOLDER);
   const found = root.getFoldersByName(name);
   return found.hasNext() ? found.next() : root.createFolder(name);
-}
-
-function uploadJson_(o) {
-  return ContentService.createTextOutput(JSON.stringify(o)).setMimeType(ContentService.MimeType.JSON);
 }
