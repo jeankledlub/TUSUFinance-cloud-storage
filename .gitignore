@@ -1,0 +1,11 @@
+# personal data and originals: never commit
+backup/
+seed/
+*.xlsx
+
+# keys and local tooling
+*.key.json
+*-firebase-adminsdk-*.json
+.firebase/
+node_modules/
+.env
