@@ -636,7 +636,9 @@ function pageHome() {
     ${LS.get('helpSeen', '') ? '' : `<div class="note-bar">${ic('help')}<span style="flex:1">${esc(t('helpFirst'))}</span><a class="btn go sm" href="#help">${esc(t('helpOpen'))}</a><button class="pill round" data-helpx aria-label="${esc(t('close'))}">${ic('x')}</button></div>`}
     <section class="card home-hero"><div class="${showM ? 'row2' : ''}">${showM ? `<div class="mascot" role="img" aria-label="assistant"></div>` : ''}
       <div style="display:grid;gap:10px;min-width:0">${showM ? `<div class="bubble" id="homeBubble" aria-live="polite" style="justify-self:start">${esc(M.last || t('say')[0])}</div>` : ''}<h1>${esc(t('homeH'))}</h1><p style="color:var(--muted)">${esc(t('homeP'))}</p></div></div>
-      <label class="bigsearch"><span class="sr">${esc(t('search'))}</span>${ic('search')}<input id="q2" type="search" autocomplete="off" placeholder="${esc(t('searchPh'))}"></label></section>
+      <label class="bigsearch"><span class="sr">${esc(t('search'))}</span>${ic('search')}<input id="q2" type="search" autocomplete="off" placeholder="${esc(t('searchPh'))}"></label>
+      <div class="mrow"><span class="lb">${esc(t('mascotSet'))}</span>${[...MASCOTS, ...TEAM_M].map(p => { const label = p.name ? t(p.name) : t('mBy', { n: p.by || '' }); return `<button class="mgb" data-mpick="${esc(p.id)}" aria-pressed="${showM && mascotNow().id === p.id}" aria-label="${esc(label)}" title="${esc(label)}"><span class="mthumb${p.strip ? ' strip' : ''}" style="background-image:url(&quot;${p.strip || p.url}&quot;)"></span></button>`; }).join('')}
+        <button class="fchip" data-assist="off" aria-pressed="${!showM}">${esc(t('mascotOff'))}</button><a class="link" href="#look">${esc(t('mascotPhoto'))}</a></div></section>
     <div class="shortcuts">
       ${sc('clubs', 'users', 'blue', t('scClubs'), t('sClubsSub', { n: act(cl) + act(ig) }), C.length)}
       ${sc('d-f-2569', 'badge', 'amber', t('scAppoint'), t('scAppointP'), ap)}
