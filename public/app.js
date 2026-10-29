@@ -51,10 +51,11 @@ const TX = {
   copyLink: 'คัดลอกลิงก์', tCopied: 'คัดลอกแล้ว', signedFull: 'ลงนามครบ', signedPartial: 'ลงนามไม่ครบ', otherDocs: 'สถานะเอกสารอื่น', fromSheet: 'จากชีตชุมนุม เป็นข้อมูลเก่า อาจยังไม่อัปเดต สถานะใบแต่งตั้งดูจากไฟล์ด้านบนเท่านั้น', fAp: 'ใบแต่งตั้ง', apHas: 'มีแล้ว', apNo: 'ยังไม่มี', apWait: 'รอลงนาม', fSigned: 'ลายเซ็น', tDemoSaved: 'โหมดตัวอย่าง: เปลี่ยนบนจอแล้ว แต่ยังไม่บันทึกจริง', tLoadErr: 'โหลดข้อมูลไม่สำเร็จ ลองรีเฟรชหน้าเว็บ', roleDemo: 'โหมดตัวอย่าง · ลองแก้ได้ ไม่บันทึกจริง',
   untitled: 'เอกสารไม่มีชื่อ', appoint: 'ใบแต่งตั้ง',
   tagsNav: 'หมวดหมู่', tagsHero: 'หมวดหมู่ที่เชื่อมกัน', tagsP: 'เอกสารและชุมนุมทุกชิ้นมีหลายหมวดในตัว กดหมวดเพื่อดูทุกอย่างที่อยู่ในหมวดนั้น แล้วกดหมวดที่เกี่ยวข้องต่อเพื่อเจาะให้แคบลง',
-  gTopic: 'หัวข้อ', gType: 'ประเภทเอกสาร', fType: 'ประเภทเอกสาร', fTags: 'หัวข้อ', tagsAuto: 'จัดหมวดให้อัตโนมัติจากชื่อแล้ว:', tagsMore: 'หัวข้ออื่นๆ คั่นด้วยจุลภาค', editTags: 'แก้หมวด',
+  gTopic: 'หัวข้อ', gType: 'ประเภทเอกสาร', fType: 'ประเภทเอกสาร', fTags: 'หัวข้อ', tagsAuto: 'จัดหมวดให้อัตโนมัติจากชื่อแล้ว:', tagsMore: 'หัวข้ออื่นๆ คั่นด้วยจุลภาค', editTags: 'แก้หมวดและคำค้น',
   tagSel: 'กำลังดู', tagRel: 'หมวดที่เกี่ยวข้อง', tagRelP: 'กดเพื่อเจาะให้แคบลง', tagAll: 'ดูทุกหมวด', tagNone: 'ไม่มีรายการในหมวดนี้', nItems: '{a} เอกสาร · {b} ชุมนุม',
   relDocs: 'เอกสารที่เกี่ยวข้อง', relClubs: 'ชุมนุมที่เกี่ยวข้อง', tagsOf: 'หมวดหมู่',
   print: 'พิมพ์', printAll: 'พิมพ์ทั้งหมด', tPrint: 'พิมพ์ไฟล์', tPrintP: 'ทุกไฟล์ในรายการ ส่งไปเครื่องพิมพ์ในครั้งเดียว', tPrintDrive: 'ไฟล์ประเภทนี้พิมพ์จากเว็บไม่ได้ เปิดใน Google Drive ให้แล้ว กด Ctrl+P ที่นั่น', tPrintSkip: 'ข้าม {n} ไฟล์ที่พิมพ์จากเว็บไม่ได้ (เช่น PowerPoint) ดาวน์โหลดไปพิมพ์ในเครื่องแทน', tPrintReady: 'กำลังเปิดหน้าต่างพิมพ์…',
+  kwT: 'คำค้น', kwPh: 'เช่น ชื่อเดิม ชื่อภาษาอังกฤษ ชื่อเล่น', kwP: 'คั่นด้วยจุลภาค ค้นหาด้วยคำเหล่านี้แล้วจะเจอชุมนุมนี้และเอกสารของชุมนุมนี้',
   upSteps: ['เลือกไฟล์', 'ตรวจชื่อ', 'กดอัปโหลด'], change: 'เปลี่ยน', autoFilled: 'ระบบกรอกให้แล้ว:', autoNone: 'ตรวจชื่อไฟล์ให้เรียบร้อย แล้วกดอัปโหลดได้เลย', moreDetail: 'แก้รายละเอียดเพิ่มเติม', pickClub: 'พิมพ์ชื่อชุมนุมแล้วเลือกจากรายการ', upMineP: 'ไฟล์ส่วนตัวเห็นแค่คุณคนเดียว เก็บในเครื่องนี้',
   help: 'วิธีใช้', helpHero: 'วิธีใช้คลังเอกสาร', helpP: 'สรุปสั้นๆ ว่าแต่ละเมนูใช้ทำอะไร กดหัวข้อเพื่อไปที่หน้านั้นได้เลย', helpGo: 'ไปที่หน้านี้', helpFirst: 'ใช้ครั้งแรก? ดูวิธีใช้แบบสั้นๆ 1 นาที', helpOpen: 'ดูวิธีใช้',
   helpItems: [
@@ -118,10 +119,11 @@ const TX = {
   copyLink: 'Copy link', tCopied: 'Copied', signedFull: 'Fully signed', signedPartial: 'Not fully signed', otherDocs: 'Other documents', fromSheet: 'From the club sheet. This is older data and may be out of date. Appointment status comes only from the file above.', fAp: 'Appointment', apHas: 'Have', apNo: 'Missing', apWait: 'Awaiting signature', fSigned: 'Signatures', tDemoSaved: 'Demo mode: changed on screen, not saved', tLoadErr: 'Could not load data. Try refreshing.', roleDemo: 'Demo mode · edits are not saved',
   untitled: 'Untitled document', appoint: 'Appointment',
   tagsNav: 'Categories', tagsHero: 'Linked categories', tagsP: 'Every document and club sits in several categories at once. Pick one to see everything in it, then pick a related one to narrow it down.',
-  gTopic: 'Topic', gType: 'Document type', fType: 'Document type', fTags: 'Topics', tagsAuto: 'Filed automatically from the name:', tagsMore: 'Other topics, separated by commas', editTags: 'Edit categories',
+  gTopic: 'Topic', gType: 'Document type', fType: 'Document type', fTags: 'Topics', tagsAuto: 'Filed automatically from the name:', tagsMore: 'Other topics, separated by commas', editTags: 'Edit categories & search words',
   tagSel: 'Showing', tagRel: 'Related categories', tagRelP: 'Pick one to narrow down', tagAll: 'All categories', tagNone: 'Nothing in this category', nItems: '{a} documents · {b} clubs',
   relDocs: 'Related documents', relClubs: 'Related clubs', tagsOf: 'Categories',
   print: 'Print', printAll: 'Print all', tPrint: 'Print files', tPrintP: 'Sends every file in the list to the printer in one go.', tPrintDrive: 'This file type can’t print from the site. It’s open in Google Drive now; press Ctrl+P there.', tPrintSkip: 'Skipped {n} files that can’t print from the site (like PowerPoint). Download them and print from your computer.', tPrintReady: 'Opening the print window…',
+  kwT: 'Search words', kwPh: 'e.g. old name, English name, nickname', kwP: 'Separate with commas. Searching any of these finds this club and its documents.',
   upSteps: ['Choose files', 'Check the name', 'Press Upload'], change: 'Change', autoFilled: 'Filled in for you:', autoNone: 'Check the name, then press Upload.', moreDetail: 'Edit more details', pickClub: 'Type a club name and pick it from the list', upMineP: 'Private files are only visible to you, on this device.',
   help: 'How to use', helpHero: 'How to use the archive', helpP: 'What each menu is for, in short. Tap a heading to go there.', helpGo: 'Go there', helpFirst: 'First time here? See the 1-minute guide.', helpOpen: 'Open guide',
   helpItems: [
@@ -189,7 +191,7 @@ const TOPICS = [
   ['ศิลปะการต่อสู้', 'Martial arts', /มวย|ยูโด|ยูยิตสู|เทควันโด|ปันจักสีลัต|ฟันดาบ|คาราเต้|ต่อสู้/],
   ['กีฬาความแม่นยำ', 'Precision sports', /ยิงธนู|ยิงปืน|กอล์ฟ|เปตอง/],
   ['กีฬาทางน้ำ', 'Water sports', /ทางน้ำ|เรือพาย/],
-  ['เกมและบอร์ดเกม', 'Games & esports', /หมากกระดาน|อิเล็กทรอนิกส์|เทเบิลเกม/],
+  ['เกมและบอร์ดเกม', 'Games & esports', /หมากกระดาน|อิเล็กทรอนิกส์|เทเบิลเกม|ท็อปเกม|บอร์ดเกม/],
   ['สุขภาพและร่างกาย', 'Fitness & wellbeing', /เวทเทนนิ่ง|กรีฑา|ลีลาศ|เอ็กซ์ตรีม|อารมณ์|กรรมฐาน/]
 ];
 const DOC_TYPES = [['ใบแต่งตั้ง', 'Appointment'], ['โครงการ', 'Project proposal'], ['งบประมาณ', 'Budget'], ['รายงานผล', 'Report'], ['รายงานการประชุม', 'Meeting minutes'], ['ประกาศ', 'Announcement'], ['หนังสือ', 'Letter'], ['แบบฟอร์ม', 'Form'], ['เอกสาร', 'Document'], ['ลิงก์', 'Link']];
@@ -203,7 +205,9 @@ function tagLbl(k) {
   if (g === 'kind') return t(v === 'indep' ? 'kIndep' : 'kClub');
   return v;
 }
-const autoTopics = c => TOPICS.filter(x => x[2].test(`${c.name} ${c.short || ''}`)).map(x => x[0]);
+// c.keywords: other names people search for (the old sheet name, English names, nicknames), editable on the club page.
+const clubWords = c => [c.name, c.short, ...(c.keywords || [])].filter(Boolean);
+const autoTopics = c => TOPICS.filter(x => x[2].test(clubWords(c).join(' '))).map(x => x[0]);
 const clubTags = c => uniq([c.cat && 'cat:' + c.cat, c.campus && 'campus:' + c.campus, c.kind && 'kind:' + c.kind, ...[...autoTopics(c), ...(c.tags || [])].map(x => 'topic:' + x)]);
 const docTags = d => uniq([(d.type || (isLink(d) ? 'ลิงก์' : '')) && 'type:' + (d.type || 'ลิงก์'), d.year && 'year:' + d.year, ...(d.tags || []).map(x => 'topic:' + x), ...(d.clubIds || []).flatMap(id => { const c = DATA.clubs.find(x => x.id === id); return c ? clubTags(c) : []; })]);
 const tagHref = keys => '#t-' + encodeURIComponent(keys.join('|'));
@@ -374,7 +378,8 @@ const appointOf = c => DATA.docs.find(d => d.id === c.appointDoc && !d.trashed) 
 function chatClubs(q) {
   const qn = norm(q); let best = 0, hits = [];
   for (const c of DATA.clubs) {
-    const len = Math.max(...[c.short, c.name, short(c.name)].filter(Boolean).map(x => norm(x)).filter(x => x.length >= 2 && qn.includes(x)).map(x => x.length), 0);
+    const len = Math.max(...[c.short, c.name, short(c.name)].filter(Boolean).map(x => norm(x)).filter(x => x.length >= 2 && qn.includes(x)).map(x => x.length),
+      ...(c.keywords || []).map(x => norm(x)).filter(x => x.length >= 4 && qn.includes(x)).map(x => x.length), 0);
     if (len > best) { best = len; hits = [c]; } else if (len && len === best) hits.push(c);
   }
   const camp = CAMPUS_W.find(([, re]) => re.test(q));
@@ -645,7 +650,7 @@ const campLbl = c => t(c);
 const signedChip = d => d.signed ? `<span class="chip ${d.signed === 'partial' ? 'st-draft' : 'st-active'}">${esc(d.signed === 'partial' ? t('signedPartial') : t('signedFull'))}</span>` : '';
 const apOf = c => c.appointDoc && DATA.docs.find(d => d.id === c.appointDoc && !d.trashed);
 function clubMatch(c, f, skip) {
-  return (!f.ap || (f.ap === 'yes') === !!apOf(c)) && (skip === 'campus' || !f.campus || c.campus === f.campus) && (skip === 'kind' || !f.kind || c.kind === f.kind) && (skip === 'cat' || !f.cat || (c.cat || '') === f.cat) && (skip === 'stat' || !f.stat || c.status === f.stat) && (!f.q || norm(c.name + ' ' + (c.advisor || '')).includes(norm(f.q)));
+  return (!f.ap || (f.ap === 'yes') === !!apOf(c)) && (skip === 'campus' || !f.campus || c.campus === f.campus) && (skip === 'kind' || !f.kind || c.kind === f.kind) && (skip === 'cat' || !f.cat || (c.cat || '') === f.cat) && (skip === 'stat' || !f.stat || c.status === f.stat) && (!f.q || norm([...clubWords(c), c.advisor].join(' ')).includes(norm(f.q)));
 }
 function clubCard(c) {
   const ap = apOf(c);
@@ -717,7 +722,8 @@ function pageClub(id) {
       ${other.length ? `<section class="card box"><div class="box-h"><h3>${esc(t('clubFiles'))}</h3></div><div class="docs">${other.map(d => docCard('shared', d)).join('')}</div></section>` : ''}
       ${rel.length ? `<section class="card box"><div class="box-h"><h3>${esc(t('relClubs'))}</h3></div><div class="cgrid">${rel.map(clubCard).join('')}</div></section>` : ''}
     </div><div>
-      <section class="card box"><div class="box-h"><h3>${esc(t('tagsOf'))}</h3>${ed ? `<button class="link" data-ctags="${esc(c.id)}">${esc(t('editTags'))}</button>` : ''}</div><div class="chips">${clubTags(c).map(k => tagChip(k)).join('')}</div></section>
+      <section class="card box"><div class="box-h"><h3>${esc(t('tagsOf'))}</h3>${ed ? `<button class="link" data-ctags="${esc(c.id)}">${esc(t('editTags'))}</button>` : ''}</div><div class="chips">${clubTags(c).map(k => tagChip(k)).join('')}</div>
+        ${(c.keywords || []).length ? `<p class="kw"><b>${esc(t('kwT'))}</b> ${esc(c.keywords.join(', '))}</p>` : ''}</section>
       <section class="card box"><div class="box-h"><h3>${esc(t('linksT'))}</h3>${ed ? `<button class="link" data-addclink="${esc(c.id)}">${esc(t('addLink'))}</button>` : ''}</div>
         <div class="ltree">${links.length || extra.length ? links.map(l => lbtn(l.url, l.label)).join('') + extra.map((l, i) => ed ? `<div style="display:grid;grid-template-columns:minmax(0,1fr) auto;gap:6px;align-items:center">${lbtn(l.url, l.label)}<button class="dots" data-rmclink="${esc(c.id)}|${i}" aria-label="${esc(t('delLink'))}" title="${esc(t('delLink'))}">${ic('x')}</button></div>` : lbtn(l.url, l.label)).join('') : `<p style="color:var(--muted)">${esc(t('noLinks'))}</p>`}</div></section>
       <section class="card box"><div class="box-h"><h3>${esc(t('infoClub'))}</h3></div><dl class="kv">
@@ -817,8 +823,10 @@ const readPicker = o => uniq([...$$('#tpk [aria-pressed="true"]', o).map(b => b.
 document.addEventListener('click', e => { const b = e.target.closest('#tpk [data-tp]'); if (b) b.setAttribute('aria-pressed', String(b.getAttribute('aria-pressed') !== 'true')); });
 function clubTagModal(c) {
   const auto = autoTopics(c);
-  const o = modal(t('editTags'), `<div class="field"><label>${esc(t('fTags'))}</label>${tagPicker(c.tags || [], auto)}</div>`, `<button class="btn" data-cancel>${esc(t('cancel'))}</button><button class="btn go" id="ctok">${esc(t('save'))}</button>`);
-  $('#ctok', o).onclick = () => { c.tags = readPicker(o).filter(x => !auto.includes(x)); closeModal(); commit([['clubs', c]]); };
+  const o = modal(t('editTags'), `<div class="fields"><div class="field full"><label>${esc(t('fTags'))}</label>${tagPicker(c.tags || [], auto)}</div>
+    <div class="field full"><label for="ckw">${esc(t('kwT'))}</label><textarea id="ckw" rows="3" placeholder="${esc(t('kwPh'))}">${esc((c.keywords || []).join(', '))}</textarea><small style="color:var(--muted)">${esc(t('kwP'))}</small></div></div>`,
+    `<button class="btn" data-cancel>${esc(t('cancel'))}</button><button class="btn go" id="ctok">${esc(t('save'))}</button>`);
+  $('#ctok', o).onclick = () => { c.tags = readPicker(o).filter(x => !auto.includes(x)); c.keywords = uniq($('#ckw', o).value.split(',').map(s => s.trim())); closeModal(); commit([['clubs', c]]); };
 }
 document.addEventListener('click', e => { const b = e.target.closest('[data-ctags]'); if (b) { const c = clubById(b.dataset.ctags); if (c) clubTagModal(c); } });
 
@@ -830,7 +838,7 @@ function pageStarred() {
 function matchDocs(k, list, query) {
   const toks = query.trim().split(/\s+/).map(norm).filter(Boolean); const out = [];
   for (const d of list) {
-    const head = d._h ||= norm([d.title, d.year, d.note, d.fileName, d.announced, d.url, d.text, ...(d.committee || []), ...(d.clubs || []), ...(d.clubIds || []).map(id => clubById(id)?.name), ...pathOf(k, d.folder).map(f => f.name), ...(k === 'shared' ? docTags(d).map(tagLbl) : [])].join(' '));
+    const head = d._h ||= norm([d.title, d.year, d.note, d.fileName, d.announced, d.url, d.text, ...(d.committee || []), ...(d.clubs || []), ...(d.clubIds || []).flatMap(id => { const c = clubById(id); return c ? clubWords(c) : []; }), ...pathOf(k, d.folder).map(f => f.name), ...(k === 'shared' ? docTags(d).map(tagLbl) : [])].join(' '));
     const pages = d.pages || []; pages.forEach(p => p.n ||= norm((p.club || '') + ' ' + (p.text || '')));
     if (!toks.every(tk => head.includes(tk) || pages.some(p => p.n.includes(tk)))) continue;
     const pt = toks.filter(tk => !head.includes(tk));
@@ -843,7 +851,7 @@ function pageSearch() {
   const qn = norm(S.q);
   const fa = A.shared.folders().filter(f => norm(f.name).includes(qn)), fb = MY.folders.filter(f => norm(f.name).includes(qn));
   const toks = S.q.trim().split(/\s+/).map(norm).filter(Boolean);
-  const cs = DATA.clubs.filter(c => { const h = norm([c.name, c.advisor, c.contact?.rep, c.contact?.ch, c.email, c.cat, ...clubTags(c).map(tagLbl)].join(' ')); return toks.every(tk => h.includes(tk)); });
+  const cs = DATA.clubs.filter(c => { const h = norm([...clubWords(c), c.advisor, c.contact?.rep, c.contact?.ch, c.email, c.cat, ...clubTags(c).map(tagLbl)].join(' ')); return toks.every(tk => h.includes(tk)); });
   const a = matchDocs('shared', A.shared.files(), S.q), b = matchDocs('mine', MY.files, S.q);
   const total = a.length + b.length + fa.length + fb.length + cs.length;
   setTimeout(() => say(total ? t('sayFound', { n: total }) : t('sayNone'), total ? 'happy' : 'confused', 10), 0);

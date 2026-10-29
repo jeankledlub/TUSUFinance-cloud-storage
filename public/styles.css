@@ -570,6 +570,8 @@ a.fchip[aria-pressed="true"]:hover { color: var(--on-accent); }
 .upauto svg.i { width: 16px; height: 16px; color: var(--ok); flex: none; margin-top: 2px; }
 .upmore summary { cursor: pointer; font-size: 13px; font-weight: 600; color: var(--accent); margin-top: 4px; }
 .upmore[open] summary { margin-bottom: 10px; }
+.kw { margin: 10px 0 0; font-size: 13px; color: var(--muted); line-height: 1.6; }
+.kw b { color: var(--fg); font-weight: 600; margin-right: 4px; }
 /* club picker */
 .cpk { display: grid; gap: 8px; }
 .cpk .chips:empty { display: none; }
