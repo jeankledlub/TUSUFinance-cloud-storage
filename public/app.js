@@ -50,6 +50,11 @@ const TX = {
   clubsFound: 'ชุมนุมที่ตรงกัน', mascotT: 'ตัวช่วยมุมจอ', goClub: 'ไปหน้าชุมนุม', officeNoPrev: 'ไฟล์ประเภทนี้ดูตัวอย่างในเว็บไม่ได้ กดดาวน์โหลดเพื่อเปิดในเครื่อง', officeOnly: 'รวมไฟล์และแปลงเป็นรูปได้เฉพาะ PDF กับรูปภาพ ไฟล์อื่นจะข้ามไป', phone: 'โทร', shortcuts: 'ทางลัด', recentShort: 'เพิ่มล่าสุด',
   copyLink: 'คัดลอกลิงก์', tCopied: 'คัดลอกแล้ว', signedFull: 'ลงนามครบ', signedPartial: 'ลงนามไม่ครบ', otherDocs: 'สถานะเอกสารอื่น', fromSheet: 'จากชีตชุมนุม เป็นข้อมูลเก่า อาจยังไม่อัปเดต สถานะใบแต่งตั้งดูจากไฟล์ด้านบนเท่านั้น', fAp: 'ใบแต่งตั้ง', apHas: 'มีแล้ว', apNo: 'ยังไม่มี', apWait: 'รอลงนาม', fSigned: 'ลายเซ็น', tDemoSaved: 'โหมดตัวอย่าง: เปลี่ยนบนจอแล้ว แต่ยังไม่บันทึกจริง', tLoadErr: 'โหลดข้อมูลไม่สำเร็จ ลองรีเฟรชหน้าเว็บ', roleDemo: 'โหมดตัวอย่าง · ลองแก้ได้ ไม่บันทึกจริง',
   untitled: 'เอกสารไม่มีชื่อ', appoint: 'ใบแต่งตั้ง',
+  tagsNav: 'หมวดหมู่', tagsHero: 'หมวดหมู่ที่เชื่อมกัน', tagsP: 'เอกสารและชุมนุมทุกชิ้นมีหลายหมวดในตัว กดหมวดเพื่อดูทุกอย่างที่อยู่ในหมวดนั้น แล้วกดหมวดที่เกี่ยวข้องต่อเพื่อเจาะให้แคบลง',
+  gTopic: 'หัวข้อ', gType: 'ประเภทเอกสาร', fType: 'ประเภทเอกสาร', fTags: 'หัวข้อ', tagsAuto: 'จัดหมวดให้อัตโนมัติจากชื่อแล้ว:', tagsMore: 'หัวข้ออื่นๆ คั่นด้วยจุลภาค', editTags: 'แก้หมวด',
+  tagSel: 'กำลังดู', tagRel: 'หมวดที่เกี่ยวข้อง', tagRelP: 'กดเพื่อเจาะให้แคบลง', tagAll: 'ดูทุกหมวด', tagNone: 'ไม่มีรายการในหมวดนี้', nItems: '{a} เอกสาร · {b} ชุมนุม',
+  relDocs: 'เอกสารที่เกี่ยวข้อง', relClubs: 'ชุมนุมที่เกี่ยวข้อง', tagsOf: 'หมวดหมู่',
+  print: 'พิมพ์', printAll: 'พิมพ์ทั้งหมด', tPrint: 'พิมพ์ไฟล์', tPrintP: 'ทุกไฟล์ในรายการ ส่งไปเครื่องพิมพ์ในครั้งเดียว', tPrintDrive: 'ไฟล์ประเภทนี้พิมพ์จากเว็บไม่ได้ เปิดใน Google Drive ให้แล้ว กด Ctrl+P ที่นั่น', tPrintSkip: 'ข้าม {n} ไฟล์ที่พิมพ์จากเว็บไม่ได้ (เช่น PowerPoint) ดาวน์โหลดไปพิมพ์ในเครื่องแทน', tPrintReady: 'กำลังเปิดหน้าต่างพิมพ์…',
   say: ['มีอะไรให้ช่วยไหม', 'ตอนนี้คลังกลางมี {n} เอกสาร ใน {f} โฟลเดอร์', 'พิมพ์ชื่อชุมนุมหรือชื่อคนในช่องค้นหาได้เลย เจอถึงในหน้าไหนของไฟล์', 'ลากการ์ดไฟล์ไปวางบนโฟลเดอร์เพื่อย้ายได้นะ', 'กดปุ่ม + ที่การ์ด แล้วไปหน้ารวม/แปลงไฟล์ เพื่อรวมเป็น PDF ไฟล์เดียว', 'ไฟล์ของฉันเก็บไว้ในเครื่องนี้ ไม่มีใครเห็นนอกจากคุณ'],
   sayFound: 'เจอ {n} รายการ', sayNone: 'อืม… หาไม่เจอ ลองคำที่สั้นลงดูนะ', sayDone: 'เรียบร้อย!', sayWork: 'กำลังจัดการให้อยู่นะ…', saySaved: 'บันทึกเรียบร้อย ขอบคุณที่ช่วยจัดคลังนะ', sayMoved: 'ย้ายให้แล้ว', sayHi: 'สวัสดี! เรียกน้องได้ทุกเมื่อ'
  },
@@ -99,6 +104,11 @@ const TX = {
   clubsFound: 'Matching clubs', mascotT: 'Corner assistant', goClub: 'Go to club page', officeNoPrev: 'This file type cannot be previewed here. Download it to open on your device.', officeOnly: 'Merge and image conversion work with PDF and images only. Other files are skipped.', phone: 'Phone', shortcuts: 'Shortcuts', recentShort: 'Recently added',
   copyLink: 'Copy link', tCopied: 'Copied', signedFull: 'Fully signed', signedPartial: 'Not fully signed', otherDocs: 'Other documents', fromSheet: 'From the club sheet. This is older data and may be out of date. Appointment status comes only from the file above.', fAp: 'Appointment', apHas: 'Have', apNo: 'Missing', apWait: 'Awaiting signature', fSigned: 'Signatures', tDemoSaved: 'Demo mode: changed on screen, not saved', tLoadErr: 'Could not load data. Try refreshing.', roleDemo: 'Demo mode · edits are not saved',
   untitled: 'Untitled document', appoint: 'Appointment',
+  tagsNav: 'Categories', tagsHero: 'Linked categories', tagsP: 'Every document and club sits in several categories at once. Pick one to see everything in it, then pick a related one to narrow it down.',
+  gTopic: 'Topic', gType: 'Document type', fType: 'Document type', fTags: 'Topics', tagsAuto: 'Filed automatically from the name:', tagsMore: 'Other topics, separated by commas', editTags: 'Edit categories',
+  tagSel: 'Showing', tagRel: 'Related categories', tagRelP: 'Pick one to narrow down', tagAll: 'All categories', tagNone: 'Nothing in this category', nItems: '{a} documents · {b} clubs',
+  relDocs: 'Related documents', relClubs: 'Related clubs', tagsOf: 'Categories',
+  print: 'Print', printAll: 'Print all', tPrint: 'Print files', tPrintP: 'Sends every file in the list to the printer in one go.', tPrintDrive: 'This file type can’t print from the site. It’s open in Google Drive now; press Ctrl+P there.', tPrintSkip: 'Skipped {n} files that can’t print from the site (like PowerPoint). Download them and print from your computer.', tPrintReady: 'Opening the print window…',
   say: ['Hi! What can I help you find today?', 'The shared drive has {n} documents in {f} folders.', 'Type a club or a person’s name in search. I’ll show the exact page.', 'Drag a file card onto a folder to move it.', 'Press + on a card, then open Merge / convert to make one PDF.', 'My files stay on this device. Only you can see them.'],
   sayFound: 'Found {n} results', sayNone: 'Hmm… nothing found. Try a shorter word.', sayDone: 'All done!', sayWork: 'Working on it…', saySaved: 'Saved. Thanks for keeping things tidy!', sayMoved: 'Moved it for you', sayHi: 'Hi! Tap me any time.'
  }
@@ -133,6 +143,45 @@ const CAMPUS = ['rangsit', 'tpc', 'lampang', 'pattaya'];
 const CATS = [['ศิลปะวัฒนธรรม', 'arts', 'Arts & culture'], ['วิชาการ', 'acad', 'Academic'], ['บำเพ็ญประโยชน์', 'vol', 'Volunteer'], ['ศาสนาและจริยธรรม', 'rel', 'Religion & ethics'], ['กีฬา', 'sport', 'Sports']];
 const catCls = c => (CATS.find(x => x[0] === c) || [0, 'none'])[1];
 const catLbl = c => { const x = CATS.find(y => y[0] === c); return x ? (lang === 'en' ? x[2] : x[0]) : (lang === 'en' ? 'Uncategorized' : 'ไม่ระบุสาย'); };
+// Linked categories. Every document and club carries tags as 'group:value'. Most come from data it already has
+// (category, campus, club or group, year, document type), topics come from the club's name (TOPICS) plus the
+// editor's own `tags` field, and a document also inherits the tags of the clubs it is about.
+const TOPICS = [
+  ['ดนตรี', 'Music', /ดนตรี|ขับร้อง|ดุริยางค์|โฟล์คซอง|music/i],
+  ['การแสดงและเวที', 'Performing arts', /ละคอน|ละคร|นาฏศิลป์|เต้น|dance|เชียร์|คัลเลอร์การ์ด|พิธีกร|สันทนาการ/i],
+  ['วัฒนธรรมท้องถิ่น', 'Local culture', /อีสาน|ทักษิณ|ขอนแก่น|ภาคใต้|กาสะลอง|อนุรักษ์และส่งเสริมศิลป|ไทยคดี|ดนตรีไทย|ประเพณี/],
+  ['สื่อและภาพ', 'Media & film', /ถ่ายภาพ|ภาพยนตร์|วิทยุ|โทรทัศน์|สื่อ|สารคดี/],
+  ['ภาษาและการพูด', 'Language & speaking', /ปาฐกถา|โต้วาที|วรรณศิลป์|ภาษา|tedx|พิธีกร/i],
+  ['เทคโนโลยีและข้อมูล', 'Tech & data', /บล็อกเชน|google developer|ดาต้า|อิเล็กทรอนิกส์|blockchain|data/i],
+  ['ผู้นำและธุรกิจ', 'Leadership & business', /ไอเซค|ผู้นำ|leaders|โรตาแรคท์|เคส|organized|โกล์เกทเทอร์|พัฒนาศักยภาพ|คอนซัลติ้ง/i],
+  ['สังคมและการเมือง', 'Society & politics', /การเมือง|รัฐสภา|สหประชาชาติ|ประชาชน|แอคท|change/i],
+  ['นานาชาติ', 'International', /international|นานาชาติ|สหประชาชาติ|ไอเซค|dome to west|ภาษาอังกฤษ/i],
+  ['สิ่งแวดล้อมและธรรมชาติ', 'Environment & nature', /ธรรมชาติ|สิ่งแวดล้อม|climate/i],
+  ['อาสาและค่าย', 'Volunteering & camps', /อาสา|ค่าย|ชนบท|ทำด้วยใจ|เพื่อนโดม/],
+  ['กีฬาประเภททีม', 'Team sports', /บอล|ตะกร้อ|รักบี้|allstar/i],
+  ['กีฬาแร็กเกต', 'Racket sports', /เทนนิส|แบดมินตัน/],
+  ['ศิลปะการต่อสู้', 'Martial arts', /มวย|ยูโด|ยูยิตสู|เทควันโด|ปันจักสีลัต|ฟันดาบ|คาราเต้|ต่อสู้/],
+  ['กีฬาความแม่นยำ', 'Precision sports', /ยิงธนู|ยิงปืน|กอล์ฟ|เปตอง/],
+  ['กีฬาทางน้ำ', 'Water sports', /ทางน้ำ|เรือพาย/],
+  ['เกมและบอร์ดเกม', 'Games & esports', /หมากกระดาน|อิเล็กทรอนิกส์|เทเบิลเกม/],
+  ['สุขภาพและร่างกาย', 'Fitness & wellbeing', /เวทเทนนิ่ง|กรีฑา|ลีลาศ|เอ็กซ์ตรีม|อารมณ์|กรรมฐาน/]
+];
+const DOC_TYPES = [['ใบแต่งตั้ง', 'Appointment'], ['โครงการ', 'Project proposal'], ['งบประมาณ', 'Budget'], ['รายงานผล', 'Report'], ['รายงานการประชุม', 'Meeting minutes'], ['ประกาศ', 'Announcement'], ['หนังสือ', 'Letter'], ['แบบฟอร์ม', 'Form'], ['เอกสาร', 'Document'], ['ลิงก์', 'Link']];
+const TAG_G = [['topic', 'gTopic'], ['cat', 'fCat'], ['type', 'gType'], ['campus', 'fCampus'], ['kind', 'fKind'], ['year', 'fYear']];
+function tagLbl(k) {
+  const i = k.indexOf(':'), g = k.slice(0, i), v = k.slice(i + 1);
+  if (g === 'topic') { const x = TOPICS.find(y => y[0] === v); return x && lang === 'en' ? x[1] : v; }
+  if (g === 'type') { const x = DOC_TYPES.find(y => y[0] === v); return x && lang === 'en' ? x[1] : v; }
+  if (g === 'cat') return catLbl(v);
+  if (g === 'campus') return t(v);
+  if (g === 'kind') return t(v === 'indep' ? 'kIndep' : 'kClub');
+  return v;
+}
+const autoTopics = c => TOPICS.filter(x => x[2].test(`${c.name} ${c.short || ''}`)).map(x => x[0]);
+const clubTags = c => uniq([c.cat && 'cat:' + c.cat, c.campus && 'campus:' + c.campus, c.kind && 'kind:' + c.kind, ...[...autoTopics(c), ...(c.tags || [])].map(x => 'topic:' + x)]);
+const docTags = d => uniq([(d.type || (isLink(d) ? 'ลิงก์' : '')) && 'type:' + (d.type || 'ลิงก์'), d.year && 'year:' + d.year, ...(d.tags || []).map(x => 'topic:' + x), ...(d.clubIds || []).flatMap(id => { const c = DATA.clubs.find(x => x.id === id); return c ? clubTags(c) : []; })]);
+const tagHref = keys => '#t-' + encodeURIComponent(keys.join('|'));
+const tagChip = (k, extra = '') => `<a class="fchip tchip" href="${tagHref([k])}">${esc(tagLbl(k))}${extra}</a>`;
 const STATS = [['มีสถานภาพ', 'Active', 'ok'], ['รอจดจัดตั้ง', 'Pending', 'warn'], ['ยุบเลิก', 'Dissolved', 'bad']];
 const statLbl = s => { const x = STATS.find(y => y[0] === s); return x ? (lang === 'en' ? x[1] : x[0]) : s; };
 const statCls = s => (STATS.find(y => y[0] === s) || [0, 0, ''])[2];
@@ -447,7 +496,7 @@ function renderNav() {
   const c = cur();
   const a = (h, icon, label, extra = '', cls = '') => `<a class="${cls}" href="#${h}" aria-current="${c === h ? 'page' : 'false'}">${icon}<span>${esc(label)}</span>${extra}</a>`;
   const ct = n => `<span class="ct num">${n}</span>`;
-  let h = `<div class="grp"><h6>${esc(t('gOverview'))}</h6><div class="nav">${a('home', ic('home'), t('home'))}${a('clubs', ic('users'), t('clubsNav'), ct(DATA.clubs.length))}</div></div>`;
+  let h = `<div class="grp"><h6>${esc(t('gOverview'))}</h6><div class="nav">${a('home', ic('home'), t('home'))}${a('clubs', ic('users'), t('clubsNav'), ct(DATA.clubs.length))}${a('tags', ic('tag'), t('tagsNav'))}</div></div>`;
   h += `<div class="grp"><h6>${esc(t('gShared'))}</h6><div class="nav">${a('drive', ic('drive'), t('allDocs'), ct(A.shared.files().length))}${kidsF('shared', null).map(f => a('d-' + f.id, `<i class="dot" style="background:${colorOf(f.color)}"></i>`, f.name, ct(countIn('shared', f.id)), 'sub')).join('')}</div></div>`;
   h += `<div class="grp"><h6>${esc(t('gMine'))}</h6><div class="nav">${a('mine', ic('user'), t('mine'), ct(MY.files.length))}${a('starred', ic('star'), t('starred'), ct(A.shared.files().filter(d => S.stars.includes(d.id)).length))}</div></div>`;
   h += `<div class="grp"><h6>${esc(t('gTools'))}</h6><div class="nav">${a('tools', ic('layers'), t('tools'), S.tray.length ? `<span class="badge num">${S.tray.length}</span>` : '')}${a('look', ic('gear'), t('look'))}</div></div>`;
@@ -457,6 +506,7 @@ function renderNav() {
   if (c.startsWith('d-')) { const top = pathOf('shared', c.slice(2))[0]; if (top) $(`#navs a[href="#d-${CSS.escape(top.id)}"]`)?.setAttribute('aria-current', 'page'); }
   if (c.startsWith('m-')) $('#navs a[href="#mine"]')?.setAttribute('aria-current', 'page');
   if (c.startsWith('c-')) $('#navs a[href="#clubs"]')?.setAttribute('aria-current', 'page');
+  if (c.startsWith('t-')) $('#navs a[href="#tags"]')?.setAttribute('aria-current', 'page');
 }
 $('#navs').addEventListener('click', e => { if (e.target.closest('a')) side(false); });
 window.addEventListener('hashchange', () => { if (R.d) closeReader(); closeModal(); route(); window.scrollTo({ top: 0 }); });
@@ -472,6 +522,8 @@ function route() {
   else if (c.startsWith('m-')) P.innerHTML = folderOf('mine', c.slice(2)) ? pageDrive('mine', c.slice(2)) : pageDrive('mine', null);
   else if (c === 'clubs') P.innerHTML = pageClubs();
   else if (c.startsWith('c-')) P.innerHTML = pageClub(c.slice(2));
+  else if (c === 'tags') P.innerHTML = pageTags([]);
+  else if (c.startsWith('t-')) P.innerHTML = pageTags(decodeURIComponent(c.slice(2)).split('|').filter(Boolean));
   else if (c === 'starred') P.innerHTML = pageStarred();
   else if (c === 'tools') P.innerHTML = pageTools();
   else if (c === 'look') P.innerHTML = pageLook();
@@ -616,7 +668,7 @@ function pageClub(id) {
   const c = clubById(id); if (!c) return `<div class="page"><a class="backlink" href="#clubs">${ic('chev')}${esc(t('backClubs'))}</a>${empty('users', t('noClub'), '')}</div>`;
   const ed = A.shared.edit();
   const ap = c.appointDoc && A.shared.files().find(d => d.id === c.appointDoc);
-  const other = A.shared.files().filter(d => (d.clubIds || []).includes(c.id) && d.id !== c.appointDoc);
+  const other = A.shared.files().filter(d => (d.clubIds || []).includes(c.id) && d.id !== c.appointDoc), rel = relClubs(c);
   const kv = (k, v) => v ? `<dt>${esc(k)}</dt><dd>${v}</dd>` : '';
   const checks = c.kind === 'club'
     ? [['ck_sent', c.sent], ['ck_report', c.report], ['ck_meeting', c.meeting], ['ck_will', c.will], ['ck_grade', c.grade], ['ck_budget', c.budget], ['ck_review', c.review], ['ck_web', c.web || '']]
@@ -635,7 +687,9 @@ function pageClub(id) {
       <section class="card box"><div class="box-h"><h3>${esc(t('apTitle'))}</h3></div>${apHtml}</section>
       <section class="card box"><div class="box-h"><h3>${esc(t('otherDocs'))}</h3></div><p class="note-bar" style="font-size:13px">${esc(t('fromSheet'))}</p><div class="checks">${checks.map(([k, v, n]) => ckRow(t(k), v, n)).join('')}</div></section>
       ${other.length ? `<section class="card box"><div class="box-h"><h3>${esc(t('clubFiles'))}</h3></div><div class="docs">${other.map(d => docCard('shared', d)).join('')}</div></section>` : ''}
+      ${rel.length ? `<section class="card box"><div class="box-h"><h3>${esc(t('relClubs'))}</h3></div><div class="cgrid">${rel.map(clubCard).join('')}</div></section>` : ''}
     </div><div>
+      <section class="card box"><div class="box-h"><h3>${esc(t('tagsOf'))}</h3>${ed ? `<button class="link" data-ctags="${esc(c.id)}">${esc(t('editTags'))}</button>` : ''}</div><div class="chips">${clubTags(c).map(k => tagChip(k)).join('')}</div></section>
       <section class="card box"><div class="box-h"><h3>${esc(t('linksT'))}</h3>${ed ? `<button class="link" data-addclink="${esc(c.id)}">${esc(t('addLink'))}</button>` : ''}</div>
         <div class="ltree">${links.length || extra.length ? links.map(l => lbtn(l.url, l.label)).join('') + extra.map((l, i) => ed ? `<div style="display:grid;grid-template-columns:minmax(0,1fr) auto;gap:6px;align-items:center">${lbtn(l.url, l.label)}<button class="dots" data-rmclink="${esc(c.id)}|${i}" aria-label="${esc(t('delLink'))}" title="${esc(t('delLink'))}">${ic('x')}</button></div>` : lbtn(l.url, l.label)).join('') : `<p style="color:var(--muted)">${esc(t('noLinks'))}</p>`}</div></section>
       <section class="card box"><div class="box-h"><h3>${esc(t('infoClub'))}</h3></div><dl class="kv">
@@ -675,6 +729,57 @@ document.addEventListener('click', e => {
   openMenu(nb, [{ icon: 'fplus', label: t('newFolder'), run: () => folderModal(k, null, fid) }, { icon: 'link', label: t('newLink'), run: () => linkModal(k, null, fid) }, ...(k === 'mine' || API.canUpload() ? [{ icon: 'up', label: t('uploadHere'), run: () => uploadModal(k, fid) }] : [])]);
 });
 
+/* ============ linked categories ============ */
+function tagCounts(docs, clubs) {
+  const n = new Map(), add = k => n.set(k, (n.get(k) || 0) + 1);
+  docs.forEach(d => docTags(d).forEach(add)); clubs.forEach(c => clubTags(c).forEach(add));
+  return n;
+}
+function tagGroups(n, sel, href) {
+  return TAG_G.map(([g, lb]) => {
+    const ks = [...n.keys()].filter(k => k.startsWith(g + ':') && !sel.includes(k)).sort((a, b) => g === 'year' ? b.localeCompare(a) : n.get(b) - n.get(a) || tagLbl(a).localeCompare(tagLbl(b), 'th'));
+    return ks.length ? `<div class="chips"><span class="lb">${esc(t(lb))}</span>${ks.map(k => `<a class="fchip tchip" href="${href(k)}">${esc(tagLbl(k))}<span class="n num">${n.get(k)}</span></a>`).join('')}</div>` : '';
+  }).join('');
+}
+// sel: the tags being looked at; an item must have all of them. Related tags narrow the selection further.
+function pageTags(sel) {
+  const docs = A.shared.files().filter(d => sel.every(k => docTags(d).includes(k)));
+  const clubs = DATA.clubs.filter(c => sel.every(k => clubTags(c).includes(k)));
+  const n = tagCounts(docs, clubs);
+  const hero = `<section class="card hero"><div><p class="k">${esc(t('tagsNav'))}</p><h1>${esc(sel.length ? sel.map(tagLbl).join(' + ') : t('tagsHero'))}</h1><p class="d">${esc(sel.length ? t('nItems', { a: docs.length, b: clubs.length }) : t('tagsP'))}</p></div></section>`;
+  if (!sel.length) return `<div class="page">${hero}<section class="card box filters">${tagGroups(n, [], k => tagHref([k]))}</section></div>`;
+  const now = `<div class="chips"><span class="lb">${esc(t('tagSel'))}</span>${sel.map(k => `<a class="fchip tchip" aria-pressed="true" href="${sel.length > 1 ? tagHref(sel.filter(x => x !== k)) : '#tags'}" title="${esc(t('del'))}">${esc(tagLbl(k))}${ic('x')}</a>`).join('')}<a class="link" href="#tags">${esc(t('tagAll'))}</a></div>`;
+  const rel = tagGroups(n, sel, k => tagHref([...sel, k]));
+  return `<div class="page">${hero}<section class="card box filters">${now}${rel ? `<p class="sec-h" style="margin:4px 0 0">${esc(t('tagRel'))} · ${esc(t('tagRelP'))}</p>${rel}` : ''}</section>
+    ${clubs.length ? `<p class="sec-h">${esc(t('clubsNav'))} · ${clubs.length}</p><div class="cgrid">${clubs.map(clubCard).join('')}</div>` : ''}
+    ${docs.length ? `<p class="sec-h">${esc(t('drive'))} · ${docs.length}</p><div class="docs ${S.layout === 'list' ? 'list' : ''}">${sortItems(docs).map(d => docCard('shared', d)).join('')}</div>` : ''}
+    ${docs.length || clubs.length ? '' : empty('tag', t('tagNone'), '')}</div>`;
+}
+// Ranks items by the tags they share with `keys`. A shared club or topic counts more than a shared campus or year.
+const tagW = k => k.startsWith('club:') ? 4 : k.startsWith('topic:') ? 3 : k.startsWith('cat:') || k.startsWith('type:') ? 2 : 1;
+function related(keys, list, keysOf, self, max) {
+  return list.filter(x => x !== self).map(x => { const o = keysOf(x); return [x, keys.reduce((s, k) => s + (o.includes(k) ? tagW(k) : 0), 0)]; })
+    .filter(([, s]) => s >= 3).sort((a, b) => b[1] - a[1]).slice(0, max).map(([x]) => x);
+}
+const docKeys = d => [...docTags(d), ...(d.clubIds || []).map(id => 'club:' + id)];
+const relDocs = d => related(docKeys(d), A.shared.files().filter(x => !isLink(x)), docKeys, d, 6);
+const relClubs = c => related(clubTags(c), DATA.clubs, clubTags, c, 6);
+// Topic picker for the edit forms: preset topics as toggles plus free text. `auto` topics come from the name and aren't offered.
+function tagPicker(chosen, auto = []) {
+  const pre = TOPICS.map(x => x[0]), own = chosen.filter(x => !pre.includes(x));
+  return `${auto.length ? `<p style="font-size:13px;color:var(--muted);margin:0 0 6px">${esc(t('tagsAuto'))} ${esc(auto.map(x => tagLbl('topic:' + x)).join(', '))}</p>` : ''}
+    <div class="chips" id="tpk">${TOPICS.filter(x => !auto.includes(x[0])).map(x => `<button type="button" class="fchip" data-tp="${esc(x[0])}" aria-pressed="${chosen.includes(x[0])}">${esc(tagLbl('topic:' + x[0]))}</button>`).join('')}</div>
+    <input id="tpo" aria-label="${esc(t('tagsMore'))}" placeholder="${esc(t('tagsMore'))}" value="${esc(own.join(', '))}" style="margin-top:8px">`;
+}
+const readPicker = o => uniq([...$$('#tpk [aria-pressed="true"]', o).map(b => b.dataset.tp), ...$('#tpo', o).value.split(',').map(s => s.trim())]);
+document.addEventListener('click', e => { const b = e.target.closest('#tpk [data-tp]'); if (b) b.setAttribute('aria-pressed', String(b.getAttribute('aria-pressed') !== 'true')); });
+function clubTagModal(c) {
+  const auto = autoTopics(c);
+  const o = modal(t('editTags'), `<div class="field"><label>${esc(t('fTags'))}</label>${tagPicker(c.tags || [], auto)}</div>`, `<button class="btn" data-cancel>${esc(t('cancel'))}</button><button class="btn go" id="ctok">${esc(t('save'))}</button>`);
+  $('#ctok', o).onclick = () => { c.tags = readPicker(o).filter(x => !auto.includes(x)); closeModal(); commit([['clubs', c]]); };
+}
+document.addEventListener('click', e => { const b = e.target.closest('[data-ctags]'); if (b) { const c = clubById(b.dataset.ctags); if (c) clubTagModal(c); } });
+
 function pageStarred() {
   const D = A.shared.files().filter(d => S.stars.includes(d.id));
   return `<div class="page"><section class="card hero"><div><p class="k">${esc(t('gMine'))}</p><h1>${esc(t('starHero'))}</h1><p class="d">${esc(t('starP'))}</p></div></section>
@@ -683,7 +788,7 @@ function pageStarred() {
 function matchDocs(k, list, query) {
   const toks = query.trim().split(/\s+/).map(norm).filter(Boolean); const out = [];
   for (const d of list) {
-    const head = d._h ||= norm([d.title, d.year, d.note, d.fileName, d.announced, d.url, d.text, ...(d.committee || []), ...(d.clubs || []), ...(d.clubIds || []).map(id => clubById(id)?.name), ...pathOf(k, d.folder).map(f => f.name)].join(' '));
+    const head = d._h ||= norm([d.title, d.year, d.note, d.fileName, d.announced, d.url, d.text, ...(d.committee || []), ...(d.clubs || []), ...(d.clubIds || []).map(id => clubById(id)?.name), ...pathOf(k, d.folder).map(f => f.name), ...(k === 'shared' ? docTags(d).map(tagLbl) : [])].join(' '));
     const pages = d.pages || []; pages.forEach(p => p.n ||= norm((p.club || '') + ' ' + (p.text || '')));
     if (!toks.every(tk => head.includes(tk) || pages.some(p => p.n.includes(tk)))) continue;
     const pt = toks.filter(tk => !head.includes(tk));
@@ -696,7 +801,7 @@ function pageSearch() {
   const qn = norm(S.q);
   const fa = A.shared.folders().filter(f => norm(f.name).includes(qn)), fb = MY.folders.filter(f => norm(f.name).includes(qn));
   const toks = S.q.trim().split(/\s+/).map(norm).filter(Boolean);
-  const cs = DATA.clubs.filter(c => { const h = norm([c.name, c.advisor, c.contact?.rep, c.contact?.ch, c.email, t(c.campus), c.cat].join(' ')); return toks.every(tk => h.includes(tk)); });
+  const cs = DATA.clubs.filter(c => { const h = norm([c.name, c.advisor, c.contact?.rep, c.contact?.ch, c.email, c.cat, ...clubTags(c).map(tagLbl)].join(' ')); return toks.every(tk => h.includes(tk)); });
   const a = matchDocs('shared', A.shared.files(), S.q), b = matchDocs('mine', MY.files, S.q);
   const total = a.length + b.length + fa.length + fb.length + cs.length;
   setTimeout(() => say(total ? t('sayFound', { n: total }) : t('sayNone'), total ? 'happy' : 'confused', 10), 0);
@@ -761,6 +866,7 @@ function pageTools() {
       <div class="card tool-card"><h4><span class="ic blue">${ic('layers')}</span>${esc(t('tMerge'))}</h4><p>${esc(t('tMergeP'))}</p><div class="btns"><button class="btn go" data-tool="merge" ${dis}>${esc(t('doMerge'))}</button></div></div>
       <div class="card tool-card"><h4><span class="ic green">${ic('image')}</span>${esc(t('tImg'))}</h4><p>${esc(t('tImgP'))}</p><div class="btns"><button class="btn" data-tool="png" ${dis}>${esc(t('toPng'))}</button><button class="btn" data-tool="jpg" ${dis}>${esc(t('toJpg'))}</button></div></div>
       <div class="card tool-card"><h4><span class="ic amber">${ic('zip')}</span>${esc(t('tZip'))}</h4><p>${esc(t('tZipP'))}</p><div class="btns"><button class="btn" data-tool="zip" ${dis}>${esc(t('doZip'))}</button></div></div>
+      <div class="card tool-card"><h4><span class="ic green">${ic('print')}</span>${esc(t('tPrint'))}</h4><p>${esc(t('tPrintP'))}</p><div class="btns"><button class="btn" data-tool="print" ${dis}>${esc(t('printAll'))}</button></div></div>
       ${S.staff ? `<div class="card tool-card"><h4><span class="ic blue">${ic('down')}</span>${esc(t('tBak'))}</h4><p>${esc(t('tBakP'))}</p><p style="color:var(--bad)">${esc(t('tBakWarn'))}</p><div class="btns"><button class="btn" data-tool="backup">${esc(t('doBak'))}</button></div></div>` : ''}
     </div></div></div>`;
 }
@@ -768,7 +874,7 @@ document.addEventListener('click', e => {
   const mv = e.target.closest('[data-tmv]'); if (mv) { const i = +mv.dataset.tmv, j = i + +mv.dataset.dir; [S.tray[i], S.tray[j]] = [S.tray[j], S.tray[i]]; saveTray(); return route(); }
   const rm = e.target.closest('[data-trm]'); if (rm) { S.tray.splice(+rm.dataset.trm, 1); saveTray(); return route(); }
   if (e.target.closest('[data-tclear]')) { S.tray = []; saveTray(); return route(); }
-  const tl = e.target.closest('[data-tool]'); if (tl) { const list = S.tray.map(trayItem).filter(Boolean); ({ merge: () => mergeFiles(list), zip: () => zipFiles(list), png: () => toImages(list, 'png'), jpg: () => toImages(list, 'jpg'), backup: backupAll })[tl.dataset.tool](); }
+  const tl = e.target.closest('[data-tool]'); if (tl) { const list = S.tray.map(trayItem).filter(Boolean); ({ merge: () => mergeFiles(list), zip: () => zipFiles(list), png: () => toImages(list, 'png'), jpg: () => toImages(list, 'jpg'), print: () => printFiles(list), backup: backupAll })[tl.dataset.tool](); }
 });
 document.addEventListener('change', async e => {
   if (e.target.id !== 'pcIn') return;
@@ -817,7 +923,7 @@ function fileMenu(anchor, k, id) {
       k === 'shared' ? { icon: 'trash', label: t('toTrash'), bad: true, run: () => { d.trashed = true; commit([['docs', d]]); toast(t('tTrashed')); } } : { icon: 'trash', label: t('del'), bad: true, run: () => confirmModal(t('delFileQ', { n: d.title }), () => deleteMine(d)) });
     return openMenu(anchor, items);
   }
-  const items = [{ icon: 'doc', label: t('open'), run: () => openReader(k, id, 1) }, { icon: 'down', label: t('dlOrig'), run: () => dlOrig(k, d) }];
+  const items = [{ icon: 'doc', label: t('open'), run: () => openReader(k, id, 1) }, { icon: 'down', label: t('dlOrig'), run: () => dlOrig(k, d) }, { icon: 'print', label: t('print'), run: () => printFiles([d]) }];
   if (k === 'shared' && !d.wrap) items.push({ icon: 'ext', label: t('openTab'), run: () => openTab(FILES.url(d)) });
   items.push({ icon: inTray(src, id) ? 'check' : 'plus', label: inTray(src, id) ? t('inTray') : t('addTray'), run: () => toggleTray(src, id) });
   if (k === 'shared') items.push({ icon: 'star', label: S.stars.includes(id) ? t('unstar') : t('star'), run: () => toggleStar(id) });
@@ -912,18 +1018,23 @@ function moveModal(k, type, id) {
   const o = modal(t('moveTitle'), treeOptions(k, ex, curParent || ''), `<button class="btn" data-cancel>${esc(t('cancel'))}</button><button class="btn go" id="mok">${esc(t('moveHere'))}</button>`);
   $('#mok', o).onclick = () => { const v = $('input[name="tgt"]:checked', o)?.value ?? ''; closeModal(); moveItem(k, type, id, v || null); };
 }
+const typeInput = (id, v) => `<input id="${id}" list="${id}L" value="${esc(v || '')}"><datalist id="${id}L">${DOC_TYPES.map(x => `<option value="${esc(x[0])}">`).join('')}</datalist>`;
 function editModal(d) {
   const o = modal(t('editInfo'), `<div class="fields">
     <div class="field full"><label for="eti">${esc(t('fTitle'))}</label><input id="eti" value="${esc(d.title)}"></div>
     <div class="field"><label for="est">${esc(t('fStatus'))}</label><select id="est">${STATUS.map(s => `<option value="${s}" ${(d.status || 'active') === s ? 'selected' : ''}>${esc(t(s))}</option>`).join('')}</select></div>
     <div class="field"><label for="eyr">${esc(t('fYear'))}</label><input id="eyr" inputmode="numeric" value="${esc(d.year || '')}"></div>
-    <div class="field full"><label for="ean">${esc(t('fAnn'))}</label><input id="ean" value="${esc(d.announced || '')}"></div>
+    <div class="field"><label for="ety">${esc(t('fType'))}</label>${typeInput('ety', d.type)}</div>
+    <div class="field"><label for="ean">${esc(t('fAnn'))}</label><input id="ean" value="${esc(d.announced || '')}"></div>
     <div class="field full"><label for="ecl">${esc(t('fClubs'))}</label><input id="ecl" value="${esc((d.clubs || []).join(', '))}"></div>
+    <div class="field full"><label>${esc(t('fTags'))}</label>${tagPicker(d.tags || [])}</div>
     <div class="field full"><label for="eno">${esc(t('fNote'))}</label><textarea id="eno">${esc(d.note || '')}</textarea></div></div>`,
     `<button class="btn" data-cancel>${esc(t('cancel'))}</button><button class="btn go" id="eok">${esc(t('save'))}</button>`);
+  const cl0 = (d.clubs || []).join(', ');
   $('#eok', o).onclick = () => {
     const v = id => $('#' + id, o).value.trim();
-    Object.assign(d, { title: v('eti') || t('untitled'), status: v('est'), year: parseInt(v('eyr'), 10) || null, announced: v('ean'), clubs: uniq(v('ecl').split(',').map(s => s.trim())), note: v('eno'), updatedAt: new Date().toISOString() });
+    Object.assign(d, { title: v('eti') || t('untitled'), status: v('est'), year: parseInt(v('eyr'), 10) || null, type: v('ety'), announced: v('ean'), clubs: uniq(v('ecl').split(',').map(s => s.trim())), tags: readPicker(o), note: v('eno'), updatedAt: new Date().toISOString() });
+    if (v('ecl') !== cl0) d.clubIds = clubIdsFor(v('ecl'));
     closeModal(); commit([['docs', d]]);
   };
 }
@@ -1076,12 +1187,21 @@ const libP = {};
 function loadLib(name) {
   return libP[name] ||= new Promise((res, rej) => { const el = document.createElement('script'); el.src = LIBS[name]; el.onload = res; el.onerror = () => { delete libP[name]; el.remove(); rej(new Error('lib ' + name)); }; document.head.append(el); });
 }
+// Word, Excel (every sheet) and text files as HTML, for the reader and for printing.
+const HTML_EXT = ['docx', 'xlsx', 'xls', 'csv', 'txt'];
+async function officeHtml(d) {
+  const x = extOf(d);
+  if (x === 'docx') { await loadLib('mammoth'); return (await window.mammoth.convertToHtml({ arrayBuffer: await bytes(d) })).value; }
+  if (x === 'txt') return `<pre style="white-space:pre-wrap">${esc(new TextDecoder().decode(await bytes(d)))}</pre>`;
+  await loadLib('xlsx'); const wb = window.XLSX.read(new Uint8Array(await bytes(d)), { type: 'array' });
+  return wb.SheetNames.map(n => `${wb.SheetNames.length > 1 ? `<h3>${esc(n)}</h3>` : ''}${window.XLSX.utils.sheet_to_html(wb.Sheets[n], { header: '', footer: '' })}`).join('');
+}
 async function renderOffice(cw, d) {
   const x = extOf(d);
   try {
     if (x === 'docx') {
-      await loadLib('mammoth'); const r = await window.mammoth.convertToHtml({ arrayBuffer: await bytes(d) }); if (R.d !== d) return;
-      cw.innerHTML = `<div class="office-view">${r.value}</div>`; return;
+      const h = await officeHtml(d); if (R.d !== d) return;
+      cw.innerHTML = `<div class="office-view">${h}</div>`; return;
     }
     if (['xlsx', 'xls', 'csv'].includes(x)) {
       await loadLib('xlsx'); const wb = window.XLSX.read(new Uint8Array(await bytes(d)), { type: 'array' }); if (R.d !== d) return;
@@ -1091,11 +1211,46 @@ async function renderOffice(cw, d) {
       };
       show(0); return;
     }
-    if (x === 'txt') { const txt = new TextDecoder().decode(await bytes(d)); if (R.d !== d) return; cw.innerHTML = `<pre class="office-view" style="white-space:pre-wrap">${esc(txt)}</pre>`; return; }
+    if (x === 'txt') { const h = await officeHtml(d); if (R.d !== d) return; cw.innerHTML = `<div class="office-view">${h}</div>`; return; }
   } catch (e) { console.error(e); }
   if (R.d !== d) return;
   cw.innerHTML = `<div class="card empty" style="max-width:520px;background:var(--panel);margin-top:24px"><div class="ic blue">${ic('doc')}</div><h3>${esc(d.fileName || d.title)}</h3><p>${esc(t('officeNoPrev'))}</p><button class="btn go" data-cwdl>${ic('down')}${esc(t('dlOrig'))}</button></div>`;
   $('[data-cwdl]', cw).onclick = () => dlOrig(R.k, d);
+}
+
+/* ============ print ============ */
+// Everything goes through one hidden frame, so a whole list prints as one job: PDF pages are drawn as images
+// (works the same in every browser), pictures go in as they are, Word/Excel/text as HTML.
+// Other types (PowerPoint, old .doc) open in Google Drive, which can print them.
+const canPrint = d => isPdf(d) || isImg(d) || HTML_EXT.includes(extOf(d));
+async function printFiles(list) {
+  list = list.filter(d => d && !isLink(d));
+  const ok = list.filter(canPrint), rest = list.filter(d => !canPrint(d));
+  if (rest.length === 1 && !ok.length && !rest[0].blob && FILES.url(rest[0])) { openTab(FILES.url(rest[0])); toast(t('tPrintDrive')); return; }
+  if (rest.length) toast(t('tPrintSkip', { n: rest.length }));
+  if (!ok.length) return;
+  veil(true); mood('work', 99);
+  const urls = [], parts = [], img = blob => { const u = URL.createObjectURL(blob); urls.push(u); return `<img class="pg" alt="" src="${u}">`; };
+  try {
+    for (const [i, d] of ok.entries()) {
+      veil(true, `${t('tWork')} ${i + 1}/${ok.length}`);
+      if (isPdf(d)) { const pdf = await loadPdf(d); for (let p = 1; p <= pdf.numPages; p++) parts.push(img(await pageImg(pdf, p, 'image/jpeg'))); }
+      else if (isImg(d)) parts.push(img(new Blob([await bytes(d)], { type: d.mime })));
+      else parts.push(`<div class="htm">${await officeHtml(d)}</div>`);
+    }
+    const f = document.createElement('iframe'); f.setAttribute('aria-hidden', 'true'); f.style.cssText = 'position:fixed;right:0;bottom:0;width:0;height:0;border:0';
+    f.srcdoc = `<!doctype html><html lang="${lang}"><head><meta charset="utf-8"><title>${esc(ok.length === 1 ? ok[0].title : t('printAll'))}</title>
+      <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Sans+Thai:wght@400;700&display=swap">
+      <style>@page{size:A4;margin:10mm}body{margin:0;font:11pt 'Noto Sans Thai',sans-serif;color:#000}.pg{display:block;max-width:100%;max-height:276mm;margin:0 auto}.pg,.htm{break-after:page}.pg:last-child,.htm:last-child{break-after:auto}
+      table{border-collapse:collapse;font-size:9pt}td,th{border:1px solid #888;padding:2px 6px}.htm img{max-width:100%}</style></head><body>${parts.join('')}</body></html>`;
+    const loaded = new Promise(r => { f.onload = r; }); document.body.append(f); await loaded;
+    const doc = f.contentDocument;
+    await Promise.all([...doc.images].map(i => i.complete ? 0 : new Promise(r => { i.onload = i.onerror = r; })));
+    await doc.fonts?.ready;
+    veil(false); M.mood = null; toast(t('tPrintReady'));
+    f.contentWindow.focus(); f.contentWindow.print();
+    setTimeout(() => { f.remove(); urls.forEach(u => URL.revokeObjectURL(u)); }, 60000);
+  } catch (e) { console.error(e); veil(false); urls.forEach(u => URL.revokeObjectURL(u)); toast(t('tErr')); mood('confused', 8); }
 }
 
 /* ============ reader ============ */
@@ -1115,6 +1270,7 @@ async function openReader(k, id, page = 1) {
 }
 document.addEventListener('keydown', e => {
   if (e.key === 'Escape') { if ($('.pmenu')) return closeMenu(); if ($('.ov.m')) return closeModal(); if (R.d) return closeReader(); }
+  if (R.d && (e.ctrlKey || e.metaKey) && e.key.toLowerCase() === 'p') { e.preventDefault(); printFiles([R.d]); return; }
   if (R.d && !$('.ov.m') && !e.target.closest('input,select,textarea')) { if (e.key === 'ArrowRight') go(R.page + 1); if (e.key === 'ArrowLeft') go(R.page - 1); }
 });
 async function go(n) {
@@ -1139,7 +1295,8 @@ function renderSide() {
   const pages = (d.pages || []).filter(p => p.club);
   const fpath = pathOf(k, d.folder).map(f => f.name).join(' › ') || (k === 'shared' ? t('drive') : t('mine'));
   let h = `<section><div class="qa">
-      <button class="btn go full" data-dl="orig">${ic('down')}${esc(t('dlOrig'))}</button>
+      <button class="btn go" data-dl="orig">${ic('down')}${esc(t('dlOrig'))}</button>
+      <button class="btn go" data-print>${ic('print')}${esc(t('print'))}</button>
       ${k === 'shared' && !d.wrap ? `<a class="btn full" href="${esc(FILES.url(d))}" target="_blank" rel="noopener">${ic('ext')}${esc(t('openTab'))}</a>` : ''}
       ${k === 'shared' && (d.clubIds || []).length ? `<a class="btn full" href="#c-${esc(d.clubIds[0])}" data-goclub>${ic('users')}${esc(t('goClub'))}</a>` : ''}
       ${ofc ? '' : `<button class="btn" data-dl="pagePdf">${esc(pdf ? t('dlPagePdf') : 'PDF')}</button>
@@ -1159,7 +1316,10 @@ function renderSide() {
       <dt>${esc(t('fFile'))}</dt><dd>${esc(d.fileName || '–')}</dd><dt>${esc(t('fAdded'))}</dt><dd>${fmtD(d.createdAt)}</dd>
       ${d.meet ? `<dt>${esc(t('meetOn'))}</dt><dd>${esc(d.meet)}</dd>` : ''}
       ${d.note ? `<dt>${esc(t('fNote'))}</dt><dd>${esc(d.note)}</dd>` : ''}</dl></section>
+    ${k === 'shared' ? `<section><h5>${esc(t('tagsOf'))}</h5><div class="chips">${docTags(d).map(x => tagChip(x)).join('')}</div></section>` : ''}
     ${(d.committee || []).length ? `<section><h5>${esc(t('committee'))}</h5><ol style="margin:0;padding-left:20px;display:grid;gap:3px;font-size:14px">${d.committee.map(x => `<li>${esc(x)}</li>`).join('')}</ol></section>` : ''}`;
+  const rel = k === 'shared' ? relDocs(d) : [];
+  if (rel.length) h += `<section><h5>${esc(t('relDocs'))}</h5><div class="rows">${rel.map(x => `<button class="row" data-row="${esc(x.id)}"><span class="th">${FILES.thumb(x) ? `<img alt="" loading="lazy" src="${esc(FILES.thumb(x))}">` : ''}</span><span style="min-width:0"><b>${esc(x.title)}</b><small>${esc([x.type, x.year].filter(Boolean).join(' · '))}</small></span><span></span></button>`).join('')}</div></section>`;
   if (pages.length > 1) h += `<section><h5>${esc(t('clubIdx'))} · ${pages.length}</h5><div class="idx">${pages.map(p => `<button data-p="${p.p}" aria-current="${p.p === R.page}"><span class="p num">${p.p}</span><span>${esc(short(p.club))}</span></button>`).join('')}</div></section>`;
   if (ed) h += `<section><div class="qa">${k === 'shared' ? `<button class="btn" data-redit>${ic('edit')}${esc(t('editInfo'))}</button>` : `<button class="btn" data-rren>${ic('edit')}${esc(t('renameFile'))}</button>`}<button class="btn" data-rmove>${ic('move')}${esc(t('moveTo'))}</button><button class="btn bad full" data-rdel>${ic('trash')}${esc(k === 'shared' ? t('toTrash') : t('del'))}</button></div></section>`;
   const rs = $('#rs'); rs.innerHTML = h;
@@ -1167,6 +1327,7 @@ function renderSide() {
     if (e.target.closest('[data-goclub]')) { closeReader(); return; }
     const b = e.target.closest('button'); if (!b) return;
     if (b.dataset.dl) return dlOne(b.dataset.dl);
+    if (b.hasAttribute('data-print')) return printFiles([d]);
     if (b.dataset.p) return go(+b.dataset.p);
     if (b.hasAttribute('data-rstar')) return toggleStar(d.id);
     if (b.hasAttribute('data-rtray')) return toggleTray(src, d.id);
@@ -1227,6 +1388,7 @@ function metaFields(m, key, k) {
   return `<div class="fields"><div class="field full"><label for="${key}ti">${esc(t('fTitle'))}</label><input id="${key}ti" value="${esc(m.title)}"></div>
     <div class="field"><label for="${key}st">${esc(t('fStatus'))}</label><select id="${key}st">${STATUS.map(s => `<option value="${s}" ${(m.status || 'active') === s ? 'selected' : ''}>${esc(t(s))}</option>`).join('')}</select></div>
     <div class="field"><label for="${key}yr">${esc(t('fYear'))}</label><input id="${key}yr" inputmode="numeric" value="${esc(m.year || '')}"></div>
+    <div class="field full"><label for="${key}ty">${esc(t('fType'))}</label>${typeInput(key + 'ty', (m.clubs || []).length ? 'ใบแต่งตั้ง' : '')}</div>
     <div class="field full"><label for="${key}cl">${esc(t('fClubs'))}</label><input id="${key}cl" value="${esc((m.clubs || []).join(', '))}"></div></div>`;
 }
 function uploadModal(k, fid, initial) {
@@ -1259,7 +1421,7 @@ function uploadModal(k, fid, initial) {
           MY.files.push(rec); await myPut('files', rec);
         } else {
           const up = await API.upload(r.p.file, r.p.thumb);
-          const nd = { id: 'd' + rid(), title: v('ti') || t('untitled'), folder: target, status: v('st') || 'active', year: parseInt(v('yr'), 10) || null, clubs: uniq(v('cl').split(',').map(x => x.trim())), clubIds: clubIdsFor(v('cl')), announced: r.p.meta.announced || '', note: '', fileUrl: up.fileUrl, ...(up.driveId ? { driveId: up.driveId } : {}), thumbUrl: up.thumbUrl || '', fileName: r.p.file.name, mime: r.p.mime, sizeBytes: up.sizeBytes ?? r.p.file.size, pageCount: r.p.pageCount, pages: r.p.meta.pages || [], trashed: false, createdAt: now, updatedAt: now };
+          const nd = { id: 'd' + rid(), title: v('ti') || t('untitled'), folder: target, status: v('st') || 'active', year: parseInt(v('yr'), 10) || null, type: v('ty'), clubs: uniq(v('cl').split(',').map(x => x.trim())), clubIds: clubIdsFor(v('cl')), announced: r.p.meta.announced || '', note: '', fileUrl: up.fileUrl, ...(up.driveId ? { driveId: up.driveId } : {}), thumbUrl: up.thumbUrl || '', fileName: r.p.file.name, mime: r.p.mime, sizeBytes: up.sizeBytes ?? r.p.file.size, pageCount: r.p.pageCount, pages: r.p.meta.pages || [], trashed: false, createdAt: now, updatedAt: now };
           DATA.docs.push(nd); r.newDoc = nd;
         }
         r.done = true; added++; s.className = 'us ok'; s.textContent = t('done');
