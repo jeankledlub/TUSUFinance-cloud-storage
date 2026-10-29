@@ -12,3 +12,7 @@ node_modules/
 
 # backups downloaded from the site (personal data)
 tusu-backup-*.json
+
+# from the shared repo
+.DS_Store
+firebase-debug.log
