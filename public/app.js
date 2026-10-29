@@ -6,24 +6,24 @@ let DATA = { v: 4, folders: [], docs: [], clubs: [] };
 const TX = {
  th: {
   brand: 'คลังเอกสาร อมธ.', brandSub: 'ฝ่ายดาต้า · องค์การนักศึกษา', search: 'ค้นหา', searchPh: 'ค้นหาเอกสาร ชุมนุม หรือชื่อคน…', upload: 'อัปโหลด', mascotName: 'น้องดาต้า', assistant: 'ผู้ช่วยฝ่ายดาต้า',
-  gOverview: 'ภาพรวม', gShared: 'คลังกลาง', gMine: 'ของฉัน', gTools: 'เครื่องมือ', gStaff: 'ฝ่ายดาต้า',
-  home: 'หน้าหลัก', drive: 'คลังกลาง', mine: 'ไฟล์ของฉัน', starred: 'ติดดาว', tools: 'รวม / แปลงไฟล์', look: 'ตั้งค่าหน้าตา', trash: 'ถังขยะ', results: 'ผลการค้นหา', allDocs: 'ทั้งหมด',
+  gOverview: 'ภาพรวม', gShared: 'คลังกลาง', gMine: 'ส่วนตัว', gTools: 'เครื่องมือ', gStaff: 'ฝ่ายดาต้า',
+  home: 'หน้าหลัก', drive: 'คลังกลาง', mine: 'ไฟล์ส่วนตัว', starred: 'ติดดาว', tools: 'ตะกร้าไฟล์', look: 'ตั้งค่าหน้าตา', trash: 'ถังขยะ', results: 'ผลการค้นหา', allDocs: 'ทั้งหมด',
   roleStaff: 'ฝ่ายดาต้า · แก้ไขได้', roleView: 'ผู้เยี่ยมชม · ดูอย่างเดียว',
   sDocs: 'เอกสารในคลังกลาง', sDocsSub: 'รวม {n} หน้า', sFolders: 'โฟลเดอร์', sFoldersSub: 'ในคลังกลาง', sMine: 'ไฟล์ของฉัน', sMineSub: 'เก็บในเครื่องนี้', sTray: 'รอรวมไฟล์', sTraySub: 'อยู่ในรายการ',
   recent: 'เพิ่มล่าสุด', topFolders: 'โฟลเดอร์หลัก', items: '{n} รายการ', openDrive: 'เปิดคลังกลาง', openMine: 'ไฟล์ของฉัน', openTools: 'รวม / แปลงไฟล์',
   folders: 'โฟลเดอร์', files: 'ไฟล์', newFolder: 'โฟลเดอร์ใหม่', newBtn: 'ใหม่', uploadHere: 'อัปโหลดไฟล์', sortName: 'ชื่อ ก–ฮ', sortNew: 'ล่าสุด', cards: 'การ์ด', list: 'รายการ',
   emptyFolder: 'โฟลเดอร์นี้ยังว่าง', emptyFolderEdit: 'ลากไฟล์จากเครื่องมาวางตรงนี้ หรือกด ใหม่ เพื่อสร้างโฟลเดอร์และอัปโหลด', emptyFolderView: 'ยังไม่มีไฟล์ในโฟลเดอร์นี้',
   dropHint: 'ลากไฟล์มาวาง หรือลากการ์ดไปวางบนโฟลเดอร์เพื่อย้าย',
-  mineNote: 'ไฟล์ในหน้านี้เก็บไว้ในเบราว์เซอร์ของเครื่องนี้เท่านั้น คนอื่นมองไม่เห็น ถ้าล้างประวัติเบราว์เซอร์หรือเปลี่ยนเครื่อง ไฟล์จะหายไป', mineTemp: 'เบราว์เซอร์นี้ไม่อนุญาตให้เก็บไฟล์ ไฟล์จะหายเมื่อปิดหน้าเว็บ',
+  mineNote: 'ไฟล์ส่วนตัวเห็นแค่คุณคนเดียว เก็บในเบราว์เซอร์ของเครื่องนี้ ไม่ขึ้นคลังกลาง ถ้าล้างประวัติเบราว์เซอร์หรือเปลี่ยนเครื่องไฟล์จะหาย อยากให้ทีมเห็นให้อัปโหลดเข้าคลังกลางแทน', mineTemp: 'เบราว์เซอร์นี้ไม่อนุญาตให้เก็บไฟล์ ไฟล์จะหายเมื่อปิดหน้าเว็บ',
   active: 'ใช้งาน', draft: 'ดราฟต์', archived: 'เก็บถาวร', pages: 'หน้า', clubs: 'ชุมนุม', foundIn: 'พบในหน้า',
-  open: 'เปิด', rename: 'เปลี่ยนชื่อ / สี', renameFile: 'เปลี่ยนชื่อ', moveTo: 'ย้ายไปที่…', del: 'ลบ', delFolder: 'ลบโฟลเดอร์', delFolderQ: 'ลบโฟลเดอร์ “{n}”? ไฟล์และโฟลเดอร์ย่อยข้างในจะย้ายขึ้นไปอยู่ชั้นบน', delFileQ: 'ลบ “{n}” ออกจากไฟล์ของฉัน? กู้คืนไม่ได้', toTrash: 'ย้ายลงถังขยะ', editInfo: 'แก้ไขข้อมูล', dlOrig: 'ดาวน์โหลด', openTab: 'เปิดในแท็บใหม่', addTray: 'เพิ่มเข้ารวมไฟล์', inTray: 'อยู่ในรายการแล้ว', star: 'ติดดาว', unstar: 'เลิกติดดาว',
+  open: 'เปิด', rename: 'เปลี่ยนชื่อ / สี', renameFile: 'เปลี่ยนชื่อ', moveTo: 'ย้ายไปที่…', del: 'ลบ', delFolder: 'ลบโฟลเดอร์', delFolderQ: 'ลบโฟลเดอร์ “{n}”? ไฟล์และโฟลเดอร์ย่อยข้างในจะย้ายขึ้นไปอยู่ชั้นบน', delFileQ: 'ลบ “{n}” ออกจากไฟล์ของฉัน? กู้คืนไม่ได้', toTrash: 'ย้ายลงถังขยะ', editInfo: 'แก้ไขข้อมูล', dlOrig: 'ดาวน์โหลด', openTab: 'เปิดในแท็บใหม่', addTray: 'ใส่ตะกร้า (รวม/พิมพ์/แปลง)', inTray: 'อยู่ในตะกร้าแล้ว', star: 'ติดดาว', unstar: 'เลิกติดดาว',
   moveTitle: 'ย้ายไปที่', moveHere: 'ย้ายมาที่นี่', root: 'ชั้นบนสุด',
   folderName: 'ชื่อโฟลเดอร์', color: 'สี', save: 'บันทึก', cancel: 'ยกเลิก', close: 'ปิด', yes: 'ยืนยันลบ', create: 'สร้าง',
   info: 'ข้อมูลเอกสาร', clubIdx: 'สารบัญชุมนุม', dl: 'ดาวน์โหลด', dlPagePdf: 'เฉพาะหน้านี้ (PDF)', dlPagePng: 'หน้านี้เป็น PNG', dlPageJpg: 'หน้านี้เป็น JPG', dlAllPng: 'ทุกหน้าเป็น PNG (ZIP)', dlAllJpg: 'ทุกหน้าเป็น JPG (ZIP)',
-  fFolder: 'โฟลเดอร์', fYear: 'ปีการศึกษา', fStatus: 'สถานะ', fAnn: 'วันที่ประกาศ', fPages: 'จำนวนหน้า', fSize: 'ขนาด', fFile: 'ชื่อไฟล์', fAdded: 'เพิ่มเมื่อ', fNote: 'หมายเหตุ', fTitle: 'ชื่อเอกสาร', fClubs: 'ชุมนุม (คั่นด้วย ,)',
+  fFolder: 'โฟลเดอร์', fYear: 'ปีการศึกษา', fStatus: 'สถานะ', fAnn: 'วันที่ประกาศ', fPages: 'จำนวนหน้า', fSize: 'ขนาด', fFile: 'ชื่อไฟล์', fAdded: 'เพิ่มเมื่อ', fNote: 'หมายเหตุ', fTitle: 'ชื่อเอกสาร', fClubs: 'ชุมนุมที่เกี่ยวข้อง',
   prev: 'ก่อนหน้า', next: 'ถัดไป', of: 'จาก',
-  upShared: 'อัปโหลดเข้าคลังกลาง', upMine: 'อัปโหลดไฟล์ของฉัน', dropHere: 'ลากไฟล์มาวางตรงนี้', or: 'หรือ', pick: 'เลือกไฟล์', upNote: 'PDF รูปภาพ Word Excel PowerPoint ไม่เกิน 20 MB ต่อไฟล์ · ไฟล์ PDF ใบแต่งตั้ง ระบบจะกรอกชื่อชุมนุมและปีให้เอง', upGo: 'อัปโหลด', reading: 'กำลังอ่านไฟล์…', ready: 'พร้อมอัปโหลด', uploading: 'กำลังอัปโหลด…', done: 'เสร็จแล้ว', failed: 'ไม่สำเร็จ', into: 'อัปโหลดลงใน',
-  toolsHero: 'รวม / แปลงไฟล์', toolsP: 'เลือกไฟล์จากคลังกลาง ไฟล์ของฉัน หรือจากเครื่อง มาเรียงลำดับ แล้วรวมเป็น PDF ไฟล์เดียวหรือแปลงเป็นรูป', tray: 'ไฟล์ที่เลือก', trayEmpty: 'ยังไม่ได้เลือกไฟล์', trayEmptyP: 'กดปุ่ม + ที่การ์ดเอกสาร หรือเพิ่มไฟล์จากเครื่องด้านล่าง', fromPc: 'เพิ่มไฟล์จากเครื่อง', clearAll: 'ล้างทั้งหมด',
+  upShared: 'อัปโหลดเข้าคลังกลาง', upMine: 'เพิ่มไฟล์ส่วนตัว', dropHere: 'ลากไฟล์มาวางตรงนี้', or: 'หรือ', pick: 'เลือกไฟล์', upNote: 'PDF รูป Word Excel PowerPoint ไม่เกิน 20 MB ต่อไฟล์', upGo: 'อัปโหลด', reading: 'กำลังอ่านไฟล์…', ready: 'พร้อมอัปโหลด', uploading: 'กำลังอัปโหลด…', done: 'เสร็จแล้ว', failed: 'ไม่สำเร็จ', into: 'จะเก็บใน',
+  toolsHero: 'ตะกร้าไฟล์', toolsP: 'กดปุ่ม + ที่มุมการ์ดเอกสารเพื่อใส่ไฟล์ลงตะกร้า แล้วมาเลือกที่นี่ว่าจะรวมเป็น PDF เดียว พิมพ์ แปลงเป็นรูป หรือโหลดเป็น ZIP', tray: 'ไฟล์ในตะกร้า', trayEmpty: 'ตะกร้ายังว่าง', trayEmptyP: 'กดปุ่ม + ที่มุมการ์ดเอกสาร ไฟล์จะมาอยู่ตรงนี้ หรือเพิ่มไฟล์จากคอมด้านล่าง', fromPc: 'เพิ่มไฟล์จากคอม', clearAll: 'ล้างทั้งหมด',
   tMerge: 'รวมเป็น PDF ไฟล์เดียว', tMergeP: 'เรียงตามลำดับในรายการ รูปภาพจะวางเป็นหน้า A4', doMerge: 'รวมและดาวน์โหลด', tImg: 'แปลง PDF เป็นรูป', tImgP: 'ทุกหน้าของทุกไฟล์ในรายการ ได้เป็น ZIP', toPng: 'เป็น PNG', toJpg: 'เป็น JPG', tZip: 'ดาวน์โหลดรวดเดียว', tZipP: 'ไฟล์ต้นฉบับทั้งหมดใน ZIP เดียว', doZip: 'โหลดเป็น ZIP', local: 'จากเครื่อง', tBak: 'สำรองข้อมูล', tBakP: 'โฟลเดอร์ เอกสาร ชมรม ปก และรูปผู้ช่วยทั้งหมด เป็นไฟล์ JSON ไฟล์ PDF อยู่ใน Google Drive อยู่แล้ว', tBakWarn: 'ไฟล์มีข้อมูลส่วนบุคคล เก็บไว้ในที่ปลอดภัย ห้ามอัปโหลดขึ้น GitHub', doBak: 'ดาวน์โหลดไฟล์สำรอง',
   starHero: 'ติดดาว', starP: 'เอกสารในคลังกลางที่คุณกดดาวไว้ จำไว้ในเครื่องนี้', starEmpty: 'ยังไม่มีเอกสารติดดาว', starEmptyP: 'กดรูปดาวที่การ์ดเอกสาร แล้วจะมารวมอยู่ที่นี่',
   trashHero: 'ถังขยะ', trashP: 'เอกสารที่ลบจากคลังกลาง กู้คืนได้ หรือลบถาวรเพื่อคืนพื้นที่', trashEmpty: 'ถังขยะว่าง', restore: 'กู้คืน', purge: 'ลบถาวร', purgeQ: 'ลบ “{n}” ถาวร? กู้คืนไม่ได้อีก',
@@ -39,14 +39,14 @@ const TX = {
   chAlso: 'มีชื่อนี้ที่ศูนย์อื่นด้วย', chEx: ['ใครเป็นประธานชุมนุมฟุตบอล', 'สายกีฬามีกี่ชุมนุม', 'ชุมนุมไหนยังไม่มีใบแต่งตั้ง', 'กลุ่มอิสระลำปางมีอะไรบ้าง'], tPhotoBad: 'ใช้รูปนี้ไม่ได้ ลองไฟล์ JPG หรือ PNG ที่เล็กลง', customColor: 'เลือกสีเอง',
   palBlue: 'น้ำเงิน', palTu: 'ธรรมศาสตร์ แดง-เหลือง', palMint: 'มิ้นต์ ฟ้าอ่อน ขาว', palPink: 'ชมพู ฟ้า', light: 'สว่าง', dark: 'มืด', system: 'ตามเครื่อง',
   searchHero: 'ผลการค้นหา “{q}”', searchSub: '{a} ในคลังกลาง · {b} ในไฟล์ของฉัน', typeToSearch: 'พิมพ์คำค้นที่ช่องด้านบน', notFound: 'ไม่พบสิ่งที่ค้นหา', notFoundP: 'ลองค้นด้วยคำที่สั้นลง เช่น ชื่อชุมนุมหรือชื่อจริงอย่างเดียว',
-  tDl: 'ส่งไฟล์ให้ดาวน์โหลดแล้ว', tDecl: 'ยกเลิกการดาวน์โหลด', tNoDl: 'ดาวน์โหลดผ่านปุ่มนี้ไม่ได้ในมุมมองนี้ ลองกด เปิดในแท็บใหม่', tSaved: 'บันทึกแล้ว', tSaving: 'กำลังบันทึก… หน้าเว็บจะรีโหลดเอง', tErr: 'ทำไม่สำเร็จ ลองใหม่อีกครั้ง', tWork: 'กำลังเตรียมไฟล์…', tTrashed: 'ย้ายลงถังขยะแล้ว', tRestored: 'กู้คืนแล้ว', tPurged: 'ลบถาวรแล้ว', tAdded: 'เพิ่มเข้ารายการรวมไฟล์แล้ว', tQuota: 'พื้นที่เก็บไฟล์เต็ม', tBig: 'ไฟล์ใหญ่เกินกำหนด', tType: 'ไม่รองรับไฟล์ประเภทนี้', tMoved: 'ย้ายแล้ว', tConflict: 'มีคนแก้ไขพร้อมกัน หน้าเว็บโหลดเวอร์ชันล่าสุดให้แล้ว ลองทำอีกครั้ง', tReadOnly: 'บัญชีนี้แก้ไขคลังกลางไม่ได้', tTooLarge: 'ข้อมูลใหญ่เกินกำหนด',
+  tDl: 'ส่งไฟล์ให้ดาวน์โหลดแล้ว', tDecl: 'ยกเลิกการดาวน์โหลด', tNoDl: 'ดาวน์โหลดผ่านปุ่มนี้ไม่ได้ในมุมมองนี้ ลองกด เปิดในแท็บใหม่', tSaved: 'บันทึกแล้ว', tSaving: 'กำลังบันทึก… หน้าเว็บจะรีโหลดเอง', tErr: 'ทำไม่สำเร็จ ลองใหม่อีกครั้ง', tWork: 'กำลังเตรียมไฟล์…', tTrashed: 'ย้ายลงถังขยะแล้ว', tRestored: 'กู้คืนแล้ว', tPurged: 'ลบถาวรแล้ว', tAdded: 'ใส่ตะกร้าแล้ว ไปที่เมนู “ตะกร้าไฟล์” เพื่อรวมหรือพิมพ์', tQuota: 'พื้นที่เก็บไฟล์เต็ม', tBig: 'ไฟล์ใหญ่เกินกำหนด', tType: 'ไม่รองรับไฟล์ประเภทนี้', tMoved: 'ย้ายแล้ว', tConflict: 'มีคนแก้ไขพร้อมกัน หน้าเว็บโหลดเวอร์ชันล่าสุดให้แล้ว ลองทำอีกครั้ง', tReadOnly: 'บัญชีนี้แก้ไขคลังกลางไม่ได้', tTooLarge: 'ข้อมูลใหญ่เกินกำหนด',
   you: 'คุณ', goBack: 'ย้อนกลับ', goFwd: 'ไปข้างหน้า', lookShort: 'ธีม', gClubs: 'ชุมนุม', clubsNav: 'ชุมนุมและกลุ่มอิสระ', clubsHero: 'ชุมนุมและกลุ่มอิสระ', clubsP: 'ข้อมูลจากชีต “ชุมนุม และ กลุ่มอิสระ มธ. 2569” กดที่ชื่อเพื่อดูรายละเอียด ใบแต่งตั้ง และลิงก์เอกสาร',
   fCampus: 'ศูนย์', fKind: 'ประเภท', fCat: 'สาย', fStat: 'สถานภาพ', all: 'ทั้งหมด', rangsit: 'รังสิต', tpc: 'ท่าพระจันทร์', lampang: 'ลำปาง', pattaya: 'พัทยา', kClub: 'ชุมนุม', kIndep: 'กลุ่มอิสระ', findClub: 'พิมพ์ชื่อชุมนุม…', nClubs: '{n} รายการ', noClub: 'ไม่พบชุมนุมตามเงื่อนไขนี้', backClubs: 'รายชื่อชุมนุมทั้งหมด',
   apTitle: 'ใบแต่งตั้ง ปีการศึกษา 2569', apNone: 'ยังไม่มีใบแต่งตั้งปี 2569 ในคลัง', committee: 'คณะกรรมการ', meetOn: 'ประชุมใหญ่', annOn: 'ประกาศ', openDoc: 'เปิดดูเอกสาร', docsCheck: 'สถานะเอกสาร', infoClub: 'ข้อมูลทั่วไป', advisor: 'ที่ปรึกษา', contact: 'ผู้ประสานงาน', linksT: 'ลิงก์เอกสาร', noLinks: 'ยังไม่มีลิงก์', clubFiles: 'ไฟล์อื่นของชุมนุมนี้',
   addLink: 'เพิ่มลิงก์', newLink: 'ลิงก์ใหม่', linkUrl: 'ลิงก์ (URL)', linkTitle: 'ชื่อที่แสดง', linkBad: 'ลิงก์ต้องขึ้นต้นด้วย https://', openLink: 'เปิดลิงก์', founded: 'วันจดจัดตั้ง', email: 'อีเมลกลุ่ม', delLink: 'ลบลิงก์', link: 'ลิงก์',
   ck_annTU: 'ประกาศแต่งตั้ง มธ.', ck_signed: 'ลงนามแล้ว', ck_sent: 'ส่งเอกสาร', ck_report: 'รายงานผลการดำเนินกิจกรรม', ck_meeting: 'รายงานการประชุมใหญ่', ck_appoint: 'ประกาศแต่งตั้งคณะกรรมการ', ck_will: 'หนังสือแสดงเจตจำนง', ck_grade: 'ใบแสดงผลการเรียน', ck_budget: 'เอกสารปีงบประมาณ 2569', ck_review: 'ผลการพิจารณา', ck_web: 'ลงเว็บไซต์', ck_renew: 'แบบต่ออายุ (กอ.02)',
   sClubs: 'ชุมนุม', sClubsSub: '{n} มีสถานภาพ', sIndep: 'กลุ่มอิสระ', sIndepSub: '{n} มีสถานภาพ', sAppoint: 'ใบแต่งตั้ง 2569', sAppointSub: 'แยกไฟล์ละชุมนุม', sLinks: 'ลิงก์', sLinksSub: 'Sheets · Docs · Drive',
-  homeH: 'หาเอกสารชุมนุมได้ในที่เดียว', homeP: 'พิมพ์ชื่อชุมนุม ชื่อคน หรือชื่อเอกสาร ระบบหาให้ถึงในไฟล์ PDF', scClubs: 'ชุมนุม / กลุ่มอิสระ', scClubsP: 'ข้อมูล ใบแต่งตั้ง ลิงก์', scAppoint: 'ใบแต่งตั้ง 2569', scAppointP: 'เรียงตามสาย', scLinks: 'ลิงก์ที่ใช้บ่อย', scLinksP: 'ชีตและเอกสารกลาง', scMine: 'ไฟล์ของฉัน', scMineP: 'เก็บในเครื่องนี้', scTools: 'รวม / แปลงไฟล์', scToolsP: 'PDF ↔ รูป รวมไฟล์',
+  homeH: 'หาเอกสารชุมนุมได้ในที่เดียว', homeP: 'พิมพ์ชื่อชุมนุม ชื่อคน หรือชื่อเอกสาร ระบบหาให้ถึงในไฟล์ PDF', scClubs: 'ชุมนุม / กลุ่มอิสระ', scClubsP: 'ข้อมูล ใบแต่งตั้ง ลิงก์', scAppoint: 'ใบแต่งตั้ง 2569', scAppointP: 'เรียงตามสาย', scLinks: 'ลิงก์ที่ใช้บ่อย', scLinksP: 'ชีตและเอกสารกลาง', scMine: 'ไฟล์ส่วนตัว', scMineP: 'เห็นคนเดียว เก็บในเครื่องนี้', scTools: 'ตะกร้าไฟล์', scToolsP: 'รวม พิมพ์ แปลงไฟล์',
   clubsFound: 'ชุมนุมที่ตรงกัน', mascotT: 'ตัวช่วยมุมจอ', goClub: 'ไปหน้าชุมนุม', officeNoPrev: 'ไฟล์ประเภทนี้ดูตัวอย่างในเว็บไม่ได้ กดดาวน์โหลดเพื่อเปิดในเครื่อง', officeOnly: 'รวมไฟล์และแปลงเป็นรูปได้เฉพาะ PDF กับรูปภาพ ไฟล์อื่นจะข้ามไป', phone: 'โทร', shortcuts: 'ทางลัด', recentShort: 'เพิ่มล่าสุด',
   copyLink: 'คัดลอกลิงก์', tCopied: 'คัดลอกแล้ว', signedFull: 'ลงนามครบ', signedPartial: 'ลงนามไม่ครบ', otherDocs: 'สถานะเอกสารอื่น', fromSheet: 'จากชีตชุมนุม เป็นข้อมูลเก่า อาจยังไม่อัปเดต สถานะใบแต่งตั้งดูจากไฟล์ด้านบนเท่านั้น', fAp: 'ใบแต่งตั้ง', apHas: 'มีแล้ว', apNo: 'ยังไม่มี', apWait: 'รอลงนาม', fSigned: 'ลายเซ็น', tDemoSaved: 'โหมดตัวอย่าง: เปลี่ยนบนจอแล้ว แต่ยังไม่บันทึกจริง', tLoadErr: 'โหลดข้อมูลไม่สำเร็จ ลองรีเฟรชหน้าเว็บ', roleDemo: 'โหมดตัวอย่าง · ลองแก้ได้ ไม่บันทึกจริง',
   untitled: 'เอกสารไม่มีชื่อ', appoint: 'ใบแต่งตั้ง',
@@ -55,29 +55,42 @@ const TX = {
   tagSel: 'กำลังดู', tagRel: 'หมวดที่เกี่ยวข้อง', tagRelP: 'กดเพื่อเจาะให้แคบลง', tagAll: 'ดูทุกหมวด', tagNone: 'ไม่มีรายการในหมวดนี้', nItems: '{a} เอกสาร · {b} ชุมนุม',
   relDocs: 'เอกสารที่เกี่ยวข้อง', relClubs: 'ชุมนุมที่เกี่ยวข้อง', tagsOf: 'หมวดหมู่',
   print: 'พิมพ์', printAll: 'พิมพ์ทั้งหมด', tPrint: 'พิมพ์ไฟล์', tPrintP: 'ทุกไฟล์ในรายการ ส่งไปเครื่องพิมพ์ในครั้งเดียว', tPrintDrive: 'ไฟล์ประเภทนี้พิมพ์จากเว็บไม่ได้ เปิดใน Google Drive ให้แล้ว กด Ctrl+P ที่นั่น', tPrintSkip: 'ข้าม {n} ไฟล์ที่พิมพ์จากเว็บไม่ได้ (เช่น PowerPoint) ดาวน์โหลดไปพิมพ์ในเครื่องแทน', tPrintReady: 'กำลังเปิดหน้าต่างพิมพ์…',
+  upSteps: ['เลือกไฟล์', 'ตรวจชื่อ', 'กดอัปโหลด'], change: 'เปลี่ยน', autoFilled: 'ระบบกรอกให้แล้ว:', autoNone: 'ตรวจชื่อไฟล์ให้เรียบร้อย แล้วกดอัปโหลดได้เลย', moreDetail: 'แก้รายละเอียดเพิ่มเติม', pickClub: 'พิมพ์ชื่อชุมนุมแล้วเลือกจากรายการ', upMineP: 'ไฟล์ส่วนตัวเห็นแค่คุณคนเดียว เก็บในเครื่องนี้',
+  help: 'วิธีใช้', helpHero: 'วิธีใช้คลังเอกสาร', helpP: 'สรุปสั้นๆ ว่าแต่ละเมนูใช้ทำอะไร กดหัวข้อเพื่อไปที่หน้านั้นได้เลย', helpGo: 'ไปที่หน้านี้', helpFirst: 'ใช้ครั้งแรก? ดูวิธีใช้แบบสั้นๆ 1 นาที', helpOpen: 'ดูวิธีใช้',
+  helpItems: [
+    ['search', 'ค้นหา', 'หาไฟล์ ชุมนุม หรือชื่อคน', ['พิมพ์ในช่องค้นหาด้านบน', 'ใส่ชื่อชุมนุม ชื่อคน หรือปีก็ได้', 'กดผลลัพธ์เพื่อเปิดดู'], 'home'],
+    ['doc', 'เปิดดู ดาวน์โหลด พิมพ์', 'ดูเอกสารในเว็บได้เลย ไม่ต้องโหลดก่อน', ['กดที่การ์ดเอกสาร', 'ด้านขวามีปุ่ม “ดาวน์โหลด” และ “พิมพ์”', 'ตอนเปิดไฟล์อยู่ กด Ctrl+P ก็พิมพ์ได้'], 'drive'],
+    ['up', 'อัปโหลดเข้าคลังกลาง', 'สำหรับฝ่ายดาต้า ไฟล์จะเข้า Google Drive และทุกคนในทีมเห็น', ['เข้าโฟลเดอร์ที่จะเก็บ แล้วกดปุ่ม “อัปโหลด” มุมขวาบน', 'ลากไฟล์มาวาง หรือกด “เลือกไฟล์”', 'ตรวจชื่อ (ใบแต่งตั้งระบบกรอกปีและชุมนุมให้เอง)', 'กด “อัปโหลด” เสร็จแล้ว'], 'drive'],
+    ['layers', 'ตะกร้าไฟล์: รวม พิมพ์ แปลง', 'ใช้ตอนอยากรวมหลายไฟล์เป็น PDF เดียว พิมพ์ทีเดียวหลายไฟล์ หรือแปลง PDF เป็นรูป', ['กดปุ่ม + ที่มุมการ์ดเอกสาร เพื่อใส่ตะกร้า', 'เปิดเมนู “ตะกร้าไฟล์”', 'เรียงลำดับด้วยปุ่มลูกศร', 'เลือก รวมเป็น PDF / พิมพ์ทั้งหมด / แปลงเป็นรูป / ZIP'], 'tools'],
+    ['user', 'ไฟล์ส่วนตัว ต่างจากคลังกลางยังไง', 'คลังกลาง = ทุกคนในทีมเห็น เก็บใน Google Drive · ไฟล์ส่วนตัว = เห็นคนเดียว เก็บในเครื่องนี้', ['ใช้เก็บไฟล์ร่างหรือไฟล์ชั่วคราว', 'ล้างเบราว์เซอร์หรือเปลี่ยนเครื่องแล้วไฟล์ส่วนตัวจะหาย', 'อยากให้ทีมเห็น ให้อัปโหลดเข้าคลังกลาง'], 'mine'],
+    ['tag', 'หมวดหมู่', 'ดูเอกสารและชุมนุมที่อยู่หมวดเดียวกัน', ['เปิดเมนู “หมวดหมู่”', 'กดหมวดที่สนใจ เช่น ดนตรี', 'กดหมวดที่เกี่ยวข้องต่อเพื่อเจาะให้แคบลง'], 'tags'],
+    ['users', 'ข้อมูลชุมนุม', 'ใบแต่งตั้ง กรรมการ ลิงก์เอกสาร และสถานะของแต่ละชุมนุม', ['เปิดเมนู “ชุมนุมและกลุ่มอิสระ”', 'กรองตามวิทยาเขต สาย หรือสถานภาพ', 'กดชื่อชุมนุมเพื่อดูรายละเอียด'], 'clubs'],
+    ['star', 'ติดดาว', 'เก็บเอกสารที่ใช้บ่อยไว้หาง่าย', ['กดรูปดาวที่การ์ดเอกสาร', 'เอกสารจะไปรวมที่เมนู “ติดดาว”'], 'starred'],
+    ['chat', 'ถามน้อง', 'ถามข้อมูลในคลังเป็นประโยคธรรมดา', ['กดปุ่ม “ถามน้อง” มุมขวาบน', 'ลองถาม เช่น “ชุมนุมไหนยังไม่มีใบแต่งตั้ง”'], '']
+  ],
   say: ['มีอะไรให้ช่วยไหม', 'ตอนนี้คลังกลางมี {n} เอกสาร ใน {f} โฟลเดอร์', 'พิมพ์ชื่อชุมนุมหรือชื่อคนในช่องค้นหาได้เลย เจอถึงในหน้าไหนของไฟล์', 'ลากการ์ดไฟล์ไปวางบนโฟลเดอร์เพื่อย้ายได้นะ', 'กดปุ่ม + ที่การ์ด แล้วไปหน้ารวม/แปลงไฟล์ เพื่อรวมเป็น PDF ไฟล์เดียว', 'ไฟล์ของฉันเก็บไว้ในเครื่องนี้ ไม่มีใครเห็นนอกจากคุณ'],
   sayFound: 'เจอ {n} รายการ', sayNone: 'อืม… หาไม่เจอ ลองคำที่สั้นลงดูนะ', sayDone: 'เรียบร้อย!', sayWork: 'กำลังจัดการให้อยู่นะ…', saySaved: 'บันทึกเรียบร้อย ขอบคุณที่ช่วยจัดคลังนะ', sayMoved: 'ย้ายให้แล้ว', sayHi: 'สวัสดี! เรียกน้องได้ทุกเมื่อ'
  },
  en: {
   brand: 'SU Archive', brandSub: 'Data team · Student Union', search: 'Search', searchPh: 'Search documents, clubs or people…', upload: 'Upload', mascotName: 'Data-chan', assistant: 'Data team assistant',
-  gOverview: 'Overview', gShared: 'Shared drive', gMine: 'Mine', gTools: 'Tools', gStaff: 'Data team',
-  home: 'Home', drive: 'Shared drive', mine: 'My files', starred: 'Starred', tools: 'Merge / convert', look: 'Appearance', trash: 'Trash', results: 'Search results', allDocs: 'All',
+  gOverview: 'Overview', gShared: 'Shared drive', gMine: 'Private', gTools: 'Tools', gStaff: 'Data team',
+  home: 'Home', drive: 'Shared drive', mine: 'Private files', starred: 'Starred', tools: 'File basket', look: 'Appearance', trash: 'Trash', results: 'Search results', allDocs: 'All',
   roleStaff: 'Data team · can edit', roleView: 'Visitor · view only',
   sDocs: 'Shared documents', sDocsSub: '{n} pages in total', sFolders: 'Folders', sFoldersSub: 'In the shared drive', sMine: 'My files', sMineSub: 'Saved on this device', sTray: 'To merge', sTraySub: 'In the list',
   recent: 'Recently added', topFolders: 'Main folders', items: '{n} items', openDrive: 'Open shared drive', openMine: 'My files', openTools: 'Merge / convert',
   folders: 'Folders', files: 'Files', newFolder: 'New folder', newBtn: 'New', uploadHere: 'Upload files', sortName: 'Name A–Z', sortNew: 'Newest', cards: 'Cards', list: 'List',
   emptyFolder: 'This folder is empty', emptyFolderEdit: 'Drop files here, or press New to add a folder or upload.', emptyFolderView: 'No files in this folder yet.',
   dropHint: 'Drop files to upload, or drag a card onto a folder to move it',
-  mineNote: 'Files on this page are saved in this browser only. Nobody else can see them. Clearing browser data or switching devices removes them.', mineTemp: 'This browser does not allow saving files. They disappear when you close the page.',
+  mineNote: 'Private files are only visible to you and live in this browser, not the shared drive. Clearing browser data or switching devices removes them. To share with the team, upload to the shared drive instead.', mineTemp: 'This browser does not allow saving files. They disappear when you close the page.',
   active: 'Active', draft: 'Draft', archived: 'Archived', pages: 'pages', clubs: 'clubs', foundIn: 'Found on page',
-  open: 'Open', rename: 'Rename / color', renameFile: 'Rename', moveTo: 'Move to…', del: 'Delete', delFolder: 'Delete folder', delFolderQ: 'Delete folder “{n}”? Its files and subfolders move up one level.', delFileQ: 'Delete “{n}” from my files? This cannot be undone.', toTrash: 'Move to trash', editInfo: 'Edit details', dlOrig: 'Download', openTab: 'Open in new tab', addTray: 'Add to merge list', inTray: 'In the list', star: 'Star', unstar: 'Unstar',
+  open: 'Open', rename: 'Rename / color', renameFile: 'Rename', moveTo: 'Move to…', del: 'Delete', delFolder: 'Delete folder', delFolderQ: 'Delete folder “{n}”? Its files and subfolders move up one level.', delFileQ: 'Delete “{n}” from my files? This cannot be undone.', toTrash: 'Move to trash', editInfo: 'Edit details', dlOrig: 'Download', openTab: 'Open in new tab', addTray: 'Add to basket (merge/print/convert)', inTray: 'In the basket', star: 'Star', unstar: 'Unstar',
   moveTitle: 'Move to', moveHere: 'Move here', root: 'Top level',
   folderName: 'Folder name', color: 'Color', save: 'Save', cancel: 'Cancel', close: 'Close', yes: 'Delete', create: 'Create',
   info: 'Details', clubIdx: 'Club index', dl: 'Download', dlPagePdf: 'This page only (PDF)', dlPagePng: 'This page as PNG', dlPageJpg: 'This page as JPG', dlAllPng: 'All pages as PNG (ZIP)', dlAllJpg: 'All pages as JPG (ZIP)',
-  fFolder: 'Folder', fYear: 'Academic year', fStatus: 'Status', fAnn: 'Announced', fPages: 'Pages', fSize: 'Size', fFile: 'File name', fAdded: 'Added', fNote: 'Note', fTitle: 'Title', fClubs: 'Clubs (comma separated)',
+  fFolder: 'Folder', fYear: 'Academic year', fStatus: 'Status', fAnn: 'Announced', fPages: 'Pages', fSize: 'Size', fFile: 'File name', fAdded: 'Added', fNote: 'Note', fTitle: 'Title', fClubs: 'Related clubs',
   prev: 'Previous', next: 'Next', of: 'of',
-  upShared: 'Upload to the shared drive', upMine: 'Upload my files', dropHere: 'Drop files here', or: 'or', pick: 'Choose files', upNote: 'PDF, images, Word, Excel, PowerPoint up to 20 MB each · Club names and year are filled in from appointment PDFs', upGo: 'Upload', reading: 'Reading…', ready: 'Ready', uploading: 'Uploading…', done: 'Done', failed: 'Failed', into: 'Upload into',
-  toolsHero: 'Merge / convert', toolsP: 'Pick files from the shared drive, your files or your computer, put them in order, then merge into one PDF or convert to images.', tray: 'Selected files', trayEmpty: 'No files selected', trayEmptyP: 'Press + on any document card, or add files from your computer below.', fromPc: 'Add from computer', clearAll: 'Clear all',
+  upShared: 'Upload to the shared drive', upMine: 'Add private files', dropHere: 'Drop files here', or: 'or', pick: 'Choose files', upNote: 'PDF, images, Word, Excel, PowerPoint up to 20 MB each', upGo: 'Upload', reading: 'Reading…', ready: 'Ready', uploading: 'Uploading…', done: 'Done', failed: 'Failed', into: 'Saving to',
+  toolsHero: 'File basket', toolsP: 'Press + on a document card to put it in the basket, then choose here: merge into one PDF, print, convert to images or download as ZIP.', tray: 'In the basket', trayEmpty: 'The basket is empty', trayEmptyP: 'Press + on the corner of a document card and it lands here, or add files from your computer below.', fromPc: 'Add from computer', clearAll: 'Clear all',
   tMerge: 'Merge into one PDF', tMergeP: 'Uses the order of the list. Images become A4 pages.', doMerge: 'Merge and download', tImg: 'Convert PDF to images', tImgP: 'Every page of every file, as one ZIP.', toPng: 'As PNG', toJpg: 'As JPG', tZip: 'Download all at once', tZipP: 'All original files in one ZIP.', doZip: 'Download ZIP', local: 'From computer', tBak: 'Backup', tBakP: 'All folders, documents, clubs, covers and assistant photos as one JSON file. The PDFs are already in Google Drive.', tBakWarn: 'This file has personal data. Keep it somewhere safe and never upload it to GitHub.', doBak: 'Download backup',
   starHero: 'Starred', starP: 'Shared documents you starred, remembered on this device.', starEmpty: 'Nothing starred yet', starEmptyP: 'Press the star on a document card and it shows up here.',
   trashHero: 'Trash', trashP: 'Documents removed from the shared drive. Restore them, or delete forever to free space.', trashEmpty: 'Trash is empty', restore: 'Restore', purge: 'Delete forever', purgeQ: 'Delete “{n}” forever? This cannot be undone.',
@@ -93,14 +106,14 @@ const TX = {
   chAlso: 'Also at other campuses:', chEx: ['Who is president of ฟุตบอล', 'How many sports clubs', 'Which clubs have no appointment letter', 'Independent groups in Lampang'], tPhotoBad: 'This image could not be used. Try a smaller JPG or PNG.', customColor: 'Custom color',
   palBlue: 'Blue', palTu: 'Thammasat red & gold', palMint: 'Mint, light blue, white', palPink: 'Pink & sky', light: 'Light', dark: 'Dark', system: 'System',
   searchHero: 'Results for “{q}”', searchSub: '{a} in the shared drive · {b} in my files', typeToSearch: 'Type in the search box above', notFound: 'Nothing found', notFoundP: 'Try a shorter word, such as just the club name or a first name.',
-  tDl: 'File sent to download', tDecl: 'Download cancelled', tNoDl: 'This button cannot download here. Try Open in new tab.', tSaved: 'Saved', tSaving: 'Saving… the page will reload', tErr: 'Something went wrong. Try again.', tWork: 'Preparing file…', tTrashed: 'Moved to trash', tRestored: 'Restored', tPurged: 'Deleted', tAdded: 'Added to merge list', tQuota: 'Storage is full', tBig: 'File is too large', tType: 'Unsupported file type', tMoved: 'Moved', tConflict: 'Someone else saved at the same time. The latest version is loaded; please try again.', tReadOnly: 'This account cannot edit the shared drive', tTooLarge: 'The data is too large to save',
+  tDl: 'File sent to download', tDecl: 'Download cancelled', tNoDl: 'This button cannot download here. Try Open in new tab.', tSaved: 'Saved', tSaving: 'Saving… the page will reload', tErr: 'Something went wrong. Try again.', tWork: 'Preparing file…', tTrashed: 'Moved to trash', tRestored: 'Restored', tPurged: 'Deleted', tAdded: 'Added to the basket. Open “File basket” to merge or print.', tQuota: 'Storage is full', tBig: 'File is too large', tType: 'Unsupported file type', tMoved: 'Moved', tConflict: 'Someone else saved at the same time. The latest version is loaded; please try again.', tReadOnly: 'This account cannot edit the shared drive', tTooLarge: 'The data is too large to save',
   you: 'You', goBack: 'Back', goFwd: 'Forward', lookShort: 'Theme', gClubs: 'Clubs', clubsNav: 'Clubs & groups', clubsHero: 'Clubs & independent groups', clubsP: 'From the sheet “TU clubs and independent groups 2569”. Tap a name for details, the appointment letter and document links.',
   fCampus: 'Campus', fKind: 'Type', fCat: 'Category', fStat: 'Status', all: 'All', rangsit: 'Rangsit', tpc: 'Tha Prachan', lampang: 'Lampang', pattaya: 'Pattaya', kClub: 'Club', kIndep: 'Independent group', findClub: 'Type a club name…', nClubs: '{n} items', noClub: 'No club matches these filters', backClubs: 'All clubs',
   apTitle: 'Appointment letter, year 2569', apNone: 'No 2569 appointment letter in the archive yet', committee: 'Committee', meetOn: 'General meeting', annOn: 'Announced', openDoc: 'Open document', docsCheck: 'Document status', infoClub: 'General info', advisor: 'Advisor', contact: 'Contact person', linksT: 'Document links', noLinks: 'No links yet', clubFiles: 'Other files for this club',
   addLink: 'Add link', newLink: 'New link', linkUrl: 'Link (URL)', linkTitle: 'Display name', linkBad: 'The link must start with https://', openLink: 'Open link', founded: 'Registered', email: 'Group email', delLink: 'Remove link', link: 'Link',
   ck_annTU: 'University announcement', ck_signed: 'Signed', ck_sent: 'Documents sent', ck_report: 'Activity report', ck_meeting: 'General meeting report', ck_appoint: 'Committee appointment', ck_will: 'Letter of intent', ck_grade: 'Transcript', ck_budget: 'Budget year 2569 documents', ck_review: 'Review result', ck_web: 'On website', ck_renew: 'Renewal form (GO.02)',
   sClubs: 'Clubs', sClubsSub: '{n} active', sIndep: 'Independent groups', sIndepSub: '{n} active', sAppoint: 'Appointments 2569', sAppointSub: 'One file per club', sLinks: 'Links', sLinksSub: 'Sheets · Docs · Drive',
-  homeH: 'Every club document in one place', homeP: 'Type a club, a person or a document name. Search reaches inside PDFs.', scClubs: 'Clubs / groups', scClubsP: 'Info, letters, links', scAppoint: 'Appointments 2569', scAppointP: 'By category', scLinks: 'Common links', scLinksP: 'Shared sheets and docs', scMine: 'My files', scMineP: 'On this device', scTools: 'Merge / convert', scToolsP: 'PDF ↔ images, merge',
+  homeH: 'Every club document in one place', homeP: 'Type a club, a person or a document name. Search reaches inside PDFs.', scClubs: 'Clubs / groups', scClubsP: 'Info, letters, links', scAppoint: 'Appointments 2569', scAppointP: 'By category', scLinks: 'Common links', scLinksP: 'Shared sheets and docs', scMine: 'Private files', scMineP: 'Only you, on this device', scTools: 'File basket', scToolsP: 'Merge, print, convert',
   clubsFound: 'Matching clubs', mascotT: 'Corner assistant', goClub: 'Go to club page', officeNoPrev: 'This file type cannot be previewed here. Download it to open on your device.', officeOnly: 'Merge and image conversion work with PDF and images only. Other files are skipped.', phone: 'Phone', shortcuts: 'Shortcuts', recentShort: 'Recently added',
   copyLink: 'Copy link', tCopied: 'Copied', signedFull: 'Fully signed', signedPartial: 'Not fully signed', otherDocs: 'Other documents', fromSheet: 'From the club sheet. This is older data and may be out of date. Appointment status comes only from the file above.', fAp: 'Appointment', apHas: 'Have', apNo: 'Missing', apWait: 'Awaiting signature', fSigned: 'Signatures', tDemoSaved: 'Demo mode: changed on screen, not saved', tLoadErr: 'Could not load data. Try refreshing.', roleDemo: 'Demo mode · edits are not saved',
   untitled: 'Untitled document', appoint: 'Appointment',
@@ -109,6 +122,19 @@ const TX = {
   tagSel: 'Showing', tagRel: 'Related categories', tagRelP: 'Pick one to narrow down', tagAll: 'All categories', tagNone: 'Nothing in this category', nItems: '{a} documents · {b} clubs',
   relDocs: 'Related documents', relClubs: 'Related clubs', tagsOf: 'Categories',
   print: 'Print', printAll: 'Print all', tPrint: 'Print files', tPrintP: 'Sends every file in the list to the printer in one go.', tPrintDrive: 'This file type can’t print from the site. It’s open in Google Drive now; press Ctrl+P there.', tPrintSkip: 'Skipped {n} files that can’t print from the site (like PowerPoint). Download them and print from your computer.', tPrintReady: 'Opening the print window…',
+  upSteps: ['Choose files', 'Check the name', 'Press Upload'], change: 'Change', autoFilled: 'Filled in for you:', autoNone: 'Check the name, then press Upload.', moreDetail: 'Edit more details', pickClub: 'Type a club name and pick it from the list', upMineP: 'Private files are only visible to you, on this device.',
+  help: 'How to use', helpHero: 'How to use the archive', helpP: 'What each menu is for, in short. Tap a heading to go there.', helpGo: 'Go there', helpFirst: 'First time here? See the 1-minute guide.', helpOpen: 'Open guide',
+  helpItems: [
+    ['search', 'Search', 'Find files, clubs or people', ['Type in the search box at the top', 'A club name, a person or a year all work', 'Tap a result to open it'], 'home'],
+    ['doc', 'View, download, print', 'Read documents right on the site, no download needed', ['Tap a document card', 'On the right are Download and Print', 'Ctrl+P also prints while a file is open'], 'drive'],
+    ['up', 'Upload to the shared drive', 'For the data team. Files go to Google Drive and the whole team sees them.', ['Open the folder, then press Upload at the top right', 'Drop files in, or press Choose files', 'Check the name (appointment letters fill in year and club for you)', 'Press Upload. Done.'], 'drive'],
+    ['layers', 'File basket: merge, print, convert', 'Merge several files into one PDF, print many at once, or turn a PDF into images', ['Press + on the corner of a document card', 'Open “File basket”', 'Put them in order with the arrows', 'Pick merge / print all / images / ZIP'], 'tools'],
+    ['user', 'Private files vs the shared drive', 'Shared drive = the whole team sees it, stored in Google Drive · Private files = only you, stored on this device', ['Good for drafts and temporary files', 'Clearing the browser or changing devices removes them', 'To share with the team, upload to the shared drive'], 'mine'],
+    ['tag', 'Categories', 'See documents and clubs that belong together', ['Open “Categories”', 'Pick one, like Music', 'Pick a related one to narrow it down'], 'tags'],
+    ['users', 'Club info', 'Appointment letter, committee, links and status for each club', ['Open “Clubs & groups”', 'Filter by campus, category or status', 'Tap a club for details'], 'clubs'],
+    ['star', 'Star', 'Keep documents you use often close at hand', ['Press the star on a document card', 'It shows up under “Starred”'], 'starred'],
+    ['chat', 'Ask', 'Ask about the archive in plain words', ['Press Ask at the top right', 'Try “which clubs have no appointment letter”'], '']
+  ],
   say: ['Hi! What can I help you find today?', 'The shared drive has {n} documents in {f} folders.', 'Type a club or a person’s name in search. I’ll show the exact page.', 'Drag a file card onto a folder to move it.', 'Press + on a card, then open Merge / convert to make one PDF.', 'My files stay on this device. Only you can see them.'],
   sayFound: 'Found {n} results', sayNone: 'Hmm… nothing found. Try a shorter word.', sayDone: 'All done!', sayWork: 'Working on it…', saySaved: 'Saved. Thanks for keeping things tidy!', sayMoved: 'Moved it for you', sayHi: 'Hi! Tap me any time.'
  }
@@ -499,7 +525,7 @@ function renderNav() {
   let h = `<div class="grp"><h6>${esc(t('gOverview'))}</h6><div class="nav">${a('home', ic('home'), t('home'))}${a('clubs', ic('users'), t('clubsNav'), ct(DATA.clubs.length))}${a('tags', ic('tag'), t('tagsNav'))}</div></div>`;
   h += `<div class="grp"><h6>${esc(t('gShared'))}</h6><div class="nav">${a('drive', ic('drive'), t('allDocs'), ct(A.shared.files().length))}${kidsF('shared', null).map(f => a('d-' + f.id, `<i class="dot" style="background:${colorOf(f.color)}"></i>`, f.name, ct(countIn('shared', f.id)), 'sub')).join('')}</div></div>`;
   h += `<div class="grp"><h6>${esc(t('gMine'))}</h6><div class="nav">${a('mine', ic('user'), t('mine'), ct(MY.files.length))}${a('starred', ic('star'), t('starred'), ct(A.shared.files().filter(d => S.stars.includes(d.id)).length))}</div></div>`;
-  h += `<div class="grp"><h6>${esc(t('gTools'))}</h6><div class="nav">${a('tools', ic('layers'), t('tools'), S.tray.length ? `<span class="badge num">${S.tray.length}</span>` : '')}${a('look', ic('gear'), t('look'))}</div></div>`;
+  h += `<div class="grp"><h6>${esc(t('gTools'))}</h6><div class="nav">${a('tools', ic('layers'), t('tools'), S.tray.length ? `<span class="badge num">${S.tray.length}</span>` : '')}${a('look', ic('gear'), t('look'))}${a('help', ic('help'), t('help'))}</div></div>`;
   if (S.staff) { const n = DATA.docs.filter(d => d.trashed).length; h += `<div class="grp"><h6>${esc(t('gStaff'))}</h6><div class="nav">${a('trash', ic('trash'), t('trash'), n ? ct(n) : '')}</div></div>`; }
   $('#navs').innerHTML = h;
   // active state for nested drive folders
@@ -522,6 +548,7 @@ function route() {
   else if (c.startsWith('m-')) P.innerHTML = folderOf('mine', c.slice(2)) ? pageDrive('mine', c.slice(2)) : pageDrive('mine', null);
   else if (c === 'clubs') P.innerHTML = pageClubs();
   else if (c.startsWith('c-')) P.innerHTML = pageClub(c.slice(2));
+  else if (c === 'help') P.innerHTML = pageHelp();
   else if (c === 'tags') P.innerHTML = pageTags([]);
   else if (c.startsWith('t-')) P.innerHTML = pageTags(decodeURIComponent(c.slice(2)).split('|').filter(Boolean));
   else if (c === 'starred') P.innerHTML = pageStarred();
@@ -591,6 +618,7 @@ function pageHome() {
   const showM = mascotOn();
   if (showM && !M.greeted) { M.greeted = true; setTimeout(() => say(t('say')[0], 'wave', 12), 0); }
   return `<div class="page">
+    ${LS.get('helpSeen', '') ? '' : `<div class="note-bar">${ic('help')}<span style="flex:1">${esc(t('helpFirst'))}</span><a class="btn go sm" href="#help">${esc(t('helpOpen'))}</a><button class="pill round" data-helpx aria-label="${esc(t('close'))}">${ic('x')}</button></div>`}
     <section class="card home-hero"><div class="${showM ? 'row2' : ''}">${showM ? `<div class="mascot" role="img" aria-label="assistant"></div>` : ''}
       <div style="display:grid;gap:10px;min-width:0">${showM ? `<div class="bubble" id="homeBubble" aria-live="polite" style="justify-self:start">${esc(M.last || t('say')[0])}</div>` : ''}<h1>${esc(t('homeH'))}</h1><p style="color:var(--muted)">${esc(t('homeP'))}</p></div></div>
       <label class="bigsearch"><span class="sr">${esc(t('search'))}</span>${ic('search')}<input id="q2" type="search" autocomplete="off" placeholder="${esc(t('searchPh'))}"></label></section>
@@ -727,6 +755,20 @@ document.addEventListener('click', e => {
   const nb = e.target.closest('[data-new]'); if (!nb) return;
   const k = nb.dataset.new, fid = curKindFolder()[1];
   openMenu(nb, [{ icon: 'fplus', label: t('newFolder'), run: () => folderModal(k, null, fid) }, { icon: 'link', label: t('newLink'), run: () => linkModal(k, null, fid) }, ...(k === 'mine' || API.canUpload() ? [{ icon: 'up', label: t('uploadHere'), run: () => uploadModal(k, fid) }] : [])]);
+});
+
+/* ============ how to use ============ */
+function pageHelp() {
+  LS.set('helpSeen', '1');
+  return `<div class="page"><section class="card hero"><div><p class="k">${esc(t('help'))}</p><h1>${esc(t('helpHero'))}</h1><p class="d">${esc(t('helpP'))}</p></div></section>
+    <div class="helps">${t('helpItems').map(([icon, title, what, steps, go]) => `<section class="card box help">
+      <h3><span class="ic blue">${ic(icon)}</span>${esc(title)}</h3><p class="d">${esc(what)}</p>
+      <ol>${steps.map(s => `<li>${esc(s)}</li>`).join('')}</ol>
+      ${go ? `<a class="link" href="#${go}">${esc(t('helpGo'))} →</a>` : `<button class="link" data-openchat>${esc(t('chAsk'))} →</button>`}</section>`).join('')}</div></div>`;
+}
+document.addEventListener('click', e => {
+  if (e.target.closest('[data-openchat]')) $('#chatBtn').click();
+  if (e.target.closest('[data-helpx]')) { LS.set('helpSeen', '1'); e.target.closest('.note-bar')?.remove(); }
 });
 
 /* ============ linked categories ============ */
@@ -1018,6 +1060,19 @@ function moveModal(k, type, id) {
   const o = modal(t('moveTitle'), treeOptions(k, ex, curParent || ''), `<button class="btn" data-cancel>${esc(t('cancel'))}</button><button class="btn go" id="mok">${esc(t('moveHere'))}</button>`);
   $('#mok', o).onclick = () => { const v = $('input[name="tgt"]:checked', o)?.value ?? ''; closeModal(); moveItem(k, type, id, v || null); };
 }
+// Club picker: type to search, pick from the list, picked clubs show as chips. The hidden input keeps the
+// comma-separated names the forms already read (see clubIdsFor).
+const cpkChip = n => `<button type="button" class="fchip" aria-pressed="true" data-cpkx="${esc(n)}" title="${esc(t('del'))}">${esc(short(n))}${ic('x')}</button>`;
+const clubPicker = (id, names) => `<div class="cpk"><input type="hidden" id="${id}" value="${esc(names.join(', '))}"><div class="chips cpk-c">${names.map(cpkChip).join('')}</div>
+  <input class="cpk-q" list="${id}L" autocomplete="off" placeholder="${esc(t('pickClub'))}" aria-label="${esc(t('pickClub'))}"><datalist id="${id}L">${DATA.clubs.map(c => `<option value="${esc(c.name)}">${esc(t(c.campus))}</option>`).join('')}</datalist></div>`;
+const cpkNames = box => box.querySelector('input[type=hidden]').value.split(',').map(s => s.trim()).filter(Boolean);
+function cpkSet(box, names) { box.querySelector('input[type=hidden]').value = names.join(', '); box.querySelector('.cpk-c').innerHTML = names.map(cpkChip).join(''); }
+document.addEventListener('input', e => {
+  const q = e.target.closest('.cpk-q'); if (!q) return;
+  const c = DATA.clubs.find(x => x.name === q.value.trim()); if (!c) return;
+  const box = q.closest('.cpk'); cpkSet(box, uniq([...cpkNames(box), c.name])); q.value = '';
+});
+document.addEventListener('click', e => { const b = e.target.closest('[data-cpkx]'); if (!b) return; const box = b.closest('.cpk'); cpkSet(box, cpkNames(box).filter(n => n !== b.dataset.cpkx)); });
 const typeInput = (id, v) => `<input id="${id}" list="${id}L" value="${esc(v || '')}"><datalist id="${id}L">${DOC_TYPES.map(x => `<option value="${esc(x[0])}">`).join('')}</datalist>`;
 function editModal(d) {
   const o = modal(t('editInfo'), `<div class="fields">
@@ -1026,7 +1081,7 @@ function editModal(d) {
     <div class="field"><label for="eyr">${esc(t('fYear'))}</label><input id="eyr" inputmode="numeric" value="${esc(d.year || '')}"></div>
     <div class="field"><label for="ety">${esc(t('fType'))}</label>${typeInput('ety', d.type)}</div>
     <div class="field"><label for="ean">${esc(t('fAnn'))}</label><input id="ean" value="${esc(d.announced || '')}"></div>
-    <div class="field full"><label for="ecl">${esc(t('fClubs'))}</label><input id="ecl" value="${esc((d.clubs || []).join(', '))}"></div>
+    <div class="field full"><label>${esc(t('fClubs'))}</label>${clubPicker('ecl', d.clubs || [])}</div>
     <div class="field full"><label>${esc(t('fTags'))}</label>${tagPicker(d.tags || [])}</div>
     <div class="field full"><label for="eno">${esc(t('fNote'))}</label><textarea id="eno">${esc(d.note || '')}</textarea></div></div>`,
     `<button class="btn" data-cancel>${esc(t('cancel'))}</button><button class="btn go" id="eok">${esc(t('save'))}</button>`);
@@ -1047,7 +1102,7 @@ function linkModal(k, d, fid, club) {
   const o = modal(d ? t('editInfo') : club ? t('addLink') : t('newLink'), `<div class="fields">
     <div class="field full"><label for="lku">${esc(t('linkUrl'))}</label><input id="lku" type="url" inputmode="url" placeholder="https://docs.google.com/…" value="${esc(d?.url || '')}"></div>
     <div class="field full"><label for="lkt">${esc(t('linkTitle'))}</label><input id="lkt" maxlength="120" value="${esc(d?.title || '')}"></div>
-    ${club || k === 'mine' ? '' : `<div class="field full"><label for="lkc">${esc(t('fClubs'))}</label><input id="lkc" value="${esc((d?.clubs || []).join(', '))}"></div>`}
+    ${club || k === 'mine' ? '' : `<div class="field full"><label>${esc(t('fClubs'))}</label>${clubPicker('lkc', d?.clubs || [])}</div>`}
     <p class="field full" id="lkerr" style="color:var(--bad);font-size:13px" hidden>${esc(t('linkBad'))}</p></div>`,
     `<button class="btn" data-cancel>${esc(t('cancel'))}</button><button class="btn go" id="lkok">${esc(d ? t('save') : t('create'))}</button>`);
   setTimeout(() => $('#lku', o).focus(), 30);
@@ -1383,20 +1438,28 @@ async function prep(file, k) {
   const b = await createImageBitmap(file);
   return { file, mime, pageCount: 1, meta: { title: file.name.replace(/\.[^.]+$/, '').replace(/_/g, ' '), clubs: [], pages: [], status: 'active' }, thumb: await thumbOf(async (x, s) => x.drawImage(b, 0, 0, b.width * s, b.height * s), b.width, b.height) };
 }
+// Upload rows ask only for the title; what was read from the file is shown in one line and the rest sits under "more details".
 function metaFields(m, key, k) {
-  if (k === 'mine') return `<div class="fields"><div class="field full"><label for="${key}ti">${esc(t('fTitle'))}</label><input id="${key}ti" value="${esc(m.title)}"></div></div>`;
-  return `<div class="fields"><div class="field full"><label for="${key}ti">${esc(t('fTitle'))}</label><input id="${key}ti" value="${esc(m.title)}"></div>
+  const title = `<div class="fields"><div class="field full"><label for="${key}ti">${esc(t('fTitle'))}</label><input id="${key}ti" value="${esc(m.title)}"></div></div>`;
+  if (k === 'mine') return title;
+  const cl = m.clubs || [], got = [cl.length && tagLbl('type:ใบแต่งตั้ง'), m.year, ...cl.slice(0, 3).map(short), cl.length > 3 && '+' + (cl.length - 3)].filter(Boolean);
+  return `${title}<p class="upauto">${got.length ? `${ic('check')}<span>${esc(t('autoFilled'))} <b>${esc(got.join(' · '))}</b></span>` : `<span>${esc(t('autoNone'))}</span>`}</p>
+    <details class="upmore"><summary>${esc(t('moreDetail'))}</summary><div class="fields">
     <div class="field"><label for="${key}st">${esc(t('fStatus'))}</label><select id="${key}st">${STATUS.map(s => `<option value="${s}" ${(m.status || 'active') === s ? 'selected' : ''}>${esc(t(s))}</option>`).join('')}</select></div>
     <div class="field"><label for="${key}yr">${esc(t('fYear'))}</label><input id="${key}yr" inputmode="numeric" value="${esc(m.year || '')}"></div>
     <div class="field full"><label for="${key}ty">${esc(t('fType'))}</label>${typeInput(key + 'ty', (m.clubs || []).length ? 'ใบแต่งตั้ง' : '')}</div>
-    <div class="field full"><label for="${key}cl">${esc(t('fClubs'))}</label><input id="${key}cl" value="${esc((m.clubs || []).join(', '))}"></div></div>`;
+    <div class="field full"><label>${esc(t('fClubs'))}</label>${clubPicker(key + 'cl', cl)}</div></div></details>`;
 }
+const whereLbl = (k, fid) => [k === 'shared' ? t('drive') : t('mine'), ...pathOf(k, fid).map(f => f.name)].join(' › ');
 function uploadModal(k, fid, initial) {
   if (k === 'shared' && !(A.shared.edit() && API.canUpload())) { toast(t('tReadOnly')); return; }
-  const o = modal(k === 'mine' ? t('upMine') : t('upShared'), `<div class="field"><label>${esc(t('into'))}</label>${treeOptions(k, new Set(), fid || '')}</div>
+  const o = modal(k === 'mine' ? t('upMine') : t('upShared'), `<ol class="upsteps">${t('upSteps').map((s, i) => `<li><span class="num">${i + 1}</span>${esc(s)}</li>`).join('')}</ol>
+    ${k === 'mine' ? `<p class="note-bar">${ic('user')}<span>${esc(t('upMineP'))}</span></p>` : ''}
+    <details class="where"><summary>${ic('folder')}<span>${esc(t('into'))}: <b id="whereL">${esc(whereLbl(k, fid))}</b></span><span class="link">${esc(t('change'))}</span></summary>${treeOptions(k, new Set(), fid || '')}</details>
     <div class="drop" id="drop">${ic('up')}<b>${esc(t('dropHere'))}</b><span>${esc(t('or'))}</span><label class="btn sm">${esc(t('pick'))}<input type="file" id="upIn" multiple accept=".pdf,.png,.jpg,.jpeg,.webp,.doc,.docx,.xls,.xlsx,.csv,.ppt,.pptx,.txt" class="sr"></label><p style="font-size:13px">${esc(t('upNote'))}</p></div><div id="ul" style="display:grid;gap:12px"></div>`,
     `<button class="btn" data-cancel>${esc(t('cancel'))}</button><button class="btn go" id="ugo" disabled>${esc(t('upGo'))}</button>`);
   const rows = [], drop = $('#drop', o);
+  o.addEventListener('change', e => { if (e.target.name !== 'tgt') return; $('#whereL', o).textContent = whereLbl(k, e.target.value || null); $('.where', o).open = false; });
   const add = files => [...files].forEach(async file => {
     const key = 'u' + rid(), row = document.createElement('div'); row.className = 'urow';
     row.innerHTML = `<div class="fn"><span>${esc(file.name)}</span><span class="num">${fmtB(file.size)}</span></div><span class="us busy">${esc(t('reading'))}</span>`;
