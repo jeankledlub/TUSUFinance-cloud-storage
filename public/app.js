@@ -27,7 +27,16 @@ const TX = {
   tMerge: 'รวมเป็น PDF ไฟล์เดียว', tMergeP: 'เรียงตามลำดับในรายการ รูปภาพจะวางเป็นหน้า A4', doMerge: 'รวมและดาวน์โหลด', tImg: 'แปลง PDF เป็นรูป', tImgP: 'ทุกหน้าของทุกไฟล์ในรายการ ได้เป็น ZIP', toPng: 'เป็น PNG', toJpg: 'เป็น JPG', tZip: 'ดาวน์โหลดรวดเดียว', tZipP: 'ไฟล์ต้นฉบับทั้งหมดใน ZIP เดียว', doZip: 'โหลดเป็น ZIP', local: 'จากเครื่อง',
   starHero: 'ติดดาว', starP: 'เอกสารในคลังกลางที่คุณกดดาวไว้ จำไว้ในเครื่องนี้', starEmpty: 'ยังไม่มีเอกสารติดดาว', starEmptyP: 'กดรูปดาวที่การ์ดเอกสาร แล้วจะมารวมอยู่ที่นี่',
   trashHero: 'ถังขยะ', trashP: 'เอกสารที่ลบจากคลังกลาง กู้คืนได้ หรือลบถาวรเพื่อคืนพื้นที่', trashEmpty: 'ถังขยะว่าง', restore: 'กู้คืน', purge: 'ลบถาวร', purgeQ: 'ลบ “{n}” ถาวร? กู้คืนไม่ได้อีก',
-  lookHero: 'ตั้งค่าหน้าตา', lookP: 'เลือกได้ตามชอบ ระบบจำไว้ในเครื่องนี้ ไม่กระทบคนอื่น', theme: 'ธีมสี', mode: 'โหมด', lang: 'ภาษา', mascotSet: 'ตัวช่วย', mascotOn: 'แสดง', mascotOff: 'ซ่อน', mascotPhoto: 'เพิ่มรูป', mascotReset: 'ตัวเดิม', mascotPhotoP: 'กดรูปเพื่อเลือกตัวช่วย เพิ่มรูปจากเครื่องได้ตามใจ ตัวเดิมยังอยู่เสมอ (จำไว้ในเครื่องนี้ ไม่กระทบคนอื่น)', tPhotoSaved: 'เพิ่มรูปตัวช่วยแล้ว', tPhotoFull: 'เพิ่มได้สูงสุด 12 รูป ลบรูปเก่าก่อน', palTusu: 'TUSU (ค่าเริ่มต้น)', tPhotoBad: 'ใช้รูปนี้ไม่ได้ ลองไฟล์ JPG หรือ PNG ที่เล็กลง', customColor: 'เลือกสีเอง',
+  lookHero: 'ตั้งค่าหน้าตา', lookP: 'เลือกได้ตามชอบ ระบบจำไว้ในเครื่องนี้ ไม่กระทบคนอื่น', theme: 'ธีมสี', mode: 'โหมด', lang: 'ภาษา', mascotSet: 'ตัวช่วย', mascotOn: 'แสดง', mascotOff: 'ซ่อน', mascotPhoto: 'เพิ่มรูป', mascotReset: 'ตัวเดิม', mascotPhotoP: 'กดรูปเพื่อเลือกตัวช่วย เพิ่มรูปจากเครื่องได้ตามใจ ตัวเดิมยังอยู่เสมอ (จำไว้ในเครื่องนี้ ไม่กระทบคนอื่น)', tPhotoSaved: 'เพิ่มรูปตัวช่วยแล้ว', tPhotoFull: 'เพิ่มได้สูงสุด 12 รูป ลบรูปเก่าก่อน', palTusu: 'TUSU (ค่าเริ่มต้น)',
+  chTitle: 'แชทกับน้องดาต้า', chSub: 'ตอบจากข้อมูลในคลังนี้เท่านั้น', chPh: 'ถามเรื่องชุมนุม ใบแต่งตั้ง หรือชื่อคน…', chSend: 'ส่ง', chAsk: 'ถามน้อง',
+  chHelp: 'สวัสดี! ถามน้องได้เลย น้องตอบจากข้อมูลในคลังนี้เท่านั้น เช่น ใครเป็นประธานชุมนุมไหน ชุมนุมไหนมีใบแต่งตั้งแล้ว สายกีฬามีกี่ชุมนุม หรือพิมพ์ชื่อคนก็ได้',
+  chWhich: 'เจอหลายชุมนุมที่ชื่อคล้ายกัน หมายถึงอันไหน', chContact: 'ข้อมูลติดต่อ (เบอร์ ไลน์ อีเมล) น้องไม่ตอบในแชทนะ ดูได้ที่หน้าชุมนุมเลย',
+  chNoAppointFor: 'ยังไม่มีใบแต่งตั้งของ {n} ในคลัง', chNoRole: 'ในใบแต่งตั้งของ {n} ไม่มีตำแหน่งนี้ ลองเปิดดูไฟล์', chFromAppoint: 'จากใบแต่งตั้ง {y}',
+  chScanNote: 'ชื่ออ่านจากไฟล์สแกน อาจสะกดผิดได้ เทียบกับ PDF ก่อนใช้งานจริง', chAdvisor: 'ที่ปรึกษาของ {n} คือ', chNoAdvisor: 'ยังไม่มีข้อมูลที่ปรึกษาของชุมนุมนี้',
+  chAppointYes: '{n} มีใบแต่งตั้ง {y} แล้ว', chAnnounced: 'ประกาศ', chMeet: 'ประชุมเลือกตั้ง', chNoAppoint: 'ยังไม่มีใบแต่งตั้ง', chHasAppoint: 'มีใบแต่งตั้งแล้ว',
+  chPeople: 'เจอชื่อนี้ในใบแต่งตั้ง', chAllClubs: 'ชุมนุมและกลุ่มอิสระทั้งหมด', chItems: 'รายการ', chSeeList: 'ดูรายชื่อทั้งหมด', chNone: 'ไม่มีชุมนุมที่ตรงกับเงื่อนไขนี้',
+  chMore: 'และอีก {n} รายการ ดูต่อที่หน้าชุมนุม', chDocs: 'เจอเอกสาร {n} ไฟล์', chNo: 'น้องหาไม่เจอในคลังนี้ ลองพิมพ์ชื่อชุมนุม ชื่อคน หรือชื่อเอกสารดูนะ',
+  chAlso: 'มีชื่อนี้ที่ศูนย์อื่นด้วย', chEx: ['ใครเป็นประธานชุมนุมฟุตบอล', 'สายกีฬามีกี่ชุมนุม', 'ชุมนุมไหนยังไม่มีใบแต่งตั้ง', 'กลุ่มอิสระลำปางมีอะไรบ้าง'], tPhotoBad: 'ใช้รูปนี้ไม่ได้ ลองไฟล์ JPG หรือ PNG ที่เล็กลง', customColor: 'เลือกสีเอง',
   palBlue: 'น้ำเงิน', palTu: 'ธรรมศาสตร์ แดง-เหลือง', palMint: 'มิ้นต์ ฟ้าอ่อน ขาว', palPink: 'ชมพู ฟ้า', light: 'สว่าง', dark: 'มืด', system: 'ตามเครื่อง',
   searchHero: 'ผลการค้นหา “{q}”', searchSub: '{a} ในคลังกลาง · {b} ในไฟล์ของฉัน', typeToSearch: 'พิมพ์คำค้นที่ช่องด้านบน', notFound: 'ไม่พบสิ่งที่ค้นหา', notFoundP: 'ลองค้นด้วยคำที่สั้นลง เช่น ชื่อชุมนุมหรือชื่อจริงอย่างเดียว',
   tDl: 'ส่งไฟล์ให้ดาวน์โหลดแล้ว', tDecl: 'ยกเลิกการดาวน์โหลด', tNoDl: 'ดาวน์โหลดผ่านปุ่มนี้ไม่ได้ในมุมมองนี้ ลองกด เปิดในแท็บใหม่', tSaved: 'บันทึกแล้ว', tSaving: 'กำลังบันทึก… หน้าเว็บจะรีโหลดเอง', tErr: 'ทำไม่สำเร็จ ลองใหม่อีกครั้ง', tWork: 'กำลังเตรียมไฟล์…', tTrashed: 'ย้ายลงถังขยะแล้ว', tRestored: 'กู้คืนแล้ว', tPurged: 'ลบถาวรแล้ว', tAdded: 'เพิ่มเข้ารายการรวมไฟล์แล้ว', tQuota: 'พื้นที่เก็บไฟล์เต็ม', tBig: 'ไฟล์ใหญ่เกินกำหนด', tType: 'ไม่รองรับไฟล์ประเภทนี้', tMoved: 'ย้ายแล้ว', tConflict: 'มีคนแก้ไขพร้อมกัน หน้าเว็บโหลดเวอร์ชันล่าสุดให้แล้ว ลองทำอีกครั้ง', tReadOnly: 'บัญชีนี้แก้ไขคลังกลางไม่ได้', tTooLarge: 'ข้อมูลใหญ่เกินกำหนด',
@@ -67,7 +76,16 @@ const TX = {
   tMerge: 'Merge into one PDF', tMergeP: 'Uses the order of the list. Images become A4 pages.', doMerge: 'Merge and download', tImg: 'Convert PDF to images', tImgP: 'Every page of every file, as one ZIP.', toPng: 'As PNG', toJpg: 'As JPG', tZip: 'Download all at once', tZipP: 'All original files in one ZIP.', doZip: 'Download ZIP', local: 'From computer',
   starHero: 'Starred', starP: 'Shared documents you starred, remembered on this device.', starEmpty: 'Nothing starred yet', starEmptyP: 'Press the star on a document card and it shows up here.',
   trashHero: 'Trash', trashP: 'Documents removed from the shared drive. Restore them, or delete forever to free space.', trashEmpty: 'Trash is empty', restore: 'Restore', purge: 'Delete forever', purgeQ: 'Delete “{n}” forever? This cannot be undone.',
-  lookHero: 'Appearance', lookP: 'Saved on this device only. It does not change anyone else’s view.', theme: 'Color theme', mode: 'Mode', lang: 'Language', mascotSet: 'Assistant', mascotOn: 'Show', mascotOff: 'Hide', mascotPhoto: 'Add photo', mascotReset: 'Original', mascotPhotoP: 'Tap a picture to choose your assistant. Add your own photos; the original always stays. Saved on this device only.', tPhotoSaved: 'Assistant photo added', tPhotoFull: 'Up to 12 photos. Delete one first.', palTusu: 'TUSU (default)', tPhotoBad: 'This image could not be used. Try a smaller JPG or PNG.', customColor: 'Custom color',
+  lookHero: 'Appearance', lookP: 'Saved on this device only. It does not change anyone else’s view.', theme: 'Color theme', mode: 'Mode', lang: 'Language', mascotSet: 'Assistant', mascotOn: 'Show', mascotOff: 'Hide', mascotPhoto: 'Add photo', mascotReset: 'Original', mascotPhotoP: 'Tap a picture to choose your assistant. Add your own photos; the original always stays. Saved on this device only.', tPhotoSaved: 'Assistant photo added', tPhotoFull: 'Up to 12 photos. Delete one first.', palTusu: 'TUSU (default)',
+  chTitle: 'Chat with Data-chan', chSub: 'Answers only from this archive', chPh: 'Ask about clubs, appointments or a person…', chSend: 'Send', chAsk: 'Ask',
+  chHelp: 'Hi! Ask me anything about this archive, and I answer only from its data. For example: who is president of a club, which clubs have an appointment letter, how many sports clubs there are, or type a person’s name.',
+  chWhich: 'Several clubs have a similar name. Which one?', chContact: 'I don’t give contact details (phone, LINE, email) in chat. You can find them on the club page.',
+  chNoAppointFor: 'There is no appointment letter for {n} in the archive yet.', chNoRole: 'The appointment letter for {n} has no such position. Try opening the file.', chFromAppoint: 'from the {y} appointment letter',
+  chScanNote: 'Names were read from scans and may contain typos. Check the PDF before official use.', chAdvisor: 'The advisor of {n} is', chNoAdvisor: 'No advisor is recorded for this club yet.',
+  chAppointYes: '{n} has its {y} appointment letter.', chAnnounced: 'Announced', chMeet: 'Election meeting', chNoAppoint: 'No appointment letter yet', chHasAppoint: 'Has an appointment letter',
+  chPeople: 'Found this name in appointment letters:', chAllClubs: 'All clubs and independent groups', chItems: 'items', chSeeList: 'See the full list', chNone: 'No club matches that.',
+  chMore: 'and {n} more on the clubs page', chDocs: 'Found {n} documents', chNo: 'I couldn’t find that in this archive. Try a club name, a person’s name or a document title.',
+  chAlso: 'Also at other campuses:', chEx: ['Who is president of ฟุตบอล', 'How many sports clubs', 'Which clubs have no appointment letter', 'Independent groups in Lampang'], tPhotoBad: 'This image could not be used. Try a smaller JPG or PNG.', customColor: 'Custom color',
   palBlue: 'Blue', palTu: 'Thammasat red & gold', palMint: 'Mint, light blue, white', palPink: 'Pink & sky', light: 'Light', dark: 'Dark', system: 'System',
   searchHero: 'Results for “{q}”', searchSub: '{a} in the shared drive · {b} in my files', typeToSearch: 'Type in the search box above', notFound: 'Nothing found', notFoundP: 'Try a shorter word, such as just the club name or a first name.',
   tDl: 'File sent to download', tDecl: 'Download cancelled', tNoDl: 'This button cannot download here. Try Open in new tab.', tSaved: 'Saved', tSaving: 'Saving… the page will reload', tErr: 'Something went wrong. Try again.', tWork: 'Preparing file…', tTrashed: 'Moved to trash', tRestored: 'Restored', tPurged: 'Deleted', tAdded: 'Added to merge list', tQuota: 'Storage is full', tBig: 'File is too large', tType: 'Unsupported file type', tMoved: 'Moved', tConflict: 'Someone else saved at the same time. The latest version is loaded; please try again.', tReadOnly: 'This account cannot edit the shared drive', tTooLarge: 'The data is too large to save',
@@ -265,7 +283,121 @@ function say(text, md, ticks) {
   if (!home && mascotOn()) { $('#assist').hidden = false; clearTimeout(M.sayT); M.sayT = setTimeout(() => { $('#aBubble').hidden = true; }, 4500); }
 }
 function tipLine() { const L = t('say'); const n = A.shared.files().length, f = A.shared.folders().length; return L[M.msgs++ % L.length].replace('{n}', n).replace('{f}', f); }
-document.addEventListener('click', e => { if (e.target.closest('.mascot')) { say(tipLine(), Math.random() < .5 ? 'happy' : 'wave'); } });
+document.addEventListener('click', e => { if (e.target.closest('.mascot') && !e.target.closest('.chat')) openChat(); });
+
+/* ============ chat assistant ============
+ * Answers only from what the site already loaded (DATA): clubs, appointment letters, committees, documents.
+ * No AI and nothing leaves the browser. Contact details (phone, LINE, email) are never given in chat. */
+const CH = { log: [] };
+const ROLES = [[/รองประธาน|vice/, /รองประธาน|vice/i], [/ประธาน|president|หัวหน้า/, /^(?!.*รอง).*(ประธาน|president)/i], [/เลขา|secretary/, /เลขา|secretary/i], [/เหรัญญิก|การเงิน|treasurer|finance/, /เหรัญญิก|การเงิน|treasurer|finance/i], [/กรรมการ|รายชื่อ|ใครบ้าง|committee|members|ทีม/, /./]];
+const CAMPUS_W = [['rangsit', /รังสิต|rangsit/], ['tpc', /ท่าพระจันทร์|ท่าพระ|tha ?prachan|tpc/], ['lampang', /ลำปาง|lampang/], ['pattaya', /พัทยา|pattaya/]];
+const CAT_W = [['ศิลปะวัฒนธรรม', /ศิลป|วัฒนธรรม|arts?/], ['วิชาการ', /วิชาการ|academic/], ['บำเพ็ญประโยชน์', /บำเพ็ญ|อาสา|volunteer/], ['ศาสนาและจริยธรรม', /ศาสนา|จริยธรรม|religio/], ['กีฬา', /กีฬา|sports?/]];
+const STAT_W = [['ยุบเลิก', /ยุบ|dissolved/], ['รอจดจัดตั้ง', /รอจด|pending/], ['มีสถานภาพ', /มีสถานภาพ|active/]];
+const appointOf = c => DATA.docs.find(d => d.id === c.appointDoc && !d.trashed) || DATA.docs.filter(d => !d.trashed && !isLink(d) && (d.clubIds || []).includes(c.id) && /แต่งตั้ง/.test(d.type || d.title || '')).sort((a, b) => (b.year || 0) - (a.year || 0))[0];
+// The club named in the question: the longest club name (short or full) found inside it.
+function chatClubs(q) {
+  const qn = norm(q); let best = 0, hits = [];
+  for (const c of DATA.clubs) {
+    const len = Math.max(...[c.short, c.name, short(c.name)].filter(Boolean).map(x => norm(x)).filter(x => x.length >= 2 && qn.includes(x)).map(x => x.length), 0);
+    if (len > best) { best = len; hits = [c]; } else if (len && len === best) hits.push(c);
+  }
+  const camp = CAMPUS_W.find(([, re]) => re.test(q));
+  if (hits.length < 2) return hits;
+  if (camp && hits.some(c => c.campus === camp[0])) return hits.filter(c => c.campus === camp[0]);
+  // Same name on several campuses and none mentioned: answer for Rangsit, offer the others as links.
+  const main = hits.filter(c => c.campus === 'rangsit');
+  if (!camp && main.length === 1) { main[0]._also = hits.filter(c => c !== main[0]); return main; }
+  return hits;
+}
+function chatFilters(q) {
+  const f = {}, n = [];
+  const camp = CAMPUS_W.find(([, re]) => re.test(q)); if (camp) { f.campus = camp[0]; n.push(campLbl(camp[0])); }
+  const cat = CAT_W.find(([, re]) => re.test(q)); if (cat) { f.cat = cat[0]; n.push(catLbl(cat[0])); }
+  if (/กลุ่มอิสระ|อิสระ|independent/i.test(q)) { f.kind = 'indep'; n.push(t('kIndep')); }
+  const st = STAT_W.find(([, re]) => re.test(q)); if (st) { f.status = st[0]; n.push(statLbl(st[0])); }
+  if (/(ยังไม่|ไม่)มีใบแต่งตั้ง|ไม่ส่ง|without appoint|no appoint/i.test(q)) { f.appoint = false; n.push(t('chNoAppoint')); }
+  else if (/มีใบแต่งตั้ง|ส่งแล้ว|with appoint/i.test(q)) { f.appoint = true; n.push(t('chHasAppoint')); }
+  const list = DATA.clubs.filter(c => (!f.campus || c.campus === f.campus) && (!f.cat || c.cat === f.cat) && (!f.kind || c.kind === f.kind) && (!f.status || c.status === f.status) && (f.appoint === undefined || !!appointOf(c) === f.appoint));
+  return { any: n.length > 0, label: n.join(' · '), list };
+}
+const clubLink = c => `<a class="cchip" href="#c-${esc(c.id)}">${esc(c.short || short(c.name))}${c.campus && c.campus !== 'rangsit' ? ` · ${esc(campLbl(c.campus))}` : ''}</a>`;
+const docBtn = d => `<button class="cchip cdoc" data-row="${esc(d.id)}">${ic('doc')}${esc(d.title)}</button>`;
+function chatAnswer(raw) {
+  const q = raw.trim(), ql = q.toLowerCase();
+  if (!q || /^(สวัสดี|หวัดดี|hi|hello|hey|ช่วย|help|ทำอะไรได้|ถามอะไรได้)/i.test(ql)) return { html: esc(t('chHelp')), mood: 'wave' };
+  const clubs = chatClubs(ql);
+  if (clubs.length > 1 && clubs.length <= 8) return { html: `${esc(t('chWhich'))}<div class="crow">${clubs.map(clubLink).join('')}</div>`, mood: 'confused' };
+  if (clubs.length === 1) {
+    const r = chatClub(clubs[0], ql), also = clubs[0]._also; delete clubs[0]._also;
+    if (also?.length) r.html += `<p class="cnote">${esc(t('chAlso'))}</p><div class="crow">${also.map(clubLink).join('')}</div>`;
+    return r;
+  }
+  // counts and lists of clubs (before names, so a word like "อิสระ" is read as a filter, not a person)
+  const f = chatFilters(ql);
+  if (/กี่|จำนวน|เท่าไร|how many|count/i.test(ql)) return { html: `${esc(f.any ? f.label : t('chAllClubs'))}: <b>${f.list.length}</b> ${esc(t('chItems'))}<div class="crow"><a class="cchip" href="#clubs">${esc(t('chSeeList'))}</a></div>`, mood: 'happy' };
+  if (f.any || /มีอะไรบ้าง|ไหนบ้าง|รายชื่อ|ทั้งหมด|list|which/i.test(ql)) {
+    if (!f.list.length) return { html: esc(t('chNone')), mood: 'confused' };
+    return { html: `${esc(f.any ? f.label : t('chAllClubs'))} · ${f.list.length} ${esc(t('chItems'))}<div class="crow">${f.list.slice(0, 24).map(clubLink).join('')}</div>${f.list.length > 24 ? `<p class="cnote">${esc(t('chMore', { n: f.list.length - 24 }))}</p>` : ''}`, mood: 'happy' };
+  }
+  // a person: someone named in a committee list
+  const qn = norm(q), people = [];
+  for (const d of DATA.docs) if (!d.trashed) for (const x of d.committee || []) { const nm = norm((x.split('—')[0] || '').split(' ')[0]); if (nm.length >= 3 && qn.includes(nm)) people.push({ x, d }); }
+  if (people.length) return { html: `${esc(t('chPeople'))}<ul class="clist">${people.slice(0, 8).map(p => `<li>${esc(p.x)} · ${esc((p.d.clubIds || []).map(id => clubById(id)?.short || '').filter(Boolean).join(', ') || p.d.title)}</li>`).join('')}</ul><div class="crow">${uniq(people.map(p => p.d.id)).slice(0, 4).map(id => docBtn(DATA.docs.find(d => d.id === id))).join('')}</div>`, mood: 'happy' };
+  // documents
+  const words = q.replace(/[?？!]/g, ' ').replace(/(ขอ|หา|อยาก|ได้|ไหม|มั้ย|หน่อย|ครับ|ค่ะ|คะ|นะ|เอกสาร|ไฟล์|ดู|เปิด|find|show|me|the|please|document|file)/gi, ' ');
+  const docs = words.trim() ? matchDocs('shared', A.shared.files(), words).map(r => r.d) : [];
+  if (docs.length) return { html: `${esc(t('chDocs', { n: docs.length }))}<div class="crow">${docs.slice(0, 6).map(docBtn).join('')}</div>`, mood: 'happy' };
+  return { html: esc(t('chNo')), mood: 'confused' };
+}
+// Answers about one club: committee roles, advisor, appointment letter, or an overview.
+function chatClub(c, ql) {
+    const ap = appointOf(c), name = esc(c.short || short(c.name));
+    if (/เบอร์|โทร|ติดต่อ|ไลน์|line|อีเมล|e-?mail|phone|contact|ig|ไอจี/i.test(ql)) return { html: `${esc(t('chContact'))}<div class="crow">${clubLink(c)}</div>`, mood: 'bow' };
+    const role = ROLES.find(([w]) => w.test(ql));
+    if (role) {
+      const who = (ap?.committee || []).filter(x => role[1].test(x.split('—')[1] || x));
+      if (!ap) return { html: `${esc(t('chNoAppointFor', { n: c.short || short(c.name) }))}<div class="crow">${clubLink(c)}</div>`, mood: 'confused' };
+      if (!who.length) return { html: `${esc(t('chNoRole', { n: c.short || short(c.name) }))}<div class="crow">${docBtn(ap)}</div>`, mood: 'confused' };
+      return { html: `<b>${name}</b> (${esc(t('chFromAppoint', { y: ap.year || '' }))})<ul class="clist">${who.map(x => `<li>${esc(x)}</li>`).join('')}</ul><p class="cnote">${esc(t('chScanNote'))}</p><div class="crow">${docBtn(ap)}${clubLink(c)}</div>`, mood: 'happy' };
+    }
+    if (/ที่ปรึกษา|advisor/i.test(ql)) return { html: c.advisor ? `${esc(t('chAdvisor', { n: c.short || short(c.name) }))} <b>${esc(c.advisor)}</b><div class="crow">${clubLink(c)}</div>` : `${esc(t('chNoAdvisor'))}<div class="crow">${clubLink(c)}</div>`, mood: c.advisor ? 'happy' : 'confused' };
+    if (/แต่งตั้ง|appoint/i.test(ql)) return ap
+      ? { html: `${esc(t('chAppointYes', { n: c.short || short(c.name), y: ap.year || '' }))}<ul class="clist">${ap.announced ? `<li>${esc(t('chAnnounced'))} ${esc(ap.announced)}</li>` : ''}${ap.meet ? `<li>${esc(t('chMeet'))} ${esc(ap.meet)}</li>` : ''}${ap.signed ? `<li>${esc(ap.signed === 'full' ? t('signedFull') : t('signedPartial'))}</li>` : ''}</ul><div class="crow">${docBtn(ap)}</div>`, mood: 'happy' }
+      : { html: `${esc(t('chNoAppointFor', { n: c.short || short(c.name) }))}<div class="crow">${clubLink(c)}</div>`, mood: 'confused' };
+    // overview of the club
+    return { html: `<b>${esc(c.name)}</b><ul class="clist"><li>${esc(c.kind === 'indep' ? t('kIndep') : t('kClub'))} · ${esc(catLbl(c.cat))} · ${esc(campLbl(c.campus))}</li><li>${esc(t('fStat'))}: ${esc(statLbl(c.status) || '-')}</li>${c.advisor ? `<li>${esc(t('advisor'))}: ${esc(c.advisor)}</li>` : ''}<li>${esc(ap ? t('chAppointYes', { n: '', y: ap.year || '' }).trim() : t('chNoAppoint'))}</li></ul><div class="crow">${clubLink(c)}${ap ? docBtn(ap) : ''}</div>`, mood: 'happy' };
+}
+function chatPaint() {
+  const box = $('#clog'); if (!box) return;
+  box.innerHTML = CH.log.map(m => `<div class="cm ${m.me ? 'me' : 'bot'}">${m.html}</div>`).join('');
+  box.scrollTop = box.scrollHeight;
+}
+function chatAsk(q) {
+  if (!q.trim()) return;
+  CH.log.push({ me: true, html: esc(q) });
+  const a = chatAnswer(q); CH.log.push({ html: a.html }); mood(a.mood);
+  chatPaint();
+}
+function openChat() {
+  let el = $('#chat');
+  if (el) { el.remove(); return; }
+  el = document.createElement('section'); el.className = 'chat'; el.id = 'chat'; el.setAttribute('role', 'dialog'); el.setAttribute('aria-label', t('chTitle'));
+  el.innerHTML = `<header><div class="mascot" role="img" aria-label="assistant"></div><div><b>${esc(t('mascotName'))}</b><small>${esc(t('chSub'))}</small></div><button class="pill round" data-chatx aria-label="${esc(t('close'))}">${ic('x')}</button></header>
+    <div class="clog" id="clog" aria-live="polite"></div>
+    <div class="cex">${t('chEx').map(x => `<button class="cchip" data-chatq="${esc(x)}">${esc(x)}</button>`).join('')}</div>
+    <form class="cform" id="cform"><input id="cin" autocomplete="off" placeholder="${esc(t('chPh'))}" aria-label="${esc(t('chPh'))}"><button class="btn go sm" aria-label="${esc(t('chSend'))}">${ic('arrow-up')}</button></form>`;
+  document.body.append(el);
+  if (!CH.log.length) CH.log.push({ html: esc(t('chHelp')) });
+  chatPaint(); mood('wave');
+  $('#cform', el).onsubmit = e => { e.preventDefault(); const i = $('#cin', el); chatAsk(i.value); i.value = ''; };
+  setTimeout(() => $('#cin', el)?.focus(), 30);
+}
+document.addEventListener('click', e => {
+  if (e.target.closest('[data-chatx]')) $('#chat')?.remove();
+  const ex = e.target.closest('[data-chatq]'); if (ex) chatAsk(ex.dataset.chatq);
+  if (e.target.closest('#chat a[href^="#"], #chat [data-row]') && innerWidth < 700) $('#chat')?.remove();
+});
+document.addEventListener('keydown', e => { if (e.key === 'Escape' && $('#chat') && !$('.ov.m')) $('#chat').remove(); });
 
 /* ============ look ============ */
 function isDark() { const r = document.documentElement, m = r.dataset.mode; return m === 'dark' || (m === 'system' && (r.dataset.theme === 'dark' || (!r.dataset.theme && matchMedia('(prefers-color-scheme: dark)').matches))); }
@@ -282,6 +414,7 @@ function applyLook() {
   $('#roleLbl').textContent = API.demo ? t('roleDemo') : S.staff ? t('roleStaff') : t('roleView');
 }
 $('#langBtn').onclick = () => { lang = lang === 'th' ? 'en' : 'th'; LS.set('lang', lang); applyLook(); route(); };
+$('#chatBtn').onclick = () => openChat();
 $('#backBtn').onclick = () => history.back();
 $('#fwdBtn').onclick = () => history.forward();
 function closeLook() { $('.lookpop')?.remove(); $('#lookBtn').setAttribute('aria-expanded', 'false'); }
