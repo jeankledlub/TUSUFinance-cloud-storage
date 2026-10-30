@@ -51,7 +51,10 @@
    */
   const firebaseConfig = {
     apiKey: 'AIzaSyDcKORfq1K-HWNSGIglxevwPu7g5-dreI8',
-    authDomain: 'document-center-513108.firebaseapp.com',
+    // Sign in through the same domain the site is opened on: Safari on iPhone blocks the sign-in
+    // from reading its state across domains ("missing initial state"). Each domain's
+    // https://<domain>/__/auth/handler must be an authorized redirect URI of the OAuth client.
+    authDomain: /^document-center-513108\.(web\.app|firebaseapp\.com)$/.test(location.hostname) ? location.hostname : 'document-center-513108.firebaseapp.com',
     projectId: 'document-center-513108',
     storageBucket: 'document-center-513108.firebasestorage.app',
     appId: '1:201661692433:web:ee7dc4ace09512a1698fb0'
