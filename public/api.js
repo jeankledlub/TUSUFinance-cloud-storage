@@ -42,8 +42,10 @@
   };
 
   /* ---------- FIREBASE: project document-center-513108 ----------
-   * Sign-in: Google account (basic profile only). Only emails listed in the Firestore collection `team`
-   * (document id = email, field role: 'viewer' | 'editor') can read data; see firestore.rules.
+   * Sign-in: Google account (basic profile only). Emails listed in the Firestore collection `team`
+   * (document id = email, field role: 'viewer' | 'editor') and every @dome.tu.ac.th account can read
+   * the shared drive and upload; only `team` can read clubs. See firestore.rules.
+   * Everyone who can upload may rename, move and trash the files they uploaded (doc.by = their email).
    * A team member with admin: true (always role 'editor') manages the list on the Team page.
    * Files: doc.driveId points at a PDF in the DOCUMENT CENTER Drive folder. The browser gets it from
    * FILE_SERVER (apps-script/Code.gs), which checks the viewer's sign-in token before sending the file.
@@ -124,6 +126,7 @@
     };
     return new Promise(() => {});
   }
+  const ORG = /@dome\.tu\.ac\.th$/; // same domain as org() in firestore.rules and Upload.gs
   const clean = o => JSON.parse(JSON.stringify(o, (k, v) => (k.startsWith('_') || v instanceof Blob ? undefined : v)));
   const FIREBASE = {
     demo: false,
@@ -141,7 +144,7 @@
       if (IN_APP) return leaveLine() ? new Promise(() => {}) : inAppGate();
       return gate({
         title: 'คลังเอกสาร อมธ.',
-        text: 'สำหรับฝ่ายดาต้าเท่านั้น ล็อกอินด้วยบัญชี Google ที่ได้รับสิทธิ์<br><small>Data team only. Sign in with your approved Google account.</small>',
+        text: 'ล็อกอินด้วยบัญชี @dome.tu.ac.th หรือบัญชี Google ที่ได้รับสิทธิ์<br><small>Sign in with your @dome.tu.ac.th account or an approved Google account.</small>',
         button: 'ล็อกอินด้วย Google · Sign in with Google',
         action: async () => {
           const provider = new firebase.auth.GoogleAuthProvider();
@@ -154,14 +157,16 @@
       const user = await this._signIn();
       const db = this.db();
       const me = await db.collection('team').doc(user.email).get().catch(() => null);
-      if (!me || !me.exists) {
-        return gate({ title: 'ยังไม่มีสิทธิ์เข้าถึง', text: `บัญชี <b>${escH(user.email)}</b> ยังไม่อยู่ในรายชื่อฝ่ายดาต้า ติดต่อผู้ดูแลเพื่อขอสิทธิ์<br><small>This account is not on the data team list.</small>`, signOut: true });
+      const inTeam = !!(me && me.exists);
+      if (!inTeam && !ORG.test(user.email)) {
+        return gate({ title: 'ยังไม่มีสิทธิ์เข้าถึง', text: `บัญชี <b>${escH(user.email)}</b> ไม่ใช่บัญชี @dome.tu.ac.th และยังไม่อยู่ในรายชื่อฝ่ายดาต้า ล็อกอินด้วยบัญชี มธ. หรือติดต่อผู้ดูแลเพื่อขอสิทธิ์<br><small>Use your @dome.tu.ac.th account, or ask the data team for access.</small>`, signOut: true });
       }
-      this._role = me.data().role || 'viewer';
-      this._admin = me.data().admin === true;
-      db.collection('team').doc(user.email).update({ lastSeen: firebase.firestore.FieldValue.serverTimestamp() }).catch(() => {});
+      this._role = inTeam ? me.data().role || 'viewer' : 'org';
+      this._admin = inTeam && me.data().admin === true;
+      if (inTeam) db.collection('team').doc(user.email).update({ lastSeen: firebase.firestore.FieldValue.serverTimestamp() }).catch(() => {});
       const all = async name => (await db.collection(name).get()).docs.map(x => ({ id: x.id, ...x.data() }));
-      const [folders, docs, clubs, thumbs] = await Promise.all([all('folders'), all('docs'), all('clubs'), all('thumbs')]);
+      // Clubs hold contact phone numbers, so only the team can read them (firestore.rules).
+      const [folders, docs, clubs, thumbs] = await Promise.all([all('folders'), all('docs'), inTeam ? all('clubs') : [], all('thumbs')]);
       const th = new Map(thumbs.map(t => [t.id, t.data]));
       docs.forEach(d => { if (th.has(d.id)) d._thumb = th.get(d.id); });
       return { folders, docs, clubs };
@@ -179,7 +184,7 @@
       return new Response(u, { headers: { 'Content-Type': j.mime } });
     },
     async canEdit() { return this._role === 'editor'; },
-    canUpload() { return this._role === 'editor' && !!FILE_SERVER; },
+    canUpload() { return !!this._role && !!FILE_SERVER; },
     // A new upload carries its cover as a data: URL in thumbUrl; it is stored in `thumbs`, not in the doc.
     async put(collection, obj) {
       const { id, ...rest } = clean(obj);

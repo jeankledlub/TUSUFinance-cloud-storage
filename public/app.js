@@ -8,7 +8,7 @@ const TX = {
   brand: 'คลังเอกสาร อมธ.', brandSub: 'ฝ่ายดาต้า · องค์การนักศึกษา', search: 'ค้นหา', searchPh: 'ค้นหาเอกสาร ชุมนุม หรือชื่อคน…', upload: 'อัปโหลด', mascotName: 'น้องดาต้า', assistant: 'ผู้ช่วยฝ่ายดาต้า',
   gOverview: 'ภาพรวม', gShared: 'คลังกลาง', gMine: 'ส่วนตัว', gTools: 'เครื่องมือ', gStaff: 'ฝ่ายดาต้า',
   home: 'หน้าหลัก', drive: 'คลังกลาง', mine: 'ไฟล์ส่วนตัว', starred: 'ติดดาว', tools: 'ตะกร้าไฟล์', look: 'ตั้งค่าหน้าตา', trash: 'ถังขยะ', results: 'ผลการค้นหา', allDocs: 'ทั้งหมด',
-  roleStaff: 'ฝ่ายดาต้า · แก้ไขได้', roleView: 'ผู้เยี่ยมชม · ดูอย่างเดียว',
+  roleStaff: 'ฝ่ายดาต้า · แก้ไขได้', roleView: 'ผู้เยี่ยมชม · ดูอย่างเดียว', roleUp: 'สมาชิก · อัปโหลดและจัดไฟล์ของตัวเองได้',
   sDocs: 'เอกสารในคลังกลาง', sDocsSub: 'รวม {n} หน้า', sFolders: 'โฟลเดอร์', sFoldersSub: 'ในคลังกลาง', sMine: 'ไฟล์ของฉัน', sMineSub: 'เก็บในเครื่องนี้', sTray: 'รอรวมไฟล์', sTraySub: 'อยู่ในรายการ',
   recent: 'เพิ่มล่าสุด', topFolders: 'โฟลเดอร์หลัก', items: '{n} รายการ', openDrive: 'เปิดคลังกลาง', openMine: 'ไฟล์ของฉัน', openTools: 'รวม / แปลงไฟล์',
   folders: 'โฟลเดอร์', files: 'ไฟล์', newFolder: 'โฟลเดอร์ใหม่', newBtn: 'ใหม่', uploadHere: 'อัปโหลดไฟล์', sortName: 'ชื่อ ก–ฮ', sortNew: 'ล่าสุด', cards: 'การ์ด', list: 'รายการ',
@@ -28,7 +28,7 @@ const TX = {
   starHero: 'ติดดาว', starP: 'เอกสารในคลังกลางที่คุณกดดาวไว้ จำไว้ในเครื่องนี้', starEmpty: 'ยังไม่มีเอกสารติดดาว', starEmptyP: 'กดรูปดาวที่การ์ดเอกสาร แล้วจะมารวมอยู่ที่นี่',
   trashHero: 'ถังขยะ', trashP: 'เอกสารที่ลบจากคลังกลาง กู้คืนได้ หรือลบถาวรเพื่อคืนพื้นที่', trashEmpty: 'ถังขยะว่าง', restore: 'กู้คืน', purge: 'ลบถาวร', purgeQ: 'ลบ “{n}” ถาวร? กู้คืนไม่ได้อีก',
   teamNav: 'จัดการทีม', teamHero: 'จัดการทีม', teamP: 'ใครเข้าเว็บนี้ได้บ้าง เพิ่มคนด้วยอีเมล Google แล้วเลือกสิทธิ์ แก้สิทธิ์ของตัวเองไม่ได้ เว็บจะได้มีผู้ดูแลอย่างน้อยหนึ่งคนเสมอ',
-  teamEmail: 'อีเมล Google', teamAdd: 'เพิ่มคน', teamRole: 'สิทธิ์', rViewer: 'ดูอย่างเดียว', rEditor: 'แก้ไขได้', rAdmin: 'ผู้ดูแล', teamRoles: 'ดูอย่างเดียว: เปิดอ่านเอกสาร · แก้ไขได้: อัปโหลด แก้ และลบเอกสาร · ผู้ดูแล: แก้ไขได้ และจัดการทีมนี้',
+  teamEmail: 'อีเมล Google', teamAdd: 'เพิ่มคน', teamRole: 'สิทธิ์', rViewer: 'อัปโหลดได้', rEditor: 'แก้ไขได้', rAdmin: 'ผู้ดูแล', teamRoles: 'อัปโหลดได้: เปิดอ่าน อัปโหลด และจัดไฟล์ที่ตัวเองอัปโหลด (บัญชี @dome.tu.ac.th ได้สิทธิ์นี้อยู่แล้ว ไม่ต้องเพิ่ม) · แก้ไขได้: อัปโหลด แก้ และลบเอกสาร · ผู้ดูแล: แก้ไขได้ และจัดการทีมนี้',
   teamYou: 'คุณ', teamSeen: 'เข้าล่าสุด', teamNever: 'ยังไม่เคยเข้า', teamDelQ: 'เอา {n} ออกจากทีม? จะเข้าเว็บไม่ได้อีก', teamLoading: 'กำลังโหลดรายชื่อ…',
   tTeamSaved: 'บันทึกสิทธิ์แล้ว', tTeamErr: 'บันทึกไม่สำเร็จ ลองอีกครั้ง', tTeamBad: 'อีเมลไม่ถูกต้อง', tTeamDup: 'อีเมลนี้อยู่ในทีมแล้ว', roleAdmin: 'ผู้ดูแล · จัดการทีมได้',
   lookHero: 'ตั้งค่าหน้าตา', lookP: 'เลือกได้ตามชอบ ระบบจำไว้ในเครื่องนี้ ไม่กระทบคนอื่น', theme: 'ธีมสี', mode: 'โหมด', lang: 'ภาษา', mascotSet: 'ตัวช่วย', mascotOn: 'แสดง', mascotOff: 'ซ่อน', mascotPhoto: 'เพิ่มรูป', mascotReset: 'ตัวเดิม', mascotPhotoP: 'กดรูปเพื่อเลือกตัวช่วยของคุณ (จำไว้ในเครื่องนี้) รูปที่เพิ่มจะแชร์ให้ทุกคนในทีมเลือกใช้ได้', tPhotoSaved: 'เพิ่มรูปแล้ว ทุกคนในทีมเลือกใช้ได้', tPhotoFull: 'แกลเลอรีเต็มแล้ว (30 รูป) ลบรูปเก่าก่อน', mName0: 'น้องดาต้า', mName1: 'น้องหมา', mName2: 'น้องบอท', mBy: 'รูปจาก {n}', mDelQ: 'ลบรูปนี้ออกจากแกลเลอรีของทีม ทุกคนจะใช้รูปนี้ไม่ได้อีก', palTusu: 'TUSU (ค่าเริ่มต้น)',
@@ -81,7 +81,7 @@ const TX = {
   brand: 'SU Archive', brandSub: 'Data team · Student Union', search: 'Search', searchPh: 'Search documents, clubs or people…', upload: 'Upload', mascotName: 'Data-chan', assistant: 'Data team assistant',
   gOverview: 'Overview', gShared: 'Shared drive', gMine: 'Private', gTools: 'Tools', gStaff: 'Data team',
   home: 'Home', drive: 'Shared drive', mine: 'Private files', starred: 'Starred', tools: 'File basket', look: 'Appearance', trash: 'Trash', results: 'Search results', allDocs: 'All',
-  roleStaff: 'Data team · can edit', roleView: 'Visitor · view only',
+  roleStaff: 'Data team · can edit', roleView: 'Visitor · view only', roleUp: 'Member · can upload and organise own files',
   sDocs: 'Shared documents', sDocsSub: '{n} pages in total', sFolders: 'Folders', sFoldersSub: 'In the shared drive', sMine: 'My files', sMineSub: 'Saved on this device', sTray: 'To merge', sTraySub: 'In the list',
   recent: 'Recently added', topFolders: 'Main folders', items: '{n} items', openDrive: 'Open shared drive', openMine: 'My files', openTools: 'Merge / convert',
   folders: 'Folders', files: 'Files', newFolder: 'New folder', newBtn: 'New', uploadHere: 'Upload files', sortName: 'Name A–Z', sortNew: 'Newest', cards: 'Cards', list: 'List',
@@ -101,7 +101,7 @@ const TX = {
   starHero: 'Starred', starP: 'Shared documents you starred, remembered on this device.', starEmpty: 'Nothing starred yet', starEmptyP: 'Press the star on a document card and it shows up here.',
   trashHero: 'Trash', trashP: 'Documents removed from the shared drive. Restore them, or delete forever to free space.', trashEmpty: 'Trash is empty', restore: 'Restore', purge: 'Delete forever', purgeQ: 'Delete “{n}” forever? This cannot be undone.',
   teamNav: 'Manage team', teamHero: 'Manage team', teamP: 'Who can use this site. Add people by their Google email and pick what they can do. You cannot change your own access, so the site always keeps at least one admin.',
-  teamEmail: 'Google email', teamAdd: 'Add', teamRole: 'Access', rViewer: 'View only', rEditor: 'Can edit', rAdmin: 'Admin', teamRoles: 'View only: read documents · Can edit: upload, edit and delete documents · Admin: can edit, and manages this team',
+  teamEmail: 'Google email', teamAdd: 'Add', teamRole: 'Access', rViewer: 'Can upload', rEditor: 'Can edit', rAdmin: 'Admin', teamRoles: 'Can upload: read, upload, and organise files they uploaded (@dome.tu.ac.th accounts have this already) · Can edit: upload, edit and delete documents · Admin: can edit, and manages this team',
   teamYou: 'You', teamSeen: 'Last visit', teamNever: 'Never signed in', teamDelQ: 'Remove {n} from the team? They will no longer be able to open the site.', teamLoading: 'Loading the list…',
   tTeamSaved: 'Access saved', tTeamErr: 'Could not save. Try again.', tTeamBad: 'Not a valid email', tTeamDup: 'This email is already on the team', roleAdmin: 'Admin · manages the team',
   lookHero: 'Appearance', lookP: 'Saved on this device only. It does not change anyone else’s view.', theme: 'Color theme', mode: 'Mode', lang: 'Language', mascotSet: 'Assistant', mascotOn: 'Show', mascotOff: 'Hide', mascotPhoto: 'Add photo', mascotReset: 'Original', mascotPhotoP: 'Tap a picture to choose your assistant (saved on this device). Photos you add are shared so the whole team can use them.', tPhotoSaved: 'Photo added for the whole team', tPhotoFull: 'The gallery is full (30 photos). Delete one first.', mName0: 'Data-chan', mName1: 'Doggo', mName2: 'Bot', mBy: 'Photo from {n}', mDelQ: 'Remove this photo from the team gallery? Nobody will be able to use it any more.', palTusu: 'TUSU (default)',
@@ -307,11 +307,17 @@ function myThumb(d) { if (!d.thumb) return ''; if (!MY.urls.has(d.id)) MY.urls.s
 const FILES = { url: d => API.fileUrl(d), thumb: d => API.thumbUrl(d) };
 
 /* ============ adapters ============ */
+// A shared file or folder the signed-in person made: they may rename, move and trash it without being an editor.
+// Their folders always sit inside another folder, and can be deleted only when empty (see firestore.rules).
+const ownDoc = d => !!d.by && d.by === API.me();
+const emptyFolder = f => !DATA.folders.some(x => x.parent === f.id) && !DATA.docs.some(d => d.folder === f.id);
 const A = {
   shared: {
     folders: () => DATA.folders,
-    files: () => DATA.docs.filter(d => !d.trashed && (S.staff || (d.status || 'active') !== 'draft')),
+    files: () => DATA.docs.filter(d => !d.trashed && (S.staff || ownDoc(d) || (d.status || 'active') !== 'draft')),
     edit: () => S.staff,
+    editDoc: d => S.staff || ownDoc(d),
+    editFolder: f => S.staff || ownDoc(f),
     thumb: d => FILES.thumb(d),
     root: '#drive', pre: '#d-'
   },
@@ -319,6 +325,8 @@ const A = {
     folders: () => MY.folders,
     files: () => MY.files,
     edit: () => true,
+    editDoc: () => true,
+    editFolder: () => true,
     thumb: d => myThumb(d),
     root: '#mine', pre: '#m-'
   }
@@ -335,7 +343,7 @@ function descendants(k, id) { const out = new Set([id]); let grew = true; while 
 async function commit(changes = []) {
   DATA.updatedAt = new Date().toISOString(); for (const d of DATA.docs) delete d._h;
   route();
-  if (!A.shared.edit()) { toast(t('tReadOnly')); return; }
+  if (!A.shared.edit() && !(changes.length && changes.every(([s, o, del]) => ownDoc(o) && (s === 'folders' || ((s === 'docs' || s === 'files') && !del))))) { toast(t('tReadOnly')); return; }
   mood('work', 6);
   try {
     for (const [store, obj, del] of changes) {
@@ -511,7 +519,7 @@ function applyLook() {
   $$('[data-tp]').forEach(e => e.placeholder = t(e.dataset.tp));
   $('#langLbl').textContent = lang === 'th' ? 'TH / EN' : 'EN / TH';
   $$('[data-ta]').forEach(e => { e.setAttribute('aria-label', t(e.dataset.ta)); e.title = t(e.dataset.ta); });
-  $('#roleLbl').textContent = API.demo ? t('roleDemo') : S.admin ? t('roleAdmin') : S.staff ? t('roleStaff') : t('roleView');
+  $('#roleLbl').textContent = API.demo ? t('roleDemo') : S.admin ? t('roleAdmin') : S.staff ? t('roleStaff') : API.canUpload() ? t('roleUp') : t('roleView');
 }
 $('#langBtn').onclick = () => { lang = lang === 'th' ? 'en' : 'th'; LS.set('lang', lang); applyLook(); route(); };
 $('#chatBtn').onclick = () => openChat();
@@ -563,7 +571,7 @@ function route() {
   renderNav(); applyLook();
   const c = cur(), P = $('#page');
   const onMine = c === 'mine' || c.startsWith('m-');
-  $('#upBtn').hidden = !(onMine || (A.shared.edit() && API.canUpload() && (c === 'drive' || c.startsWith('d-') || c === 'home')));
+  $('#upBtn').hidden = !(onMine || (API.canUpload() && (c === 'drive' || c.startsWith('d-') || c === 'home')));
   if (c === 'home') P.innerHTML = pageHome();
   else if (c === 'drive') P.innerHTML = pageDrive('shared', null);
   else if (c.startsWith('d-')) P.innerHTML = folderOf('shared', c.slice(2)) ? pageDrive('shared', c.slice(2)) : pageDrive('shared', null);
@@ -594,7 +602,7 @@ function statusChip(d) { if (d.trashed) return `<span class="chip st-trash">${es
 const inTray = (src, id) => S.tray.some(x => x.src === src && x.id === id);
 function linkCard(k, d) {
   const [cls, lb] = linkKind(d.url), clubsTxt = (d.clubs || []).length === 1 ? short(d.clubs[0]) : '';
-  return `<article class="card doc" data-k="${k}" data-type="file" data-id="${esc(d.id)}" draggable="${A[k].edit()}">
+  return `<article class="card doc" data-k="${k}" data-type="file" data-id="${esc(d.id)}" draggable="${A[k].editDoc(d)}">
     <a class="open" href="${esc(d.url)}" target="_blank" rel="noopener" draggable="false">
       <div class="pv lnk"><span class="li ${cls}">${lb}</span></div>
       <div class="bd"><h4>${esc(d.title)}</h4><p class="meta">${esc([t('link'), hostOf(d.url), clubsTxt].filter(Boolean).join(' · '))}</p></div>
@@ -610,7 +618,7 @@ function docCard(k, d, hits = []) {
   const meta = [d.year, d.pageCount ? `${d.pageCount} ${t('pages')}` : '', n > 1 ? `${n} ${t('clubs')}` : n === 1 ? short(d.clubs[0]) : '', k === 'mine' ? fmtB(d.sizeBytes) : ''].filter(Boolean).join(' · ');
   const hit = hits.length ? `<p class="hit">${esc(t('foundIn'))} ${hits.slice(0, 3).map(p => { const pg = (d.pages || []).find(x => x.p === p); return `<b class="num">${p}</b>${pg && pg.club && d.pages.length > 1 ? ' ' + esc(short(pg.club)) : ''}`; }).join(' · ')}${hits.length > 3 ? ' · +' + (hits.length - 3) : ''}</p>` : '';
   const th = A[k].thumb(d), src = k === 'shared' ? 'doc' : 'mine';
-  return `<article class="card doc" data-k="${k}" data-type="file" data-id="${esc(d.id)}" draggable="${A[k].edit()}">
+  return `<article class="card doc" data-k="${k}" data-type="file" data-id="${esc(d.id)}" draggable="${A[k].editDoc(d)}">
     <button class="open" data-open="${hits[0] || 1}">
       <div class="pv">${th ? `<img loading="lazy" alt="" src="${esc(th)}" draggable="false" onerror="this.remove()">` : `${isOffice(d) ? `<span class="ofc"><span class="${ofcCls(d)}">${esc(extOf(d).toUpperCase() || 'FILE')}</span></span>` : `<span class="ty">${(d.mime || '').includes('pdf') ? 'PDF' : 'IMG'}</span>`}`}${d.pageCount > 1 ? `<span class="pg num">${d.pageCount} ${esc(t('pages'))}</span>` : ''}</div>
       <div class="bd">${k === 'shared' && (d.status || 'active') !== 'active' ? `<div>${statusChip(d)}</div>` : ''}<h4>${esc(d.title)}</h4><p class="meta">${esc(meta)}</p>${hit}</div>
@@ -623,7 +631,7 @@ function docCard(k, d, hits = []) {
 }
 function folderTile(k, f) {
   const c = colorOf(f.color);
-  return `<div class="ftile" data-k="${k}" data-type="folder" data-id="${esc(f.id)}" draggable="${A[k].edit()}">
+  return `<div class="ftile" data-k="${k}" data-type="folder" data-id="${esc(f.id)}" draggable="${A[k].editFolder(f)}">
     <a class="fo" href="${A[k].pre}${esc(f.id)}" draggable="false"><span class="fic" style="background:color-mix(in srgb, ${c} 16%, transparent);color:${c}">${ic('folder')}</span><span><b>${esc(f.name)}</b><small>${esc(t('items', { n: countIn(k, f.id) }))}</small></span></a>
     <button class="dots" data-dots aria-label="more">${ic('dots')}</button></div>`;
 }
@@ -766,7 +774,7 @@ function pageDrive(k, fid) {
   const rootLbl = k === 'shared' ? t('drive') : t('mine');
   const crumbs = `<nav class="crumbs" aria-label="path"><a href="${A[k].root}" data-crumb="" data-k="${k}">${esc(rootLbl)}</a>${path.map(f => `<span class="sep">${ic('chev')}</span><a href="${A[k].pre}${esc(f.id)}" data-crumb="${esc(f.id)}" data-k="${k}">${esc(f.name)}</a>`).join('')}</nav>`;
   const F = sortItems(kidsF(k, fid), 'name'), D = sortItems(kidsD(k, fid));
-  const newBtn = ed ? `<button class="btn go" data-new="${k}">${ic('plus')}${esc(t('newBtn'))}</button>` : '';
+  const newBtn = ed || (k === 'shared' && fid && API.canUpload()) ? `<button class="btn go" data-new="${k}">${ic('plus')}${esc(t('newBtn'))}</button>` : '';
   const tools = `<div class="toolbar">${newBtn}<span class="sp"></span><span class="sel"><select data-sort aria-label="sort"><option value="name" ${S.sort === 'name' ? 'selected' : ''}>${esc(t('sortName'))}</option><option value="new" ${S.sort === 'new' ? 'selected' : ''}>${esc(t('sortNew'))}</option></select></span>${layoutSeg()}</div>`;
   let note = '';
   if (k === 'mine') note = `<div class="note-bar">${ic('user')}<span>${esc(MY.temp ? t('mineTemp') : t('mineNote'))}</span></div>`;
@@ -781,7 +789,7 @@ document.addEventListener('click', e => { const b = e.target.closest('[data-layo
 document.addEventListener('click', e => {
   const nb = e.target.closest('[data-new]'); if (!nb) return;
   const k = nb.dataset.new, fid = curKindFolder()[1];
-  openMenu(nb, [{ icon: 'fplus', label: t('newFolder'), run: () => folderModal(k, null, fid) }, { icon: 'link', label: t('newLink'), run: () => linkModal(k, null, fid) }, ...(k === 'mine' || API.canUpload() ? [{ icon: 'up', label: t('uploadHere'), run: () => uploadModal(k, fid) }] : [])]);
+  openMenu(nb, [{ icon: 'fplus', label: t('newFolder'), run: () => folderModal(k, null, fid) }, ...(A[k].edit() ? [{ icon: 'link', label: t('newLink'), run: () => linkModal(k, null, fid) }] : []), ...(k === 'mine' || API.canUpload() ? [{ icon: 'up', label: t('uploadHere'), run: () => uploadModal(k, fid) }] : [])]);
 });
 
 /* ============ how to use ============ */
@@ -1031,7 +1039,7 @@ function openMenu(anchor, items) {
 document.addEventListener('click', e => { if ($('.pmenu') && !e.target.closest('.pmenu') && !e.target.closest('[data-dots],[data-new]')) closeMenu(); }, true);
 window.addEventListener('scroll', closeMenu, true);
 function fileMenu(anchor, k, id) {
-  const d = A[k].files().find(x => x.id === id); if (!d) return; const ed = A[k].edit(), src = k === 'shared' ? 'doc' : 'mine';
+  const d = A[k].files().find(x => x.id === id); if (!d) return; const ed = A[k].editDoc(d), src = k === 'shared' ? 'doc' : 'mine';
   if (isLink(d)) {
     const items = [{ icon: 'ext', label: t('openLink'), run: () => openTab(d.url) }, { icon: 'link', label: t('copyLink'), run: () => copyText(d.url) }];
     if (k === 'shared') items.push({ icon: 'star', label: S.stars.includes(id) ? t('unstar') : t('star'), run: () => toggleStar(id) });
@@ -1054,7 +1062,8 @@ function fileMenu(anchor, k, id) {
 function folderMenu(anchor, k, id) {
   const f = folderOf(k, id); if (!f) return;
   const items = [{ icon: 'folder', label: t('open'), run: () => location.hash = A[k].pre.slice(1) + id }];
-  if (A[k].edit()) items.push('-', { icon: 'edit', label: t('rename'), run: () => folderModal(k, f) }, { icon: 'move', label: t('moveTo'), run: () => moveModal(k, 'folder', id) }, { icon: 'trash', label: t('delFolder'), bad: true, run: () => confirmModal(t('delFolderQ', { n: f.name }), () => deleteFolder(k, f)) });
+  if (A[k].editFolder(f)) items.push('-', { icon: 'edit', label: t('rename'), run: () => folderModal(k, f) }, { icon: 'move', label: t('moveTo'), run: () => moveModal(k, 'folder', id) });
+  if (A[k].edit() || (A[k].editFolder(f) && emptyFolder(f))) items.push({ icon: 'trash', label: t('delFolder'), bad: true, run: () => confirmModal(t('delFolderQ', { n: f.name }), () => deleteFolder(k, f)) });
   openMenu(anchor, items);
 }
 
@@ -1070,6 +1079,7 @@ function moveItem(k, type, id, target) {
   target = target || null;
   if (type === 'folder') {
     if (descendants(k, id).has(target)) return;
+    if (!A[k].edit() && !target) { toast(t('tReadOnly')); return; } // only editors put folders at the top level
     const f = folderOf(k, id); if (!f || (f.parent || null) === target) return;
     mutate(k, () => { f.parent = target; return [['folders', f]]; }); say(t('sayMoved'), 'happy', 6); toast(t('tMoved'));
   } else {
@@ -1118,7 +1128,7 @@ function folderModal(k, f, parent) {
   const ok = () => {
     const name = $('#fn', o).value.trim(); if (!name) return; closeModal();
     if (f) mutate(k, () => { f.name = name; f.color = color; return [['folders', f]]; });
-    else { const nf = { id: (k === 'shared' ? 'f-' : 'm') + rid(), name, parent: parent || null, color, createdAt: new Date().toISOString() }; mutate(k, () => { A[k].folders().push(nf); return [['folders', nf]]; }); }
+    else { const nf = { id: (k === 'shared' ? 'f-' : 'm') + rid(), name, parent: parent || null, color, createdAt: new Date().toISOString(), ...(k === 'shared' && !S.staff ? { by: API.me() } : {}) }; mutate(k, () => { A[k].folders().push(nf); return [['folders', nf]]; }); }
   };
   $('#fok', o).onclick = ok; $('#fn', o).onkeydown = e => { if (e.key === 'Enter') ok(); };
 }
@@ -1219,8 +1229,10 @@ function dropTarget(e) {
   if (page) return { el: page, k: page.dataset.drop, fid: page.dataset.folder || null, page: true };
   return null;
 }
+// Files and folders move for whoever may edit them (folders into the top level only for editors); files from the computer for anyone who may upload.
+const canDrop = tg => drag ? (drag.type === 'file' ? A[tg.k].editDoc(A[tg.k].files().find(x => x.id === drag.id) || {}) : A[tg.k].editFolder(folderOf(tg.k, drag.id) || {}) && (A[tg.k].edit() || !!tg.fid)) : tg.k === 'mine' || API.canUpload();
 document.addEventListener('dragover', e => {
-  const tg = dropTarget(e); if (!tg || !A[tg.k].edit()) return;
+  const tg = dropTarget(e); if (!tg || !canDrop(tg)) return;
   const files = !drag && [...(e.dataTransfer?.types || [])].includes('Files');
   if (drag && (drag.k !== tg.k || tg.page)) return;
   if (!drag && !files) return;
@@ -1230,7 +1242,7 @@ document.addEventListener('dragover', e => {
 document.addEventListener('dragleave', e => { const tg = dropTarget(e); if (tg && !tg.el.contains(e.relatedTarget)) tg.el.classList.remove('dz-over'); });
 document.addEventListener('drop', e => {
   const tg = dropTarget(e); $$('.dz-over').forEach(x => x.classList.remove('dz-over'));
-  if (!tg || !A[tg.k].edit()) return;
+  if (!tg || !canDrop(tg)) return;
   e.preventDefault();
   if (drag) { const d = drag; drag = null; if (d.k === tg.k && !tg.page) moveItem(tg.k, d.type, d.id, tg.fid); return; }
   if (e.dataTransfer?.files?.length) uploadModal(tg.k, tg.fid, e.dataTransfer.files);
@@ -1420,7 +1432,7 @@ async function go(n) {
 }
 function renderSide() {
   const d = R.d, k = R.k; if (!d) return; $('#rt').textContent = d.title;
-  const pdf = isPdf(d), many = (d.pageCount || 1) > 1, src = k === 'shared' ? 'doc' : 'mine', ed = A[k].edit(), ofc = isOffice(d);
+  const pdf = isPdf(d), many = (d.pageCount || 1) > 1, src = k === 'shared' ? 'doc' : 'mine', ed = A[k].editDoc(d), ofc = isOffice(d);
   const pages = (d.pages || []).filter(p => p.club);
   const fpath = pathOf(k, d.folder).map(f => f.name).join(' › ') || (k === 'shared' ? t('drive') : t('mine'));
   let h = `<section><div class="qa">
@@ -1526,7 +1538,7 @@ function metaFields(m, key, k) {
 }
 const whereLbl = (k, fid) => [k === 'shared' ? t('drive') : t('mine'), ...pathOf(k, fid).map(f => f.name)].join(' › ');
 function uploadModal(k, fid, initial) {
-  if (k === 'shared' && !(A.shared.edit() && API.canUpload())) { toast(t('tReadOnly')); return; }
+  if (k === 'shared' && !API.canUpload()) { toast(t('tReadOnly')); return; }
   const o = modal(k === 'mine' ? t('upMine') : t('upShared'), `<ol class="upsteps">${t('upSteps').map((s, i) => `<li><span class="num">${i + 1}</span>${esc(s)}</li>`).join('')}</ol>
     ${k === 'mine' ? `<p class="note-bar">${ic('user')}<span>${esc(t('upMineP'))}</span></p>` : ''}
     <details class="where"><summary>${ic('folder')}<span>${esc(t('into'))}: <b id="whereL">${esc(whereLbl(k, fid))}</b></span><span class="link">${esc(t('change'))}</span></summary>${treeOptions(k, new Set(), fid || '')}</details>
@@ -1558,7 +1570,7 @@ function uploadModal(k, fid, initial) {
           MY.files.push(rec); await myPut('files', rec);
         } else {
           const up = await API.upload(r.p.file, r.p.thumb);
-          const nd = { id: 'd' + rid(), title: v('ti') || t('untitled'), folder: target, status: v('st') || 'active', year: parseInt(v('yr'), 10) || null, type: v('ty'), clubs: uniq(v('cl').split(',').map(x => x.trim())), clubIds: clubIdsFor(v('cl')), announced: r.p.meta.announced || '', note: '', fileUrl: up.fileUrl, ...(up.driveId ? { driveId: up.driveId } : {}), thumbUrl: up.thumbUrl || '', fileName: r.p.file.name, mime: r.p.mime, sizeBytes: up.sizeBytes ?? r.p.file.size, pageCount: r.p.pageCount, pages: r.p.meta.pages || [], trashed: false, createdAt: now, updatedAt: now };
+          const nd = { id: 'd' + rid(), title: v('ti') || t('untitled'), folder: target, status: v('st') || 'active', year: parseInt(v('yr'), 10) || null, type: v('ty'), clubs: uniq(v('cl').split(',').map(x => x.trim())), clubIds: clubIdsFor(v('cl')), announced: r.p.meta.announced || '', note: '', fileUrl: up.fileUrl, ...(up.driveId ? { driveId: up.driveId } : {}), thumbUrl: up.thumbUrl || '', fileName: r.p.file.name, mime: r.p.mime, sizeBytes: up.sizeBytes ?? r.p.file.size, pageCount: r.p.pageCount, pages: r.p.meta.pages || [], trashed: false, by: API.me(), createdAt: now, updatedAt: now };
           DATA.docs.push(nd); r.newDoc = nd;
         }
         r.done = true; added++; s.className = 'us ok'; s.textContent = t('done');

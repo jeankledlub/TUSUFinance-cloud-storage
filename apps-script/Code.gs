@@ -2,7 +2,7 @@
  * File server for คลังเอกสาร อมธ. (https://document-center-513108.web.app)
  *
  * The website sends { id, token }: a document id and the viewer's Firebase sign-in token.
- * Firestore checks the token with the same rules as the website (only the `team` list can read docs),
+ * Firestore checks the token with the same rules as the website (only the `team` list and @dome.tu.ac.th accounts can read docs),
  * then this script sends that document's PDF from the DOCUMENT CENTER Drive folder.
  * It runs as the folder owner, so viewers need no Drive access and no extra Google permission.
  *

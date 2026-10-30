@@ -1,5 +1,6 @@
 /**
- * Uploads from the website into the DOCUMENT CENTER Drive folder (editors only), and moving files to trash.
+ * Uploads from the website into the DOCUMENT CENTER Drive folder (team members and @dome.tu.ac.th accounts),
+ * and moving files to trash (editors only).
  * Uses PROJECT, ROOT_FOLDER, insideRoot() and reply() from Code.gs.
  *
  * Code.gs doPost sends any request with an `action` here, right after parsing:
@@ -20,10 +21,10 @@ const UPLOAD_SUBFOLDER = {
 
 function uploadRoute(req) {
   try {
-    const email = editorEmail(String(req.token || ''));
-    if (!email) return reply({ error: 'denied' });
-    if (req.action === 'upload') return reply(uploadFile(req, email));
-    if (req.action === 'trash') return reply(trashFile(req));
+    const who = uploader(String(req.token || ''));
+    if (!who) return reply({ error: 'denied' });
+    if (req.action === 'upload') return reply(uploadFile(req, who.email));
+    if (req.action === 'trash') return reply(who.editor ? trashFile(req) : { error: 'denied' });
     return reply({ error: 'bad request' });
   } catch (err) {
     console.error(err);
@@ -31,23 +32,24 @@ function uploadRoute(req) {
   }
 }
 
-// The signed-in email if the Firebase token is valid and the person is an editor in `team`, else ''.
-function editorEmail(token) {
-  if (!token) return '';
+// { email, editor } if the Firebase token is valid and the person is in `team` or has a @dome.tu.ac.th account, else null.
+function uploader(token) {
+  if (!token) return null;
   const look = UrlFetchApp.fetch('https://identitytoolkit.googleapis.com/v1/accounts:lookup?key=' + UPLOAD_API_KEY, {
     method: 'post', contentType: 'application/json', payload: JSON.stringify({ idToken: token }), muteHttpExceptions: true
   });
-  if (look.getResponseCode() !== 200) return '';
+  if (look.getResponseCode() !== 200) return null;
   const user = (JSON.parse(look.getContentText()).users || [])[0];
-  if (!user || !user.email || !user.emailVerified) return '';
+  if (!user || !user.email || !user.emailVerified) return null;
   // Read the person's own team doc with their own token, so firestore.rules decide, as on the website.
   const r = UrlFetchApp.fetch(
     'https://firestore.googleapis.com/v1/projects/' + PROJECT + '/databases/(default)/documents/team/' + encodeURIComponent(user.email),
     { headers: { Authorization: 'Bearer ' + token }, muteHttpExceptions: true }
   );
-  if (r.getResponseCode() !== 200) return '';
+  if (r.getResponseCode() === 404) return /@dome\.tu\.ac\.th$/.test(user.email) ? { email: user.email, editor: false } : null;
+  if (r.getResponseCode() !== 200) return null;
   const role = ((JSON.parse(r.getContentText()).fields || {}).role || {}).stringValue;
-  return role === 'editor' ? user.email : '';
+  return { email: user.email, editor: role === 'editor' };
 }
 
 function uploadFile(req, email) {

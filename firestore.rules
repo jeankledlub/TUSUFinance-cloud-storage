@@ -1,6 +1,9 @@
 rules_version = '2';
-// Only signed-in Google accounts listed in `team` (document id = email) can see the data.
-// role 'editor' can also change folders, docs, clubs and thumbs (covers of uploaded files).
+// Signed-in Google accounts listed in `team` (document id = email) and every @dome.tu.ac.th account
+// can see the shared drive (folders, docs, thumbs) and upload files; only `team` can see clubs.
+// Uploaders can change their own files (docs with by = their email) but not delete them for good,
+// and make folders of their own inside existing folders (never at the top level).
+// role 'editor' can also change folders, all docs, clubs and thumbs (covers of uploaded files).
 // admin: true (only with role 'editor') can also manage the team list from the Team page, except their own entry,
 // so there is always at least one admin. The first admin is set in the console.
 service cloud.firestore {
@@ -9,6 +12,10 @@ service cloud.firestore {
     function member() { return signedIn() && exists(/databases/$(database)/documents/team/$(request.auth.token.email)); }
     function editor() { return member() && get(/databases/$(database)/documents/team/$(request.auth.token.email)).data.role == 'editor'; }
     function admin() { return member() && get(/databases/$(database)/documents/team/$(request.auth.token.email)).data.get('admin', false) == true; }
+    function org() { return signedIn() && request.auth.token.email.matches('.*@dome[.]tu[.]ac[.]th'); }
+    function reader() { return member() || org(); }
+    function mine(d) { return d.get('by', '') == request.auth.token.email; }
+    function inFolder(d) { return d.get('parent', null) is string && exists(/databases/$(database)/documents/folders/$(d.parent)); }
     function self(email) { return signedIn() && request.auth.token.email == email; }
     function validMember() {
       let d = request.resource.data;
@@ -38,9 +45,31 @@ service cloud.firestore {
         && request.resource.data.url.size() < 300000;
       allow delete: if editor() || (member() && resource.data.by == request.auth.token.email);
     }
-    match /{col}/{id} {
-      allow read: if member() && col in ['folders', 'docs', 'clubs', 'thumbs'];
-      allow write: if editor() && col in ['folders', 'docs', 'clubs', 'thumbs'];
+    match /docs/{id} {
+      allow read: if reader();
+      allow create: if editor() || (reader() && mine(request.resource.data));
+      allow update: if editor() || (reader() && mine(resource.data) && mine(request.resource.data));
+      allow delete: if editor();
+    }
+    // A new upload's cover is saved just before its doc, so anyone who can upload may create one for a doc not saved yet.
+    match /thumbs/{id} {
+      allow read: if reader();
+      allow write: if editor();
+      allow create: if reader() && !exists(/databases/$(database)/documents/docs/$(id))
+        && request.resource.data.keys().hasOnly(['data'])
+        && request.resource.data.data is string && request.resource.data.data.matches('data:image/.*')
+        && request.resource.data.data.size() < 300000;
+    }
+    // The site deletes someone's own folder only when it is empty; rules cannot check that.
+    match /folders/{id} {
+      allow read: if reader();
+      allow create: if editor() || (reader() && mine(request.resource.data) && inFolder(request.resource.data));
+      allow update: if editor() || (reader() && mine(resource.data) && mine(request.resource.data) && inFolder(request.resource.data));
+      allow delete: if editor() || (reader() && mine(resource.data));
+    }
+    match /clubs/{id} {
+      allow read: if member();
+      allow write: if editor();
     }
   }
 }
