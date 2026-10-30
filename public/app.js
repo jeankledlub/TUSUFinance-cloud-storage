@@ -28,7 +28,7 @@ const TX = {
   starHero: 'ติดดาว', starP: 'เอกสารในคลังกลางที่คุณกดดาวไว้ จำไว้ในเครื่องนี้', starEmpty: 'ยังไม่มีเอกสารติดดาว', starEmptyP: 'กดรูปดาวที่การ์ดเอกสาร แล้วจะมารวมอยู่ที่นี่',
   trashHero: 'ถังขยะ', trashP: 'เอกสารที่ลบจากคลังกลาง กู้คืนได้ หรือลบถาวรเพื่อคืนพื้นที่', trashEmpty: 'ถังขยะว่าง', restore: 'กู้คืน', purge: 'ลบถาวร', purgeQ: 'ลบ “{n}” ถาวร? กู้คืนไม่ได้อีก',
   teamNav: 'จัดการทีม', teamHero: 'จัดการทีม', teamP: 'ใครเข้าเว็บนี้ได้บ้าง เพิ่มคนด้วยอีเมล Google แล้วเลือกสิทธิ์ แก้สิทธิ์ของตัวเองไม่ได้ เว็บจะได้มีผู้ดูแลอย่างน้อยหนึ่งคนเสมอ',
-  teamEmail: 'อีเมล Google', teamAdd: 'เพิ่มคน', teamRole: 'สิทธิ์', rViewer: 'ดูอย่างเดียว', rEditor: 'แก้ไขได้', rAdmin: 'ผู้ดูแล', teamRoles: 'ดูอย่างเดียว: เปิดอ่านเอกสาร · แก้ไขได้: อัปโหลด แก้ และลบเอกสาร · ผู้ดูแล: แก้ไขได้ และจัดการทีมนี้',
+  teamEmail: 'อีเมล Google', signOut: 'ออกจากระบบ', teamAdd: 'เพิ่มคน', teamRole: 'สิทธิ์', rViewer: 'ดูอย่างเดียว', rEditor: 'แก้ไขได้', rAdmin: 'ผู้ดูแล', teamRoles: 'ดูอย่างเดียว: เปิดอ่านเอกสาร · แก้ไขได้: อัปโหลด แก้ และลบเอกสาร · ผู้ดูแล: แก้ไขได้ และจัดการทีมนี้',
   teamYou: 'คุณ', teamSeen: 'เข้าล่าสุด', teamNever: 'ยังไม่เคยเข้า', teamDelQ: 'เอา {n} ออกจากทีม? จะเข้าเว็บไม่ได้อีก', teamLoading: 'กำลังโหลดรายชื่อ…',
   tTeamSaved: 'บันทึกสิทธิ์แล้ว', tTeamErr: 'บันทึกไม่สำเร็จ ลองอีกครั้ง', tTeamBad: 'อีเมลไม่ถูกต้อง', tTeamDup: 'อีเมลนี้อยู่ในทีมแล้ว', roleAdmin: 'ผู้ดูแล · จัดการทีมได้',
   lookHero: 'ตั้งค่าหน้าตา', lookP: 'เลือกได้ตามชอบ ระบบจำไว้ในเครื่องนี้ ไม่กระทบคนอื่น', theme: 'ธีมสี', mode: 'โหมด', lang: 'ภาษา', mascotSet: 'ตัวช่วย', mascotOn: 'แสดง', mascotOff: 'ซ่อน', mascotPhoto: 'เพิ่มรูป', mascotReset: 'ตัวเดิม', mascotPhotoP: 'กดรูปเพื่อเลือกตัวช่วยของคุณ (จำไว้ในเครื่องนี้) รูปที่เพิ่มจะแชร์ให้ทุกคนในทีมเลือกใช้ได้', tPhotoSaved: 'เพิ่มรูปแล้ว ทุกคนในทีมเลือกใช้ได้', tPhotoFull: 'แกลเลอรีเต็มแล้ว (30 รูป) ลบรูปเก่าก่อน', mName0: 'น้องดาต้า', mName1: 'น้องหมา', mName2: 'น้องบอท', mBy: 'รูปจาก {n}', mDelQ: 'ลบรูปนี้ออกจากแกลเลอรีของทีม ทุกคนจะใช้รูปนี้ไม่ได้อีก', palTusu: 'TUSU (ค่าเริ่มต้น)',
@@ -101,7 +101,7 @@ const TX = {
   starHero: 'Starred', starP: 'Shared documents you starred, remembered on this device.', starEmpty: 'Nothing starred yet', starEmptyP: 'Press the star on a document card and it shows up here.',
   trashHero: 'Trash', trashP: 'Documents removed from the shared drive. Restore them, or delete forever to free space.', trashEmpty: 'Trash is empty', restore: 'Restore', purge: 'Delete forever', purgeQ: 'Delete “{n}” forever? This cannot be undone.',
   teamNav: 'Manage team', teamHero: 'Manage team', teamP: 'Who can use this site. Add people by their Google email and pick what they can do. You cannot change your own access, so the site always keeps at least one admin.',
-  teamEmail: 'Google email', teamAdd: 'Add', teamRole: 'Access', rViewer: 'View only', rEditor: 'Can edit', rAdmin: 'Admin', teamRoles: 'View only: read documents · Can edit: upload, edit and delete documents · Admin: can edit, and manages this team',
+  teamEmail: 'Google email', signOut: 'Sign out', teamAdd: 'Add', teamRole: 'Access', rViewer: 'View only', rEditor: 'Can edit', rAdmin: 'Admin', teamRoles: 'View only: read documents · Can edit: upload, edit and delete documents · Admin: can edit, and manages this team',
   teamYou: 'You', teamSeen: 'Last visit', teamNever: 'Never signed in', teamDelQ: 'Remove {n} from the team? They will no longer be able to open the site.', teamLoading: 'Loading the list…',
   tTeamSaved: 'Access saved', tTeamErr: 'Could not save. Try again.', tTeamBad: 'Not a valid email', tTeamDup: 'This email is already on the team', roleAdmin: 'Admin · manages the team',
   lookHero: 'Appearance', lookP: 'Saved on this device only. It does not change anyone else’s view.', theme: 'Color theme', mode: 'Mode', lang: 'Language', mascotSet: 'Assistant', mascotOn: 'Show', mascotOff: 'Hide', mascotPhoto: 'Add photo', mascotReset: 'Original', mascotPhotoP: 'Tap a picture to choose your assistant (saved on this device). Photos you add are shared so the whole team can use them.', tPhotoSaved: 'Photo added for the whole team', tPhotoFull: 'The gallery is full (30 photos). Delete one first.', mName0: 'Data-chan', mName1: 'Doggo', mName2: 'Bot', mBy: 'Photo from {n}', mDelQ: 'Remove this photo from the team gallery? Nobody will be able to use it any more.', palTusu: 'TUSU (default)',
@@ -511,10 +511,13 @@ function applyLook() {
   $$('[data-tp]').forEach(e => e.placeholder = t(e.dataset.tp));
   $('#langLbl').textContent = lang === 'th' ? 'TH / EN' : 'EN / TH';
   $$('[data-ta]').forEach(e => { e.setAttribute('aria-label', t(e.dataset.ta)); e.title = t(e.dataset.ta); });
+  let who = ''; try { who = API.demo ? '' : API.me(); } catch {} // Firebase is not started before the first load
+  if (who) { $('#meName').textContent = who; $('#meName').title = who; $('#outBtn').hidden = false; }
   $('#roleLbl').textContent = API.demo ? t('roleDemo') : S.admin ? t('roleAdmin') : S.staff ? t('roleStaff') : t('roleView');
 }
 $('#langBtn').onclick = () => { lang = lang === 'th' ? 'en' : 'th'; LS.set('lang', lang); applyLook(); route(); };
 $('#chatBtn').onclick = () => openChat();
+$('#outBtn').onclick = async () => { await API.signOut(); location.hash = 'home'; location.reload(); };
 $('#backBtn').onclick = () => history.back();
 $('#fwdBtn').onclick = () => history.forward();
 function closeLook() { $('.lookpop')?.remove(); $('#lookBtn').setAttribute('aria-expanded', 'false'); }
