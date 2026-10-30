@@ -31,6 +31,11 @@
     async listMascots() { return this._m; },
     async addMascot(url) { const m = { id: 'm' + Date.now(), url, by: 'demo', createdAt: new Date().toISOString() }; this._m.push(m); return m; },
     async removeMascot(id) { this._m = this._m.filter(m => m.id !== id); },
+    _t: [{ id: 'demo', role: 'editor', admin: true }, { id: 'viewer@example.com', role: 'viewer' }],
+    isAdmin() { return true; },
+    async listTeam() { return JSON.parse(JSON.stringify(this._t)); },
+    async putMember(email, role, admin) { const m = this._t.find(x => x.id === email); if (m) Object.assign(m, { role, admin }); else this._t.push({ id: email, role, admin, addedBy: 'demo', addedAt: new Date().toISOString() }); },
+    async removeMember(email) { this._t = this._t.filter(x => x.id !== email); },
     async backup() { return { project: 'sample', exportedAt: new Date().toISOString(), by: 'demo', ...(await this.load()), thumbs: [], mascots: this._m }; },
     fileUrl: d => d.fileUrl || '',
     thumbUrl: d => d.thumbUrl || ''
@@ -39,6 +44,7 @@
   /* ---------- FIREBASE: project document-center-513108 ----------
    * Sign-in: Google account (basic profile only). Only emails listed in the Firestore collection `team`
    * (document id = email, field role: 'viewer' | 'editor') can read data; see firestore.rules.
+   * A team member with admin: true (always role 'editor') manages the list on the Team page.
    * Files: doc.driveId points at a PDF in the DOCUMENT CENTER Drive folder. The browser gets it from
    * FILE_SERVER (apps-script/Code.gs), which checks the viewer's sign-in token before sending the file.
    * Thumbnails live in the `thumbs` collection (document id = doc id, field data = data: URL).
@@ -90,6 +96,7 @@
     demo: false,
     _db: null,
     _role: null,
+    _admin: false,
     db() {
       if (!this._db) { window.firebase.initializeApp(firebaseConfig); this._db = window.firebase.firestore(); }
       return this._db;
@@ -117,6 +124,8 @@
         return gate({ title: 'ยังไม่มีสิทธิ์เข้าถึง', text: `บัญชี <b>${escH(user.email)}</b> ยังไม่อยู่ในรายชื่อฝ่ายดาต้า ติดต่อผู้ดูแลเพื่อขอสิทธิ์<br><small>This account is not on the data team list.</small>`, signOut: true });
       }
       this._role = me.data().role || 'viewer';
+      this._admin = me.data().admin === true;
+      db.collection('team').doc(user.email).update({ lastSeen: firebase.firestore.FieldValue.serverTimestamp() }).catch(() => {});
       const all = async name => (await db.collection(name).get()).docs.map(x => ({ id: x.id, ...x.data() }));
       const [folders, docs, clubs, thumbs] = await Promise.all([all('folders'), all('docs'), all('clubs'), all('thumbs')]);
       const th = new Map(thumbs.map(t => [t.id, t.data]));
@@ -148,6 +157,20 @@
     },
     async remove(collection, id) { await this.db().collection(collection).doc(id).delete(); },
     me: () => firebase.auth().currentUser?.email || '',
+    isAdmin() { return this._admin; },
+    // Team list for admins: { id (email), role, admin, addedBy, addedAt, lastSeen (ISO) }.
+    async listTeam() {
+      return (await this.db().collection('team').get()).docs.map(x => {
+        const d = x.data();
+        return { id: x.id, ...d, lastSeen: d.lastSeen?.toDate ? d.lastSeen.toDate().toISOString() : '' };
+      });
+    },
+    async putMember(email, role, admin) {
+      const ref = this.db().collection('team').doc(email);
+      if ((await ref.get()).exists) await ref.update({ role, admin });
+      else await ref.set({ role, admin, addedBy: this.me(), addedAt: new Date().toISOString() });
+    },
+    async removeMember(email) { await this.db().collection('team').doc(email).delete(); },
     // Assistant photos shared with the whole team: `mascots` collection, { url (data: URL), by, createdAt }.
     async listMascots() { return (await this.db().collection('mascots').orderBy('createdAt').get()).docs.map(x => ({ id: x.id, ...x.data() })); },
     async addMascot(url) {

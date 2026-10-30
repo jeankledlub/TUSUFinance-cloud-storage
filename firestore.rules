@@ -1,15 +1,31 @@
 rules_version = '2';
 // Only signed-in Google accounts listed in `team` (document id = email) can see the data.
-// role 'editor' can also change folders, docs, clubs and thumbs (covers of uploaded files). The team list itself is managed in the console.
+// role 'editor' can also change folders, docs, clubs and thumbs (covers of uploaded files).
+// admin: true (only with role 'editor') can also manage the team list from the Team page, except their own entry,
+// so there is always at least one admin. The first admin is set in the console.
 service cloud.firestore {
   match /databases/{database}/documents {
     function signedIn() { return request.auth != null && request.auth.token.email_verified == true; }
     function member() { return signedIn() && exists(/databases/$(database)/documents/team/$(request.auth.token.email)); }
     function editor() { return member() && get(/databases/$(database)/documents/team/$(request.auth.token.email)).data.role == 'editor'; }
+    function admin() { return member() && get(/databases/$(database)/documents/team/$(request.auth.token.email)).data.get('admin', false) == true; }
+    function self(email) { return signedIn() && request.auth.token.email == email; }
+    function validMember() {
+      let d = request.resource.data;
+      return d.role in ['viewer', 'editor'] && d.get('admin', false) is bool && (d.get('admin', false) == false || d.role == 'editor');
+    }
 
     match /team/{email} {
-      allow read: if signedIn() && request.auth.token.email == email;
-      allow write: if false;
+      allow read: if self(email) || admin();
+      allow create: if admin() && email == email.lower()
+        && request.resource.data.keys().hasOnly(['role', 'admin', 'addedBy', 'addedAt'])
+        && request.resource.data.addedBy == request.auth.token.email && validMember();
+      // Admins change other people's role; everyone stamps their own last sign-in time.
+      allow update: if (admin() && !self(email)
+          && request.resource.data.diff(resource.data).affectedKeys().hasOnly(['role', 'admin']) && validMember())
+        || (self(email) && request.resource.data.diff(resource.data).affectedKeys().hasOnly(['lastSeen'])
+          && request.resource.data.lastSeen == request.time);
+      allow delete: if admin() && !self(email);
     }
     // Assistant photos shared with the team: any member can add one in their own name;
     // the person who added it or an editor can delete it. Photos can't be edited.

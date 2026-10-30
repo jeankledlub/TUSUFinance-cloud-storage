@@ -27,6 +27,10 @@ const TX = {
   tMerge: 'รวมเป็น PDF ไฟล์เดียว', tMergeP: 'เรียงตามลำดับในรายการ รูปภาพจะวางเป็นหน้า A4', doMerge: 'รวมและดาวน์โหลด', tImg: 'แปลง PDF เป็นรูป', tImgP: 'ทุกหน้าของทุกไฟล์ในรายการ ได้เป็น ZIP', toPng: 'เป็น PNG', toJpg: 'เป็น JPG', tZip: 'ดาวน์โหลดรวดเดียว', tZipP: 'ไฟล์ต้นฉบับทั้งหมดใน ZIP เดียว', doZip: 'โหลดเป็น ZIP', local: 'จากเครื่อง', tBak: 'สำรองข้อมูล', tBakP: 'โฟลเดอร์ เอกสาร ชมรม ปก และรูปผู้ช่วยทั้งหมด เป็นไฟล์ JSON ไฟล์ PDF อยู่ใน Google Drive อยู่แล้ว', tBakWarn: 'ไฟล์มีข้อมูลส่วนบุคคล เก็บไว้ในที่ปลอดภัย ห้ามอัปโหลดขึ้น GitHub', doBak: 'ดาวน์โหลดไฟล์สำรอง',
   starHero: 'ติดดาว', starP: 'เอกสารในคลังกลางที่คุณกดดาวไว้ จำไว้ในเครื่องนี้', starEmpty: 'ยังไม่มีเอกสารติดดาว', starEmptyP: 'กดรูปดาวที่การ์ดเอกสาร แล้วจะมารวมอยู่ที่นี่',
   trashHero: 'ถังขยะ', trashP: 'เอกสารที่ลบจากคลังกลาง กู้คืนได้ หรือลบถาวรเพื่อคืนพื้นที่', trashEmpty: 'ถังขยะว่าง', restore: 'กู้คืน', purge: 'ลบถาวร', purgeQ: 'ลบ “{n}” ถาวร? กู้คืนไม่ได้อีก',
+  teamNav: 'จัดการทีม', teamHero: 'จัดการทีม', teamP: 'ใครเข้าเว็บนี้ได้บ้าง เพิ่มคนด้วยอีเมล Google แล้วเลือกสิทธิ์ แก้สิทธิ์ของตัวเองไม่ได้ เว็บจะได้มีผู้ดูแลอย่างน้อยหนึ่งคนเสมอ',
+  teamEmail: 'อีเมล Google', teamAdd: 'เพิ่มคน', teamRole: 'สิทธิ์', rViewer: 'ดูอย่างเดียว', rEditor: 'แก้ไขได้', rAdmin: 'ผู้ดูแล', teamRoles: 'ดูอย่างเดียว: เปิดอ่านเอกสาร · แก้ไขได้: อัปโหลด แก้ และลบเอกสาร · ผู้ดูแล: แก้ไขได้ และจัดการทีมนี้',
+  teamYou: 'คุณ', teamSeen: 'เข้าล่าสุด', teamNever: 'ยังไม่เคยเข้า', teamDelQ: 'เอา {n} ออกจากทีม? จะเข้าเว็บไม่ได้อีก', teamLoading: 'กำลังโหลดรายชื่อ…',
+  tTeamSaved: 'บันทึกสิทธิ์แล้ว', tTeamErr: 'บันทึกไม่สำเร็จ ลองอีกครั้ง', tTeamBad: 'อีเมลไม่ถูกต้อง', tTeamDup: 'อีเมลนี้อยู่ในทีมแล้ว', roleAdmin: 'ผู้ดูแล · จัดการทีมได้',
   lookHero: 'ตั้งค่าหน้าตา', lookP: 'เลือกได้ตามชอบ ระบบจำไว้ในเครื่องนี้ ไม่กระทบคนอื่น', theme: 'ธีมสี', mode: 'โหมด', lang: 'ภาษา', mascotSet: 'ตัวช่วย', mascotOn: 'แสดง', mascotOff: 'ซ่อน', mascotPhoto: 'เพิ่มรูป', mascotReset: 'ตัวเดิม', mascotPhotoP: 'กดรูปเพื่อเลือกตัวช่วยของคุณ (จำไว้ในเครื่องนี้) รูปที่เพิ่มจะแชร์ให้ทุกคนในทีมเลือกใช้ได้', tPhotoSaved: 'เพิ่มรูปแล้ว ทุกคนในทีมเลือกใช้ได้', tPhotoFull: 'แกลเลอรีเต็มแล้ว (30 รูป) ลบรูปเก่าก่อน', mName0: 'น้องดาต้า', mName1: 'น้องหมา', mName2: 'น้องบอท', mBy: 'รูปจาก {n}', mDelQ: 'ลบรูปนี้ออกจากแกลเลอรีของทีม ทุกคนจะใช้รูปนี้ไม่ได้อีก', palTusu: 'TUSU (ค่าเริ่มต้น)',
   chTitle: 'แชทกับน้องดาต้า', chSub: 'ตอบจากข้อมูลในคลังนี้เท่านั้น', chPh: 'ถามเรื่องชุมนุม ใบแต่งตั้ง หรือชื่อคน…', chSend: 'ส่ง', chAsk: 'ถามน้อง',
   chHelp: 'สวัสดี! ถามน้องได้เลย น้องตอบจากข้อมูลในคลังนี้เท่านั้น เช่น ใครเป็นประธานชุมนุมไหน ชุมนุมไหนมีใบแต่งตั้งแล้ว สายกีฬามีกี่ชุมนุม หรือพิมพ์ชื่อคนก็ได้',
@@ -96,6 +100,10 @@ const TX = {
   tMerge: 'Merge into one PDF', tMergeP: 'Uses the order of the list. Images become A4 pages.', doMerge: 'Merge and download', tImg: 'Convert PDF to images', tImgP: 'Every page of every file, as one ZIP.', toPng: 'As PNG', toJpg: 'As JPG', tZip: 'Download all at once', tZipP: 'All original files in one ZIP.', doZip: 'Download ZIP', local: 'From computer', tBak: 'Backup', tBakP: 'All folders, documents, clubs, covers and assistant photos as one JSON file. The PDFs are already in Google Drive.', tBakWarn: 'This file has personal data. Keep it somewhere safe and never upload it to GitHub.', doBak: 'Download backup',
   starHero: 'Starred', starP: 'Shared documents you starred, remembered on this device.', starEmpty: 'Nothing starred yet', starEmptyP: 'Press the star on a document card and it shows up here.',
   trashHero: 'Trash', trashP: 'Documents removed from the shared drive. Restore them, or delete forever to free space.', trashEmpty: 'Trash is empty', restore: 'Restore', purge: 'Delete forever', purgeQ: 'Delete “{n}” forever? This cannot be undone.',
+  teamNav: 'Manage team', teamHero: 'Manage team', teamP: 'Who can use this site. Add people by their Google email and pick what they can do. You cannot change your own access, so the site always keeps at least one admin.',
+  teamEmail: 'Google email', teamAdd: 'Add', teamRole: 'Access', rViewer: 'View only', rEditor: 'Can edit', rAdmin: 'Admin', teamRoles: 'View only: read documents · Can edit: upload, edit and delete documents · Admin: can edit, and manages this team',
+  teamYou: 'You', teamSeen: 'Last visit', teamNever: 'Never signed in', teamDelQ: 'Remove {n} from the team? They will no longer be able to open the site.', teamLoading: 'Loading the list…',
+  tTeamSaved: 'Access saved', tTeamErr: 'Could not save. Try again.', tTeamBad: 'Not a valid email', tTeamDup: 'This email is already on the team', roleAdmin: 'Admin · manages the team',
   lookHero: 'Appearance', lookP: 'Saved on this device only. It does not change anyone else’s view.', theme: 'Color theme', mode: 'Mode', lang: 'Language', mascotSet: 'Assistant', mascotOn: 'Show', mascotOff: 'Hide', mascotPhoto: 'Add photo', mascotReset: 'Original', mascotPhotoP: 'Tap a picture to choose your assistant (saved on this device). Photos you add are shared so the whole team can use them.', tPhotoSaved: 'Photo added for the whole team', tPhotoFull: 'The gallery is full (30 photos). Delete one first.', mName0: 'Data-chan', mName1: 'Doggo', mName2: 'Bot', mBy: 'Photo from {n}', mDelQ: 'Remove this photo from the team gallery? Nobody will be able to use it any more.', palTusu: 'TUSU (default)',
   chTitle: 'Chat with Data-chan', chSub: 'Answers only from this archive', chPh: 'Ask about clubs, appointments or a person…', chSend: 'Send', chAsk: 'Ask',
   chHelp: 'Hi! Ask me anything about this archive, and I answer only from its data. For example: who is president of a club, which clubs have an appointment letter, how many sports clubs there are, or type a person’s name.',
@@ -271,7 +279,7 @@ function veil(on, m) { let e = $('.veil'); if (!on) { e && e.remove(); return; }
 
 /* ============ state ============ */
 const S = {
-  staff: false, art: null, assets: null, dl: null,
+  staff: false, admin: false, art: null, assets: null, dl: null,
   stars: (() => { try { return JSON.parse(LS.get('stars', '[]')); } catch { return []; } })(),
   tray: (() => { try { return JSON.parse(LS.get('tray', '[]')); } catch { return []; } })(), local: new Map(),
   layout: LS.get('layout', 'grid'), sort: LS.get('sort', 'name'), q: ''
@@ -503,7 +511,7 @@ function applyLook() {
   $$('[data-tp]').forEach(e => e.placeholder = t(e.dataset.tp));
   $('#langLbl').textContent = lang === 'th' ? 'TH / EN' : 'EN / TH';
   $$('[data-ta]').forEach(e => { e.setAttribute('aria-label', t(e.dataset.ta)); e.title = t(e.dataset.ta); });
-  $('#roleLbl').textContent = API.demo ? t('roleDemo') : S.staff ? t('roleStaff') : t('roleView');
+  $('#roleLbl').textContent = API.demo ? t('roleDemo') : S.admin ? t('roleAdmin') : S.staff ? t('roleStaff') : t('roleView');
 }
 $('#langBtn').onclick = () => { lang = lang === 'th' ? 'en' : 'th'; LS.set('lang', lang); applyLook(); route(); };
 $('#chatBtn').onclick = () => openChat();
@@ -541,7 +549,7 @@ function renderNav() {
   h += `<div class="grp"><h6>${esc(t('gShared'))}</h6><div class="nav">${a('drive', ic('drive'), t('allDocs'), ct(A.shared.files().length))}${kidsF('shared', null).map(f => a('d-' + f.id, `<i class="dot" style="background:${colorOf(f.color)}"></i>`, f.name, ct(countIn('shared', f.id)), 'sub')).join('')}</div></div>`;
   h += `<div class="grp"><h6>${esc(t('gMine'))}</h6><div class="nav">${a('mine', ic('user'), t('mine'), ct(MY.files.length))}${a('starred', ic('star'), t('starred'), ct(A.shared.files().filter(d => S.stars.includes(d.id)).length))}</div></div>`;
   h += `<div class="grp"><h6>${esc(t('gTools'))}</h6><div class="nav">${a('tools', ic('layers'), t('tools'), S.tray.length ? `<span class="badge num">${S.tray.length}</span>` : '')}${a('look', ic('gear'), t('look'))}${a('help', ic('help'), t('help'))}</div></div>`;
-  if (S.staff) { const n = DATA.docs.filter(d => d.trashed).length; h += `<div class="grp"><h6>${esc(t('gStaff'))}</h6><div class="nav">${a('trash', ic('trash'), t('trash'), n ? ct(n) : '')}</div></div>`; }
+  if (S.staff) { const n = DATA.docs.filter(d => d.trashed).length; h += `<div class="grp"><h6>${esc(t('gStaff'))}</h6><div class="nav">${a('trash', ic('trash'), t('trash'), n ? ct(n) : '')}${S.admin ? a('team', ic('badge'), t('teamNav'), TEAM ? ct(TEAM.length) : '') : ''}</div></div>`; }
   $('#navs').innerHTML = h;
   // active state for nested drive folders
   if (c.startsWith('d-')) { const top = pathOf('shared', c.slice(2))[0]; if (top) $(`#navs a[href="#d-${CSS.escape(top.id)}"]`)?.setAttribute('aria-current', 'page'); }
@@ -570,6 +578,7 @@ function route() {
   else if (c === 'tools') P.innerHTML = pageTools();
   else if (c === 'look') P.innerHTML = pageLook();
   else if (c === 'trash' && S.staff) P.innerHTML = pageTrash();
+  else if (c === 'team' && S.admin) P.innerHTML = pageTeam();
   else if (c === 'search') P.innerHTML = pageSearch();
   else P.innerHTML = pageHome();
   if (c !== 'search' && S.q) { S.q = ''; $('#q').value = ''; }
@@ -883,6 +892,49 @@ function pageTrash() {
 document.addEventListener('click', e => {
   const r = e.target.closest('[data-restore]'); if (r) { const d = DATA.docs.find(x => x.id === r.dataset.restore); if (d) { d.trashed = false; commit([['docs', d]]); } }
   const p = e.target.closest('[data-purge]'); if (p) { const d = DATA.docs.find(x => x.id === p.dataset.purge); if (d) confirmModal(t('purgeQ', { n: d.title }), async () => { await API.removeFile(d).catch(() => {}); DATA.docs = DATA.docs.filter(x => x !== d); commit([['docs', d, true]]); }); }
+});
+/* ============ team (admins only) ============ */
+let TEAM = null;
+const roleOf = m => m.admin ? 'admin' : m.role === 'editor' ? 'editor' : 'viewer';
+const ROLE_T = { viewer: 'rViewer', editor: 'rEditor', admin: 'rAdmin' };
+async function loadTeam() {
+  try { TEAM = (await API.listTeam()).sort((a, b) => a.id.localeCompare(b.id)); } catch (e) { console.error(e); TEAM = []; toast(t('tLoadErr')); }
+  if (cur() === 'team') route(); else renderNav();
+}
+function pageTeam() {
+  const me = API.me(), roleSel = (r, attr) => `<span class="sel"><select ${attr}>${Object.keys(ROLE_T).map(k => `<option value="${k}"${k === r ? ' selected' : ''}>${esc(t(ROLE_T[k]))}</option>`).join('')}</select></span>`;
+  const rows = (TEAM || []).map(m => `<tr><td style="font-weight:600">${esc(m.id)}${m.id === me ? ` <span class="chip">${esc(t('teamYou'))}</span>` : ''}</td>
+    <td class="num" style="color:var(--muted);white-space:nowrap">${m.lastSeen ? `${esc(t('teamSeen'))} ${fmtD(m.lastSeen)}` : esc(t('teamNever'))}</td>
+    <td style="text-align:right;white-space:nowrap">${m.id === me ? esc(t(ROLE_T[roleOf(m)])) : `${roleSel(roleOf(m), `data-trole="${esc(m.id)}" aria-label="${esc(m.id)}"`)} <button class="btn sm bad" data-tdel="${esc(m.id)}">${ic('trash')}${esc(t('del'))}</button>`}</td></tr>`).join('');
+  return `<div class="page"><section class="card hero"><div><p class="k">${esc(t('gStaff'))}</p><h1>${esc(t('teamHero'))}</h1><p class="d">${esc(t('teamP'))}</p></div></section>
+    <section class="card box"><form class="toolbar" id="teamAdd"><div class="field" style="flex:1;min-width:220px"><label for="tEmail">${esc(t('teamEmail'))}</label><input id="tEmail" type="email" autocomplete="off" placeholder="name@gmail.com" required></div>
+      <div class="field"><label for="tRole">${esc(t('teamRole'))}</label>${roleSel('viewer', 'id="tRole"')}</div>
+      <button class="btn go" style="align-self:end">${ic('plus')}${esc(t('teamAdd'))}</button></form>
+      <p class="d">${esc(t('teamRoles'))}</p></section>
+    ${TEAM ? `<div class="card tbl-wrap"><table class="tbl"><tbody>${rows}</tbody></table></div>` : `<div class="card box"><p class="d">${esc(t('teamLoading'))}</p></div>`}</div>`;
+}
+// Saves one person's access and updates the list; admin always goes with role 'editor' (see firestore.rules).
+async function saveMember(email, r) {
+  try {
+    await API.putMember(email, r === 'viewer' ? 'viewer' : 'editor', r === 'admin');
+    toast(t('tTeamSaved')); await loadTeam();
+  } catch (e) { console.error(e); toast(t('tTeamErr')); route(); }
+}
+document.addEventListener('submit', e => {
+  if (e.target.id !== 'teamAdd') return;
+  e.preventDefault();
+  const email = $('#tEmail').value.trim().toLowerCase();
+  if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) return toast(t('tTeamBad'));
+  if ((TEAM || []).some(m => m.id === email)) return toast(t('tTeamDup'));
+  saveMember(email, $('#tRole').value);
+});
+document.addEventListener('change', e => { const s = e.target.closest('[data-trole]'); if (s) saveMember(s.dataset.trole, s.value); });
+document.addEventListener('click', e => {
+  const d = e.target.closest('[data-tdel]'); if (!d) return;
+  const email = d.dataset.tdel;
+  confirmModal(t('teamDelQ', { n: email }), async () => {
+    try { await API.removeMember(email); await loadTeam(); } catch (e) { console.error(e); toast(t('tTeamErr')); }
+  });
 });
 function pageLook() {
   const pal = LS.get('pal', 'tusu'), mode = LS.get('mode', 'system'), as = LS.get('mascot', 'off');
@@ -1524,7 +1576,8 @@ async function boot() {
     const d = await API.load();
     DATA = Object.assign({ v: 4, folders: [], docs: [], clubs: [] }, d);
   } catch (e) { console.error(e); toast(t('tLoadErr')); }
-  try { S.staff = !!(await API.canEdit()); } catch {}
+  try { S.staff = !!(await API.canEdit()); S.admin = S.staff && !!API.isAdmin(); } catch {}
+  if (S.admin) loadTeam();
   loadMascots();
   route();
   await myOpen(); route();
