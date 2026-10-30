@@ -36,7 +36,6 @@
     async listTeam() { return JSON.parse(JSON.stringify(this._t)); },
     async putMember(email, role, admin) { const m = this._t.find(x => x.id === email); if (m) Object.assign(m, { role, admin }); else this._t.push({ id: email, role, admin, addedBy: 'demo', addedAt: new Date().toISOString() }); },
     async removeMember(email) { this._t = this._t.filter(x => x.id !== email); },
-    async signOut() { /* demo */ },
     async backup() { return { project: 'sample', exportedAt: new Date().toISOString(), by: 'demo', ...(await this.load()), thumbs: [], mascots: this._m }; },
     fileUrl: d => d.fileUrl || '',
     thumbUrl: d => d.thumbUrl || ''
@@ -162,7 +161,6 @@
     async remove(collection, id) { await this.db().collection(collection).doc(id).delete(); },
     me: () => firebase.auth().currentUser?.email || '',
     isAdmin() { return this._admin; },
-    async signOut() { await firebase.auth().signOut(); },
     // Team list for admins: { id (email), role, admin, addedBy, addedAt, lastSeen (ISO) }.
     async listTeam() {
       return (await this.db().collection('team').get()).docs.map(x => {
