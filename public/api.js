@@ -94,6 +94,33 @@
 
   const toDataUrl = blob => new Promise((res, rej) => { const fr = new FileReader(); fr.onload = () => res(fr.result); fr.onerror = () => rej(fr.error); fr.readAsDataURL(blob); });
   const toB64 = async blob => (await toDataUrl(blob)).split(',')[1];
+  // Built-in browsers of chat and social apps, where Google blocks sign-in (403 disallowed_useragent).
+  const UA = navigator.userAgent;
+  const IN_APP = /\bLine\/|FBAN|FBAV|FB_IAB|Instagram|Messenger|MicroMessenger|KAKAOTALK|TikTok|musical_ly|Bytedance|Twitter|; wv\)/i.test(UA);
+  // LINE opens the page in the phone's browser when the link has openExternalBrowser=1.
+  function leaveLine() {
+    if (!/\bLine\//i.test(UA) || /[?&]openExternalBrowser=1/.test(location.search)) return false;
+    location.replace(location.pathname + (location.search ? location.search + '&' : '?') + 'openExternalBrowser=1' + location.hash);
+    return true;
+  }
+  // Card that sends people from an in-app browser to Chrome (Android) or Safari (iPhone, iOS 17+), or lets them copy the link.
+  function inAppGate() {
+    const url = location.href, rest = url.replace(/^https:\/\//, '');
+    const open = /Android/i.test(UA)
+      ? `intent://${rest.replace(/#.*$/, '')}#Intent;scheme=https;package=com.android.chrome;S.browser_fallback_url=${encodeURIComponent(url)};end`
+      : `x-safari-https://${rest}`;
+    gate({
+      title: 'เปิดในเบราว์เซอร์ก่อน',
+      text: `ลิงก์นี้เปิดอยู่ในแอปอื่น ซึ่ง Google ไม่ให้ล็อกอิน กดปุ่มด้านล่างเพื่อเปิดใน ${/Android/i.test(UA) ? 'Chrome' : 'Safari'} หรือคัดลอกลิงก์ไปเปิดเอง<br><small>This link opened inside another app, where Google blocks sign-in. Open it in your browser, or copy the link.</small>
+        <a class="btn go" href="${escH(open)}" style="margin-top:14px;display:flex;justify-content:center">เปิดในเบราว์เซอร์ · Open in browser</a>
+        <button class="btn" id="gateCopy" style="margin-top:8px;width:100%">คัดลอกลิงก์ · Copy link</button>`
+    });
+    document.getElementById('gateCopy').onclick = async e => {
+      try { await navigator.clipboard.writeText(url); } catch { prompt('', url); return; }
+      e.target.textContent = 'คัดลอกแล้ว · Copied';
+    };
+    return new Promise(() => {});
+  }
   const clean = o => JSON.parse(JSON.stringify(o, (k, v) => (k.startsWith('_') || v instanceof Blob ? undefined : v)));
   const FIREBASE = {
     demo: false,
@@ -108,6 +135,7 @@
       this.db();
       const user = await new Promise(res => { const off = firebase.auth().onAuthStateChanged(u => { off(); res(u); }); });
       if (user) return user;
+      if (IN_APP) return leaveLine() ? new Promise(() => {}) : inAppGate();
       return gate({
         title: 'คลังเอกสาร อมธ.',
         text: 'สำหรับฝ่ายดาต้าเท่านั้น ล็อกอินด้วยบัญชี Google ที่ได้รับสิทธิ์<br><small>Data team only. Sign in with your approved Google account.</small>',
