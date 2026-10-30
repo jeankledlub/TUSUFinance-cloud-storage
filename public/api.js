@@ -61,7 +61,7 @@
     storageBucket: 'document-center-513108.firebasestorage.app',
     appId: '1:201661692433:web:ee7dc4ace09512a1698fb0'
   };
-  const FILE_SERVER = 'https://script.google.com/macros/s/AKfycbxMJCoZiteie-DpO3cv9NiCu-tTYO97coioBpC8wG9Z8ZdfVre4ADj70T2Fo9a_xp1P/exec'; // apps-script/Code.gs
+  const FILE_SERVER = 'https://script.google.com/macros/s/AKfycbzXAH7sx8cDnGXvcR4Qb4SvcFm3Tvt_unyiGBvoJnhlVUk2WPtcG3No4RiWqxF6enZ3/exec'; // apps-script/Code.gs
   const escH = s => String(s).replace(/[&<>"']/g, c => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c]));
 
   // Full-screen card over the site. With `action`, shows a button and resolves with action()'s result.
