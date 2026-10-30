@@ -96,7 +96,10 @@
   const toB64 = async blob => (await toDataUrl(blob)).split(',')[1];
   // Built-in browsers of chat and social apps, where Google blocks sign-in (403 disallowed_useragent).
   const UA = navigator.userAgent;
-  const IN_APP = /\bLine\/|FBAN|FBAV|FB_IAB|Instagram|Messenger|MicroMessenger|KAKAOTALK|TikTok|musical_ly|Bytedance|Twitter|; wv\)/i.test(UA);
+  // On iPhone, Safari and the Safari view apps open links in say "Safari/"; an app's own browser does not
+  // (Telegram's, Threads...). A site saved to the home screen does not either, so it is left out.
+  const IN_APP = /\bLine\/|FBAN|FBAV|FB_IAB|Instagram|Messenger|MicroMessenger|KAKAOTALK|TikTok|musical_ly|Bytedance|Twitter|Barcelona|Snapchat|LinkedInApp|Pinterest|; wv\)/i.test(UA)
+    || (/iPhone|iPad|iPod/.test(UA) && !/Safari\//.test(UA) && !navigator.standalone);
   // LINE opens the page in the phone's browser when the link has openExternalBrowser=1.
   function leaveLine() {
     if (!/\bLine\//i.test(UA) || /[?&]openExternalBrowser=1/.test(location.search)) return false;
